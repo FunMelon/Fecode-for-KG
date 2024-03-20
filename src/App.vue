@@ -1,33 +1,63 @@
 <template>
   <!-- 整个网页 -->
-  <a-flex class="whole" >
-    <!-- 左侧 -->
-    <a-flex class="left block" :style="{ flex: 1 }">
-      侧边
+  <a-flex vertical class="whole">
+    <!-- 上侧 -->
+    <a-flex class="block" :style="{ flex: 1 }">
+      <selectView class="block" :style="{ flex: 1 }"/>
+      <menuView class="block" :style="{ flex: 5 }"/>
     </a-flex>
-    <!-- 右侧 -->
-    <a-flex class="right block" vertical :style="{ flex: 5 }">
-      <!-- 顶部 -->
-      <a-flex class="top block" :style="{ flex: 1 }">
-        顶部
-      </a-flex>
-      <!-- 中部 -->
-      <a-flex class="middle block" :style="{ flex: 5 }">
-        中部
-      </a-flex>
-      <!-- 下部 -->
-      <a-flex class="down block" :style="{ flex: 3 }">
-        下部
+    <!-- 下侧 -->
+    <a-flex class="block" :style="{ flex: 9 }">
+      <!-- 表格 -->
+      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" />
+      <a-flex vertical class="block" :style="{ flex: 5 }">
+        <!-- 详细视图 -->
+        <detailView :style="{ flex: 2 }" :WCData="WCData" :tlbData="tlbData.slice(0, 5)"/>
+        <a-flex class="block" :style="{ flex: 1 }">
+          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :data="FGData"/>
+          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :data="FGData" />
+        </a-flex>
       </a-flex>
     </a-flex>
   </a-flex>
 </template>
 
 <script>
+import { getFGData, getTlbData, getWCData } from './api/utils.js';
+import detailView from './components/detail/detailView.vue';
+import FView from './components/down/FView.vue'
+import KGTable from './components/side/KGTable.vue';
+import selectView from './components/top/selectView.vue';
+import menuView from './components/top/menuView.vue';
+import { ref } from 'vue';
 
+export default {
+  setup() {
+    const tlbData = ref([]);
+    const WCData = ref([]);
+    const FGData = ref([]);
+    getTlbData().then((res) => {
+      tlbData.value = res;
+    })
+    getWCData().then((res) => {
+      WCData.value = res;
+    })
+    getFGData().then((res) => {
+      FGData.value = res;
+    })
+    return { tlbData, WCData, FGData };
+  },
+  components: {
+    detailView,
+    FView,
+    KGTable,
+    selectView,
+    menuView,
+  }
+}
 </script>
 
-<style>
+<style scoped>
 /* 砖块，为了更加美观 */
 .block {
   padding: 3px;
@@ -42,27 +72,4 @@
   top: 0px;
   left: 0px;
 }
-
-/* 侧边栏 */
-.left {
-
-}
-
-/* 主要内容栏 */
-.right {
-
-}
-
-/* 顶部 */
-.top {
-
-}
-
-.middle {
-
-}
-
-.down {
-
-}
-</style>
+</style>./api/utils.js
