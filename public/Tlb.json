@@ -1,68 +1,218 @@
 [
     {
-        "kg1": "Simlssssssssssssssssssssssssssssssss",
-        "kg2": "LKI",
-        "similarity": 0.4,
-        "status": "marked"
+        "KG1": "阿卜杜拉·居尔",
+        "KG2": "Abdullah_Gül",
+        "Sim": 0.8937726657457677,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "marked"
+        "KG1": "金大中",
+        "KG2": "Kim_Dae-jung",
+        "Sim": 0.8365158352705568,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "marked"
+        "KG1": "民族陣線_(法國)",
+        "KG2": "National_Front_(France)",
+        "Sim": 0.927902742941847,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "香港丁組足球聯賽",
+        "KG2": "Hong_Kong_Fourth_Division_League",
+        "Sim": 0.938284356363518,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "松山區_(臺灣)",
+        "KG2": "Songshan_District,_Taipei",
+        "Sim": 0.806216323871612,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "恩斯特·金恩",
+        "KG2": "Ernest_King",
+        "Sim": 0.8965689824084,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "哥連泰斯保利斯塔體育會",
+        "KG2": "Sport_Club_Corinthians_Paulista",
+        "Sim": 0.8399842123458684,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "符騰堡王國",
+        "KG2": "Kingdom_of_Württemberg",
+        "Sim": 0.8321028238056782,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "IBooks",
+        "KG2": "IBooks",
+        "Sim": 0.860521868188977,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "约阿希姆·高克",
+        "KG2": "Joachim_Gauck",
+        "Sim": 0.92500809398497,
+        "Status": "marked"
     },
     {
-        "kg1": "sds",
-        "kg2": "LKI",
-        "similarity": 0.9,
-        "status": "unmarked"
+        "KG1": "呼和浩特市",
+        "KG2": "Hohhot",
+        "Sim": 0.879679928759924,
+        "Status": "marked"
+    },
+    {
+        "KG1": "约翰·沃尔",
+        "KG2": "John_Wall_(basketball)",
+        "Sim": 0.8912355953680918,
+        "Status": "marked"
+    },
+    {
+        "KG1": "加斯頓·拉美利斯",
+        "KG2": "Gastón_Ramírez",
+        "Sim": 0.8253923384520828,
+        "Status": "marked"
+    },
+    {
+        "KG1": "耶斯佩尔·格伦夏尔",
+        "KG2": "Jesper_Grønkjær",
+        "Sim": 0.8386115311622944,
+        "Status": "marked"
+    },
+    {
+        "KG1": "拉孔内",
+        "KG2": "Laconnex",
+        "Sim": 0.8263782963520758,
+        "Status": "marked"
+    },
+    {
+        "KG1": "欧内斯特·卢瑟福",
+        "KG2": "Ernest_Rutherford",
+        "Sim": 0.8097934626726176,
+        "Status": "marked"
+    },
+    {
+        "KG1": "康维尔",
+        "KG2": "Convair",
+        "Sim": 0.8469705659949073,
+        "Status": "marked"
+    },
+    {
+        "KG1": "费代丽卡·莫盖里尼",
+        "KG2": "Federica_Mogherini",
+        "Sim": 0.9114325935148543,
+        "Status": "marked"
+    },
+    {
+        "KG1": "艾哈迈德·沙·巴哈杜尔",
+        "KG2": "Ahmad_Shah_Bahadur",
+        "Sim": 0.8230383000549752,
+        "Status": "marked"
+    },
+    {
+        "KG1": "于海",
+        "KG2": "Yu_Hai",
+        "Sim": 0.8683115357876727,
+        "Status": "marked"
+    },
+    {
+        "KG1": "哥威迅语",
+        "KG2": "Gwich’in_language",
+        "Sim": 0.8011242669693518,
+        "Status": "marked"
+    },
+    {
+        "KG1": "依納爵·羅耀拉",
+        "KG2": "Ignatius_of_Loyola",
+        "Sim": 0.9144583170517191,
+        "Status": "marked"
+    },
+    {
+        "KG1": "Linux",
+        "KG2": "Linux",
+        "Sim": 0.8484103316063273,
+        "Status": "marked"
+    },
+    {
+        "KG1": "F-15E打擊鷹式戰鬥轟炸機",
+        "KG2": "McDonnell_Douglas_F-15E_Strike_Eagle",
+        "Sim": 0.8285098394603152,
+        "Status": "marked"
+    },
+    {
+        "KG1": "伊藤博文",
+        "KG2": "Itō_Hirobumi",
+        "Sim": 0.9313557526608489,
+        "Status": "marked"
+    },
+    {
+        "KG1": "柯瑞·布克",
+        "KG2": "Cory_Booker",
+        "Sim": 0.914030024501097,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "路竹區",
+        "KG2": "Lujhu_District",
+        "Sim": 0.853540444152701,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "瓦西莉基·萨努",
+        "KG2": "Vassiliki_Thanou-Christophilou",
+        "Sim": 0.9259877318991154,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "馮國璋",
+        "KG2": "Feng_Guozhang",
+        "Sim": 0.8676786164942172,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "Perfect_Crime",
+        "KG2": "Perfect_Crime_(album)",
+        "Sim": 0.8334999377404689,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "克里斯蒂安·涅梅特",
+        "KG2": "Krisztián_Németh",
+        "Sim": 0.8013021878536684,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "森美亞",
+        "KG2": "Sammir",
+        "Sim": 0.9003991311817942,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "扬帕河",
+        "KG2": "Yampa_River",
+        "Sim": 0.9049909896475201,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "尼科西亚",
+        "KG2": "Nicosia",
+        "Sim": 0.9391490010842137,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "埃里克·哈里斯和迪倫·克萊伯德",
+        "KG2": "Eric_Harris_and_Dylan_Klebold",
+        "Sim": 0.8362789886060468,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "意大利-西罗曼语支",
+        "KG2": "Italo-Western_languages",
+        "Sim": 0.8851844532894391,
+        "Status": "unmarked"
     }
 ]

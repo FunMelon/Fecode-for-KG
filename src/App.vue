@@ -7,15 +7,15 @@
       <menuView class="block" :style="{ flex: 5 }"/>
     </a-flex>
     <!-- 下侧 -->
-    <a-flex class="block" :style="{ flex: 9 }">
+    <a-flex class="block" :style="{ flex: 13 }">
       <!-- 表格 -->
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :style="{ flex: 2 }" :WCData="WCData" :tlbData="tlbData.slice(0, 5)"/>
-        <a-flex class="block" :style="{ flex: 1 }">
-          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :data="FGData"/>
-          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :data="FGData" />
+        <detailView :style="{ flex: 9 }" :WCData="WCData" :tlbData="tlbData.slice(0, 5)"/>
+        <a-flex class="block" :style="{ flex: 5 }">
+          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGData"/>
+          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGData" />
         </a-flex>
       </a-flex>
     </a-flex>
@@ -35,7 +35,7 @@ export default {
   setup() {
     const tlbData = ref([]);
     const WCData = ref([]);
-    const FGData = ref([]);
+    const FGData = ref({});
     getTlbData().then((res) => {
       tlbData.value = res;
     })
@@ -60,7 +60,6 @@ export default {
 <style scoped>
 /* 砖块，为了更加美观 */
 .block {
-  padding: 3px;
   border: 1px solid #ccc;
 }
 

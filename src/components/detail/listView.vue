@@ -2,19 +2,19 @@
 <template>
     <a-table :columns="columns" :data-source="data" size="small" :showHeader=false :pagination=false>
         <template #bodyCell="{ column, record }">
-            <template v-if="column.key === 'kg2' && isNode ">
+            <template v-if="column.key === 'KG2' && isNode ">
                 <span>
-                    <FrownTwoTone rotate="180"/>
+                    <FrownTwoTone  />
                 </span>
             </template>
-            <template v-else-if="column.key === 'kg2' && !isNode ">
+            <template v-else-if="column.key === 'KG2' && !isNode ">
                 <span>
                     <SwapRightOutlined />
                 </span>
             </template>
-            <template v-else-if="column.key === 'kg1'">
+            <template v-else-if="column.key === 'KG1'">
                 <span>
-                    {{ record.kg1 }}
+                    {{ record.KG1 }}
                 </span>
             </template>
         </template>
@@ -36,15 +36,16 @@ export default {
         return {
             columns: [
                 {
-                    name: 'kg2',
-                    dataIndex: 'kg2',
-                    key: 'kg2',
+                    name: 'KG2',
+                    dataIndex: 'KG2',
+                    key: 'KG2',
                     align: 'center',
+                    width: "20%",
                 },
                 {
                     title: 'Name',
                     dataIndex: 'name',
-                    key: 'kg1',
+                    key: 'KG1',
                     ellipsis: true,
                     align: 'center',
                 },

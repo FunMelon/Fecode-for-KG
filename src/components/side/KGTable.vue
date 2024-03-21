@@ -1,16 +1,18 @@
 <template>
-    <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 20 }">
+    <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 19 }">
         <template #headerCell="{ column }">
-            <template v-if="column.key === 'kg1'">
+            <template v-if="column.key === 'KG1'">
                 Kg1
             </template>
         </template>
         <template #bodyCell="{ column, record }">
-            <template v-if="column.key === 'status'">
+            <template v-if="column.key === 'Status'">
                 <span>
-                    <CheckCircleTwoTone v-if="record.status == 'marked' || record.status == 'unmarked'" two-tone-color="#52c41a"/>
+                    <CheckCircleTwoTone v-if="record.Status == 'marked' || record.Status == 'unmarked'"
+                        two-tone-color="#52c41a" />
                     &nbsp;
-                    <CloseCircleTwoTone v-if="record.status == 'unmarkable' || record.status == 'unmarked'" two-tone-color="#eb2f96" />
+                    <CloseCircleTwoTone v-if="record.Status == 'unmarkable' || record.Status == 'unmarked'"
+                        two-tone-color="#eb2f96" />
                 </span>
             </template>
         </template>
@@ -32,30 +34,30 @@ export default {
         return {
             columns: [
                 {
-                    name: 'Kg1',
-                    dataIndex: 'kg1',
-                    key: 'kg1',
+                    title: "KG1",
+                    dataIndex: "KG1",
+                    key: "KG1",
                     width: "50px",
                     ellipsis: true,
                 },
                 {
-                    title: 'Kg2',
-                    dataIndex: 'kg2',
-                    key: 'kg2',
+                    title: 'KG2',
+                    dataIndex: 'KG2',
+                    key: 'KG2',
                     width: "50px",
                     ellipsis: true,
                 },
                 {
                     title: 'Sim',
-                    dataIndex: 'similarity',
-                    key: 'similarity',
-                    width: "30px",
+                    dataIndex: 'Sim',
+                    key: 'Sim',
+                    width: "20px",
                     ellipsis: true,
                 },
                 {
                     title: 'Status',
-                    dataIndex: 'status',
-                    key: 'status',
+                    dataIndex: 'Status',
+                    key: 'Status',
                     width: "30px",
                     ellipsis: true,
                     align: 'center'
@@ -88,5 +90,4 @@ export default {
     height: 30px;
     padding: 0px !important;
 }
-
 </style>

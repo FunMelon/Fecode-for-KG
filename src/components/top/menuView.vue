@@ -6,13 +6,13 @@
                     <label :style="{ flex: 3 }" align="center">
                         名称权重
                     </label>
-                    <a-slider :style="{ flex: 4 }" value="22" />
+                    <a-slider :style="{ flex: 4 }"/>
                 </a-flex>
                 <a-flex :style="{ flex: 1 }" justify="space-around" align='center'>
                     <label :style="{ flex: 3 }" align="center">
                         属性权重
                     </label>
-                    <a-slider :style="{ flex: 4 }" value="22" />
+                    <a-slider :style="{ flex: 4 }"/>
                 </a-flex>
             </a-flex>
             <a-flex :style="{ flex: 1 }">
@@ -20,13 +20,13 @@
                     <label :style="{ flex: 3 }" align="center">
                         结构权重
                     </label>
-                    <a-slider :style="{ flex: 4 }" value="22" />
+                    <a-slider :style="{ flex: 4 }"/>
                 </a-flex>
                 <a-flex :style="{ flex: 1 }" justify="space-around" align='center'>
                     <label :style="{ flex: 3 }" align="center">
                         关系权重
                     </label>
-                    <a-slider :style="{ flex: 4 }" value="22" />
+                    <a-slider :style="{ flex: 4 }" />
                 </a-flex>
             </a-flex>
         </a-flex>
@@ -47,7 +47,6 @@
 </script>
 <style scoped>
 .block {
-    padding: 3px;
     border: 1px solid #ccc;
 }
 </style>

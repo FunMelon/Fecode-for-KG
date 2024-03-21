@@ -9,8 +9,8 @@ import { watch } from 'vue';
 export default {
     name: "LWCView",
     mounted() {
-        watch(() => this.data, (newVal, oldVal) => {
-            console.log(`Items count changed from ${oldVal.length} to ${newVal.length}`);
+        // console.log(this.data)
+        watch(() => this.data, () => {
             this.setupG2();
         }, { deep: true });
     },

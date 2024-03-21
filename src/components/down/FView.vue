@@ -4,13 +4,16 @@
 
 <script>
 import G6 from '@antv/g6';
-// import { watch } from 'vue';
+import { watch } from 'vue';
 
 export default {
     name: "FView",
     props: {
         assignId: String,
-        data: null,
+        FGData: {
+            nodes: [],
+            edges: [],
+        },
     },
     data() {
         return {
@@ -18,62 +21,17 @@ export default {
         }
     },
     mounted() {
-        this.setupG6();
-        // watch(() => this.data, (newVal, oldVal) => {
-        //     console.log(`Items count changed from ${oldVal.length} to ${newVal.length}`);
-        //     this.setupG6();
-        // }, { deep: true });
+        watch(() => this.FGData, (newVal, oldVal) => {
+            console.log(`Items count changed from ${oldVal} to ${newVal}`);
+            this.setupG6()
+        }, { deep: true });
     },
     methods: {
         setupG6() {
             if (this.graph) {
                 this.graph.clear();
             }
-            const data = {
-            "nodes": [
-                    { "id": "6543", "label": "古巴", "style": { "fill": "#3333" } },
-                    { "id": "16871" },
-                    { "id": "18980" },
-                    { "id": "12088" },
-                    { "id": "8328" },
-                    { "id": "19748" },
-                    { "id": "19313" },
-                    { "id": "19983" },
-                    { "id": "7808" },
-                    { "id": "8352" },
-                    { "id": "11708" },
-                    { "id": "14860" },
-                    { "id": "21530" },
-                    { "id": "7907" },
-                    { "id": "17866" },
-                    { "id": "21530" },
-                    { "id": "23390" },
-                    { "id": "18980" },
-                    { "id": "17866" },
-                    { "id": "18980" }
-                ],
-                "edges": [
-                    { "source": "6543", "target": "16871" },
-                    { "source": "6543", "target": "18980" },
-                    { "source": "6543", "target": "12088" },
-                    { "source": "6543", "target": "8328" },
-                    { "source": "6543", "target": "19748" },
-                    { "source": "6543", "target": "19313" },
-                    { "source": "6543", "target": "19983" },
-                    { "source": "6543", "target": "7808" },
-                    { "source": "6543", "target": "8352" },
-                    { "source": "6543", "target": "11708" },
-                    { "source": "6543", "target": "14860" },
-                    { "source": "6543", "target": "21530" },
-                    { "source": "6543", "target": "7907" },
-                    { "source": "6543", "target": "17866" },
-                    { "source": "6543", "target": "21530" },
-                    { "source": "6543", "target": "23390" },
-                    { "source": "6543", "target": "18980" },
-                    { "source": "6543", "target": "17866" },
-                    { "source": "6543", "target": "18980" }
-                ]
-        }
+
             this.graph = new G6.Graph({
                 container: this.assignId,
                 fitView: true,
@@ -112,16 +70,9 @@ export default {
                 },
                 animate: true,
             });
-            
-            data.nodes.forEach((node) => {
-                if (node.id == 6543) {
-                    if (!node.style) node.style = {};
-                    node.style.fill = "#3333"
-                }
-            })
 
             // console.log(JSON.stringify (this.data));
-            this.graph.data(data);
+            this.graph.data(JSON.parse(JSON.stringify(this.FGData)));
             this.graph.render()
         },
     }

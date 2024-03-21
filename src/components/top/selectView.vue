@@ -1,13 +1,19 @@
 <template>
-    <a-flex justify="space-between" align="center">
+    <a-flex justify="space-around" align="center">
             <label align="center">
                 选择数据集：
             </label>
-            <a-select>
-                <a-select-option value="jack">ZH_EN_15K</a-select-option>
-                <a-select-option value="lucy">JA_EN_15K</a-select-option>
-                <a-select-option value="Yiminghe">FR_EN_15K</a-select-option>
+            <a-select
+                v-model:value="value1">
+                <a-select-option value="ZH">ZH_EN_15K</a-select-option>
+                <a-select-option value="JA">JA_EN_15K</a-select-option>
+                <a-select-option value="FR">FR_EN_15K</a-select-option>
             </a-select>
-            <UploadOutlined />
         </a-flex>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+
+const value1 = ref('ZH');
+</script>
