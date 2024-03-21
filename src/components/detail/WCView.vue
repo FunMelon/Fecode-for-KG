@@ -9,9 +9,9 @@ import { watch } from 'vue';
 export default {
     name: "LWCView",
     mounted() {
-        setTimeout(() => {
+        setTimeout(() => {  // 此处延迟渲染，否则词云的渲染会出问题
             this.setupG2();
-        }, 500);
+        }, 1000);
 
         watch(() => this.data, () => {
             this.setupG2();
@@ -23,8 +23,8 @@ export default {
         }
     },
     props: {
-        assignId: String,
-        data: null,
+        assignId: String,  // 指定的ID
+        data: null,  // 数据
     },
     methods: {
         setupG2() {
@@ -32,16 +32,14 @@ export default {
                 this.WordCloud.clear();
             }
 
+            // 确定渲染那边的数据
             var data;
             if (this.assignId[1] == 'L' ) {
                 data = this.data[this.assignId[0] - 1][0];
-                console.log("左侧")
             } else {
                 data = this.data[this.assignId[0] - 1][1];
-                console.log("右侧")
             }
             
-
             this.wordCloud = new WordCloud(this.assignId, {
                 data,
                 wordField: 'x',

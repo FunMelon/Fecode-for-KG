@@ -1,13 +1,13 @@
 <!-- 列表显示器 -->
 <template>
-    <a-table :columns="columns" :data-source="data" size="small" :showHeader=false :pagination=false>
+    <a-table v-if="getData" :columns="columns" :data-source="getData" size="small" :showHeader=false :pagination=false>
         <template #bodyCell="{ column, record }">
-            <template v-if="column.key === 'KG2' && isNode ">
+            <template v-if="column.key === 'KG2' && isNode">
                 <span>
                     <FrownTwoTone />
                 </span>
             </template>
-            <template v-else-if="column.key === 'KG2' && !isNode ">
+            <template v-else-if="column.key === 'KG2' && !isNode">
                 <span>
                     <SwapRightOutlined />
                 </span>
@@ -23,14 +23,19 @@
 
 <script>
 import { FrownTwoTone, SwapRightOutlined } from '@ant-design/icons-vue';
+import { toRaw } from 'vue';
+
 export default {
     props: {
         isNode: Boolean,
         data: null,
+        assignId: String,
     },
     components: {
         FrownTwoTone,
         SwapRightOutlined,
+    },
+    setup() {
     },
     data() {
         return {
@@ -50,6 +55,27 @@ export default {
                     align: 'center',
                 },
             ]
+        }
+    },
+
+    computed: {
+        getData() {
+
+            // TODO:此处有bug，渲染顺序会影响，请在保证页面加载完毕后，修改本文件的代码以重新渲染
+            // 首先尝试使用 toRaw 获取原始数据
+            let rawData = toRaw(this.data)
+
+            // 检查 rawData 是否存在并且是预期的数组结构
+            if (rawData && Array.isArray(rawData[0]) && rawData[0].length > 0) {
+                // 如果需要深拷贝转换为普通对象，可以使用 JSON.parse(JSON.stringify(data))
+                if(this.assignId[1] == 'L') {
+                    return JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0]));
+                } else {
+                    return JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
+                }
+            }
+            // 返回 null 或其他适当的默认值以处理错误的数据结构
+            return null;
         }
     }
 }

@@ -12,10 +12,11 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :style="{ flex: 9 }" :WCDatas="WCDatas" :tlbData="tlbData.slice(0, 5)" />
+        <detailView :style="{ flex: 9 }" :WCDatas="WCDatas" :tlbData="tlbData.slice(0, 5)" :ENDatas="ENDatas" :RLDatas="RLDatas"/>
+        <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 5 }">
-          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGData" />
-          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGData" />
+          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGDataL"/>
+          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGDataR" />
         </a-flex>
       </a-flex>
     </a-flex>
@@ -23,7 +24,7 @@
 </template>
 
 <script>
-import { getFGData, getTlbData, getWCData } from './api/utils.js';
+import { getFGData, getTlbData, getWCData, getLiData } from './api/utils.js';
 import detailView from './components/detail/detailView.vue';
 import FView from './components/down/FView.vue'
 import KGTable from './components/side/KGTable.vue';
@@ -33,9 +34,13 @@ import { ref } from 'vue';
 
 export default {
   setup() {
+    // 读取Json数据
     const tlbData = ref([]);
     const WCDatas = ref([]);
-    const FGData = ref({});
+    const FGDataL = ref({});
+    const FGDataR = ref({});
+
+    // 读取表格数据
     getTlbData().then((res) => {
       tlbData.value = res;
     })
@@ -47,12 +52,35 @@ export default {
     }
     WCDatas.value = WCList;
 
-    getFGData().then((res) => {
-      FGData.value = res;
+    // 读取力导向图数据
+    getFGData('ForceGraph1.json').then((res) => {
+      FGDataL.value = res;
+    })
+    getFGData('ForceGraph2.json').then((res) => {
+      FGDataR.value = res;
     })
 
-    
-    return { tlbData, WCDatas, FGData };
+    // 读取节点列表数据
+    const ENDatas = ref([]);
+    var ENList = [];
+    for(i = 1; i <= 5; ++i) {
+      getLiData('./EL/EntityList' + i + '.json').then((res) => {
+        ENList.push(res);
+      })
+    }
+    ENDatas.value = ENList;
+
+    // 读取边列表数据
+    const RLDatas = ref([]);
+    var RLList = [];
+    for(i = 1; i <= 5; ++i) {
+      getLiData('./RL/RelList' + i + '.json').then((res) => {
+        RLList.push(res);
+      })
+    }
+    RLDatas.value = RLList;
+
+    return { tlbData, WCDatas, FGDataL, FGDataR, ENDatas, RLDatas };
   },
   components: {
     detailView,

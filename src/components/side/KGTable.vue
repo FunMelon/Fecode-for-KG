@@ -1,3 +1,4 @@
+<!-- 侧边栏表格 -->
 <template>
     <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 19 }">
         <template #headerCell="{ column }">

@@ -1,24 +1,22 @@
 # fecode
 
-## Project setup
+一个基于Vue3 + antd + g2 + g6的知识图谱可视化方案
+## 项目设置
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 开发配置的编译和热加载
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 生产的编译和缩小
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 整理修复文件
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

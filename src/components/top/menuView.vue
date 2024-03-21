@@ -1,3 +1,4 @@
+<!-- 整个的操纵按钮 -->
 <template>
     <a-flex>
         <a-flex class="block" vertical :style="{ flex: 2 }">
@@ -43,8 +44,6 @@
     </a-flex>
 </template>
 
-<script setup>
-</script>
 <style scoped>
 .block {
     border: 1px solid #ccc;

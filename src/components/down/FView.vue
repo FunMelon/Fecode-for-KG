@@ -1,3 +1,4 @@
+<!-- 力导向图 -->
 <template>
     <div :id=this.assignId />
 </template>
@@ -9,8 +10,8 @@ import { watch } from 'vue';
 export default {
     name: "FView",
     props: {
-        assignId: String,
-        FGData: {
+        assignId: String,  // 指定的ID
+        FGData: {  // 力导向图数据
             nodes: [],
             edges: [],
         },
@@ -38,6 +39,9 @@ export default {
                 fitViewPadding: [10, 10, 10, 10],
                 defaultNode: {
                     size: 25,
+                    style: {
+                        fill: '#E0E0E0'
+                    },
                     labelCfg: {
                         style: {
                             fontSize: 8,
@@ -71,7 +75,7 @@ export default {
             });
 
             // console.log(JSON.stringify (this.data));
-            this.graph.data(JSON.parse(JSON.stringify(this.FGData)));
+            this.graph.data(JSON.parse(JSON.stringify(this.FGData)));  // 此处会修改data，因此必须使用深拷贝
             this.graph.render()
         },
     }

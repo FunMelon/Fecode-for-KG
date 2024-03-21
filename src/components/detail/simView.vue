@@ -1,24 +1,31 @@
+<!-- 显示相似度占比 -->
 <template>
     <svg>
-        <!-- 上方红色矩形 -->
-        <!-- <rect x="0" y="0" width="100%" :height="redHeight" fill="red" /> -->
-        <!-- 下方蓝色矩形 -->
-        <rect x="0" :y="redHeight" width="100%" :height="blueHeight" :fill="getColor" />
+        <!-- 上方矩形 -->
+        <!-- <rect x="0" y="0" width="100%" :height="topHeight" fill="red" /> -->
+        <!-- 下方矩形 -->
+        <rect x="0" :y="topHeight" width="100%" :height="downHeight" :fill="getColor" />
         <line x1="0" y1=50 x2="100" y2="50" style="stroke:rgb(1,1,1); stroke-width:0.5" stroke-dasharray="4, 2" />
+        <line x1="0" :y1="maxHeight" x2="100" :y2="maxHeight" style="stroke:rgb(100,1,1); stroke-width:1"
+            stroke-dasharray="4, 2" />
     </svg>
 </template>
 
 <script>
 export default {
     props: {
-        sim: Number,
-        row: Number,
+        sim: Number,  // 相似度
+        row: Number,  // 代表是卡片的第几行，用来确定配色
+        maxSim: Number,  // 代表改行的最大相似度
     },
     computed: {
-        redHeight() {
+        maxHeight() {
+            return (1 - this.maxSim) * 100;
+        },
+        topHeight() {
             return (1 - this.sim) * 100;
         },
-        blueHeight() {
+        downHeight() {
             return this.sim * 100;
         },
         getColor() {
