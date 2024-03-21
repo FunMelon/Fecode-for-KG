@@ -1,11 +1,11 @@
 <!-- 详情显示 -->
 <template>
     <a-flex>
-        <cardView :style="{ flex: 1 }" assignId="Pair1" :WCData="WCData" :tlbData="tlbData"/>
-        <cardView :style="{ flex: 1 }" assignId="Pair2" :WCData="WCData" :tlbData="tlbData"/>
-        <cardView :style="{ flex: 1 }" assignId="Pair3" :WCData="WCData" :tlbData="tlbData"/>
-        <cardView :style="{ flex: 1 }" assignId="pair4" :WCData="WCData" :tlbData="tlbData"/>
-        <cardView :style="{ flex: 1 }" assignId="Pair5" :WCData="WCData" :tlbData="tlbData"/>
+        <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :tlbData="tlbData"/>
+        <cardView :style="{ flex: 1 }" assignId="2" :WCData="WCDatas" :tlbData="tlbData"/>
+        <cardView :style="{ flex: 1 }" assignId="3" :WCData="WCDatas" :tlbData="tlbData"/>
+        <cardView :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :tlbData="tlbData"/>
+        <cardView :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :tlbData="tlbData"/>
     </a-flex>
 </template>
 
@@ -15,11 +15,14 @@ import cardView from './cardView.vue'
 export default {
     name: 'detailView',
     props: {
-        WCData: null,
+        WCDatas: null,
         tlbData: null,
     },
     components: {
         cardView
+    },
+    mounted() {
+        console.log(this.WCDatas);
     }
 }
 </script>

@@ -4,7 +4,7 @@
         <!-- 卡片头 -->
         <a-flex class="block" :style="{ flex: 1 }">
             <label :style="{ flex: 1 }" align="center">
-                {{ this.assignId }}
+                {{ "Pair" + this.assignId }}
             </label>
             <label :style="{ flex: 1 }" align="center">
                 相似性
@@ -12,7 +12,6 @@
         </a-flex>
         <!-- 名称 -->
         <a-flex class="block" :style="{ flex: 2 }">
-            <!-- TODO:使用颜色表示相似性 -->
             <simView class="block c0" :sim=0.9 :row=0 />
             <a-flex class="block c1" justify="space-around" align="center">
                 <label>
@@ -28,8 +27,8 @@
         <!-- 属性 -->
         <a-flex class="block" :style="{ flex: 5 }">
             <simView class="block c0" :sim=0.9 :row=1 />
-            <WCView class="block c1" :assignId="assignId + 'Left'" :data="WCData[0]" />
-            <WCView class="block c2" :assignId="assignId + 'Right'" :data="WCData[1]" />
+            <WCView class="block c1" :assignId="assignId + 'Left'" :data="WCData"/>
+            <WCView class="block c2" :assignId="assignId + 'Right'" :data="WCData"/>
         </a-flex>
         <!-- 实体列表 -->
         <a-flex class="block" :style="{ flex: 5 }">
@@ -37,7 +36,7 @@
             <listView class="block c1" :data="tlbData" :isNode=true />
             <listView class="block c2" :data="tlbData" :isNode=true />
         </a-flex>
-
+        <!-- 边列表 -->
         <a-flex class="block" :style="{ flex: 5 }">
             <simView class="block c0" :sim=0.9 :row=3 />
             <listView class="block c1" :data="tlbData" :isNode=false />
@@ -62,6 +61,9 @@ export default {
         WCView,
         listView,
         simView,
+    },
+    mounted() {
+        console.log(this.WCData)
     }
 }
 </script>

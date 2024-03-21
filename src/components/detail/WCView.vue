@@ -9,7 +9,10 @@ import { watch } from 'vue';
 export default {
     name: "LWCView",
     mounted() {
-        // console.log(this.data)
+        setTimeout(() => {
+            this.setupG2();
+        }, 500);
+
         watch(() => this.data, () => {
             this.setupG2();
         }, { deep: true });
@@ -28,7 +31,16 @@ export default {
             if(this.WordCloud) {
                 this.WordCloud.clear();
             }
-            const data = this.data;
+
+            var data;
+            if (this.assignId[1] == 'L' ) {
+                data = this.data[this.assignId[0] - 1][0];
+                console.log("左侧")
+            } else {
+                data = this.data[this.assignId[0] - 1][1];
+                console.log("右侧")
+            }
+            
 
             this.wordCloud = new WordCloud(this.assignId, {
                 data,

@@ -3,8 +3,8 @@
   <a-flex vertical class="whole">
     <!-- 上侧 -->
     <a-flex class="block" :style="{ flex: 1 }">
-      <selectView class="block" :style="{ flex: 1 }"/>
-      <menuView class="block" :style="{ flex: 5 }"/>
+      <selectView class="block" :style="{ flex: 1 }" />
+      <menuView class="block" :style="{ flex: 5 }" />
     </a-flex>
     <!-- 下侧 -->
     <a-flex class="block" :style="{ flex: 13 }">
@@ -12,9 +12,9 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :style="{ flex: 9 }" :WCData="WCData" :tlbData="tlbData.slice(0, 5)"/>
+        <detailView :style="{ flex: 9 }" :WCDatas="WCDatas" :tlbData="tlbData.slice(0, 5)" />
         <a-flex class="block" :style="{ flex: 5 }">
-          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGData"/>
+          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGData" />
           <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGData" />
         </a-flex>
       </a-flex>
@@ -34,18 +34,25 @@ import { ref } from 'vue';
 export default {
   setup() {
     const tlbData = ref([]);
-    const WCData = ref([]);
+    const WCDatas = ref([]);
     const FGData = ref({});
     getTlbData().then((res) => {
       tlbData.value = res;
     })
-    getWCData().then((res) => {
-      WCData.value = res;
-    })
+    var WCList = []
+    for (var i = 1; i <= 5; ++i) {
+      getWCData('WordCloud' + i + '.json').then((res) => {
+        WCList.push(res);
+      })
+    }
+    WCDatas.value = WCList;
+
     getFGData().then((res) => {
       FGData.value = res;
     })
-    return { tlbData, WCData, FGData };
+
+    
+    return { tlbData, WCDatas, FGData };
   },
   components: {
     detailView,
