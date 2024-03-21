@@ -4,7 +4,7 @@
         <template #bodyCell="{ column, record }">
             <template v-if="column.key === 'KG2' && isNode ">
                 <span>
-                    <FrownTwoTone  />
+                    <FrownTwoTone />
                 </span>
             </template>
             <template v-else-if="column.key === 'KG2' && !isNode ">

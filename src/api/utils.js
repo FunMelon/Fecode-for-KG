@@ -12,8 +12,9 @@ export async function getTlbData() {
 // 读取词云的数据
 export async function getWCData() {
     try {
-        const response = await fetch('./WordCloud.json');
+        const response = await fetch('./WC/WordCloud1.json');
         const data = await response.json();
+        console.log(data);
         return data;
     } catch (error) {
         console.error('Error fetching data:', error);

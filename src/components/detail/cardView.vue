@@ -13,37 +13,33 @@
         <!-- 名称 -->
         <a-flex class="block" :style="{ flex: 2 }">
             <!-- TODO:使用颜色表示相似性 -->
-            <label class="block c0" align="center">
-                相似性
-            </label>
-            <label class="block c1" align="center">
-                实体名
-            </label>
-            <label class="block c2" align="center">
-                实体名
-            </label>
+            <simView class="block c0" :sim=0.9 :row=0 />
+            <a-flex class="block c1" justify="space-around" align="center">
+                <label>
+                    实体名
+                </label>
+            </a-flex>
+            <a-flex class="block c2" justify="space-around" align="center">
+                <label>
+                    实体名
+                </label>
+            </a-flex>
         </a-flex>
         <!-- 属性 -->
         <a-flex class="block" :style="{ flex: 5 }">
-            <label class="block c0" align="center">
-                相似度
-            </label>
-            <WCView class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
-            <WCView class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
+            <simView class="block c0" :sim=0.9 :row=1 />
+            <WCView class="block c1" :assignId="assignId + 'Left'" :data="WCData[0]" />
+            <WCView class="block c2" :assignId="assignId + 'Right'" :data="WCData[1]" />
         </a-flex>
         <!-- 实体列表 -->
         <a-flex class="block" :style="{ flex: 5 }">
-            <label class="block c0" align="center">
-                相似性
-            </label>
+            <simView class="block c0" :sim=0.9 :row=2 />
             <listView class="block c1" :data="tlbData" :isNode=true />
             <listView class="block c2" :data="tlbData" :isNode=true />
         </a-flex>
 
         <a-flex class="block" :style="{ flex: 5 }">
-            <label class="block c0" align="center">
-                相似性
-            </label>
+            <simView class="block c0" :sim=0.9 :row=3 />
             <listView class="block c1" :data="tlbData" :isNode=false />
             <listView class="block c2" :data="tlbData" :isNode=false />
         </a-flex>
@@ -53,6 +49,7 @@
 <script>
 import WCView from './WCView.vue';
 import listView from './listView.vue';
+import simView from './simView.vue';
 
 export default {
     name: 'cardView',
@@ -64,6 +61,7 @@ export default {
     components: {
         WCView,
         listView,
+        simView,
     }
 }
 </script>

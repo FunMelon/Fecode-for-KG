@@ -1,0 +1,126 @@
+[
+    [
+        {
+            "x": "Milan",
+            "value": 15.0,
+            "category": "1"
+        },
+        {
+            "x": "Inter",
+            "value": 14.5,
+            "category": "1"
+        },
+        {
+            "x": "Pirelli",
+            "value": 14.0,
+            "category": "1"
+        },
+        {
+            "x": "Tohill",
+            "value": 13.5,
+            "category": "1"
+        },
+        {
+            "x": "Milano",
+            "value": 13.0,
+            "category": "1"
+        },
+        {
+            "x": "SpA",
+            "value": 12.5,
+            "category": "1"
+        },
+        {
+            "x": "Italy",
+            "value": 12.0,
+            "category": "1"
+        },
+        {
+            "x": "Football",
+            "value": 11.5,
+            "category": "1"
+        },
+        {
+            "x": "Club",
+            "value": 11.0,
+            "category": "1"
+        },
+        {
+            "x": "Eric",
+            "value": 10.5,
+            "category": "1"
+        },
+        {
+            "x": "Nerazzurri",
+            "value": 10.0,
+            "category": "1"
+        },
+        {
+            "x": "Biscione",
+            "value": 9.5,
+            "category": "1"
+        },
+        {
+            "x": "Beneamata",
+            "value": 9.0,
+            "category": "1"
+        },
+        {
+            "x": "Debao",
+            "value": 8.5,
+            "category": "1"
+        },
+        {
+            "x": "2015",
+            "value": 8.0,
+            "category": "1"
+        }
+    ],
+    [
+        {
+            "x": "ITA",
+            "value": 9.0,
+            "category": "1"
+        },
+        {
+            "x": "Rigoli",
+            "value": 8.5,
+            "category": "1"
+        },
+        {
+            "x": "ESP",
+            "value": 8.0,
+            "category": "1"
+        },
+        {
+            "x": "Franco",
+            "value": 7.5,
+            "category": "1"
+        },
+        {
+            "x": "CRO",
+            "value": 7.0,
+            "category": "1"
+        },
+        {
+            "x": "Davide",
+            "value": 6.5,
+            "category": "1"
+        },
+        {
+            "x": "Pino",
+            "value": 6.0,
+            "category": "1"
+        },
+        {
+            "x": "SLO",
+            "value": 5.5,
+            "category": "1"
+        },
+        {
+            "x": "GK",
+            "value": 5.0,
+            "category": "1"
+        }
+    ]
+]

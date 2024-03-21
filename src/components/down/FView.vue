@@ -21,8 +21,7 @@ export default {
         }
     },
     mounted() {
-        watch(() => this.FGData, (newVal, oldVal) => {
-            console.log(`Items count changed from ${oldVal} to ${newVal}`);
+        watch(() => this.FGData, () => {
             this.setupG6()
         }, { deep: true });
     },
