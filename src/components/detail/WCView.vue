@@ -1,79 +1,81 @@
 <!-- 词云图 -->
 <template>
-    <div :id=this.assignId />
+  <div :id="this.assignId" />
 </template>
 
 <script>
-import { WordCloud } from '@antv/g2plot';
-import { watch } from 'vue';
+import { WordCloud } from "@antv/g2plot";
+import { watch } from "vue";
 export default {
-    name: "LWCView",
-    mounted() {
-        setTimeout(() => {  // 此处延迟渲染，否则词云的渲染会出问题
-            this.setupG2();
-        }, 1000);
+  name: "LWCView",
+  mounted() {
+    watch(
+      () => this.data,
+      () => {
+        //console.log(this.data, this.assignId);
+        this.setupG2();
+      },
+      { deep: true }
+    );
+  },
+  data() {
+    return {
+      WordCloud: null,
+    };
+  },
+  props: {
+    assignId: String, // 指定的ID
+    data: null, // 数据
+  },
+  methods: {
+    setupG2() {
+      if (this.WordCloud) {
+        this.WordCloud.clear();
+      }
 
-        watch(() => this.data, () => {
-            this.setupG2();
-        }, { deep: true });
-    },
-    data() {
-        return {
-            WordCloud: null
-        }
-    },
-    props: {
-        assignId: String,  // 指定的ID
-        data: null,  // 数据
-    },
-    methods: {
-        setupG2() {
-            if(this.WordCloud) {
-                this.WordCloud.clear();
-            }
+      // 确定渲染那边的数据
 
-            // 确定渲染那边的数据
-            var data;
-            if (this.assignId[1] == 'L' ) {
-                data = this.data[this.assignId[0] - 1][0];
-            } else {
-                data = this.data[this.assignId[0] - 1][1];
-            }
-            
-            this.wordCloud = new WordCloud(this.assignId, {
-                data,
-                wordField: 'x',
-                weightField: 'value',
-                colorField: 'category',
-                forceFit: true,
-                wordStyle: {
-                    fontFamily: 'Verdana',
-                    fontSize: [5, 15],
-                    rotation: 0,
-                },
-                spiral: 'archimedean',
-                // 设置交互类型
-                interactions: [{ type: 'element-active' }],
-                state: {
-                    active: {
-                        // 这里可以设置 active 时的样式
-                        style: {
-                            lineWidth: 3,
-                        },
-                    },
-                },
-                random: () => 0.5,
-            });
+      var data;
+      if (this.assignId[1] == "L") {
+        data = this.data[this.assignId[0] - 1][0];
+      } else {
+        data = this.data[this.assignId[0] - 1][1];
+      }
 
-            this.wordCloud.render();
-        }
-    }
-}
+      this.wordCloud = new WordCloud(this.assignId, {
+        data,
+        wordField: "x",
+        weightField: "value",
+        colorField: "category",
+        forceFit: true,
+        wordStyle: {
+          fontFamily: "Verdana",
+          fontSize: [5, 15],
+          rotation: 0,
+        },
+        spiral: "archimedean",
+        // 设置交互类型
+        interactions: [{ type: "element-active" }],
+        state: {
+          active: {
+            // 这里可以设置 active 时的样式
+            style: {
+              lineWidth: 3,
+            },
+          },
+        },
+        random: () => 0.5,
+      });
+
+      this.wordCloud.render();
+    },
+  },
+};
 </script>
 
 <style scoped>
 #LWCNode {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 </style>
