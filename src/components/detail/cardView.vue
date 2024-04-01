@@ -123,10 +123,14 @@ label {
   border: 1px solid #ccc;
   padding: 2px;
 }
+.card:hover {
+  border: 3px solid blue;
+}
 
 /* 砖块 */
 .block {
   border: 0.5px solid #ccc;
+  overflow: hidden;
 }
 
 /* c加数字代表第几行，用来分配占比 */
