@@ -104,6 +104,6 @@ export default {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  margin: 0 auto;
+  margin-left: 4px;
 }
 </style>
