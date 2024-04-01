@@ -6,7 +6,7 @@
       <label :style="{ flex: 1 }" align="center">
         {{ "Pair" + this.assignId }}
       </label>
-      <label :style="{ flex: 1 }" align="center">
+      <label align="right" style="margin-right: 10px">
         {{ "相似性: " + sim[0] }}
       </label>
     </a-flex>

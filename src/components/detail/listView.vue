@@ -47,7 +47,7 @@ export default {
           name: "KG2",
           dataIndex: "KG2",
           key: "KG2",
-          align: "center",
+          align: "left",
           width: "20%",
         },
         {
@@ -55,7 +55,7 @@ export default {
           dataIndex: "name",
           key: "KG1",
           ellipsis: true,
-          align: "center",
+          align: "left",
         },
       ],
     };
