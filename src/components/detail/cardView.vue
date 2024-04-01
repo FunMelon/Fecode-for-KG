@@ -27,8 +27,18 @@
     <!-- 属性 -->
     <a-flex class="block">
       <simView class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />
-      <WCView class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
-      <WCView class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
+      <WCView
+        @click="() => showModal('left')"
+        class="block c1"
+        :assignId="assignId + 'Left'"
+        :data="WCData"
+      />
+      <WCView
+        @click="() => showModal('right')"
+        class="block c2"
+        :assignId="assignId + 'Right'"
+        :data="WCData"
+      />
     </a-flex>
     <!-- 实体列表 -->
     <div class="block">
@@ -73,6 +83,28 @@
         />
       </a-flex>
     </div>
+    <a-modal
+      v-model:open="open"
+      width="600px"
+      height="300px"
+      title="词云"
+      @ok="handleOk"
+    >
+      <WCView
+        v-show="modalAssignId === 'left'"
+        class="modal-wrap"
+        :isModal="true"
+        :assignId="assignId + 'Left'"
+        :data="WCData"
+      />
+      <WCView
+        v-show="modalAssignId === 'right'"
+        class="modal-wrap"
+        :isModal="true"
+        :assignId="assignId + 'Right'"
+        :data="WCData"
+      />
+    </a-modal>
   </a-flex>
 </template>
 
@@ -102,10 +134,22 @@ export default {
     return {
       // TODO: 死数据：最大相似性
       maxSim: [0.84, 0.69, 0.9, 1.0],
+      open: false,
+      modalAssignId: undefined,
     };
   },
   mounted() {
     // console.log(this.RLDatas)
+  },
+  methods: {
+    showModal(assign) {
+      this.open = true;
+      this.modalAssignId = assign;
+    },
+
+    handleOk() {
+      this.open = false;
+    },
   },
 };
 </script>
@@ -152,5 +196,10 @@ label {
   justify-content: flex-end;
   align-items: center;
   padding-right: 5px;
+}
+
+.modal-wrap {
+  width: 100%;
+  height: 100%;
 }
 </style>
