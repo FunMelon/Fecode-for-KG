@@ -31,37 +31,48 @@
       <WCView class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
     </a-flex>
     <!-- 实体列表 -->
-    <a-flex class="block">
-      <simView class="block c0" :sim="sim[3]" :row="2" :maxSim="maxSim[2]" />
-      <listView
-        class="block c1"
-        :assignId="assignId + 'Left'"
-        :data="ENDatas"
-        :isNode="true"
-      />
-      <listView
-        class="block c2"
-        :assignId="assignId + 'Right'"
-        :data="ENDatas"
-        :isNode="true"
-      />
-    </a-flex>
+    <div class="block">
+      <div class="sort-wrap block">
+        <SwapOutlined :rotate="90" :style="{ color: '#666' }" />
+      </div>
+      <a-flex>
+        <simView class="block c0" :sim="sim[3]" :row="2" :maxSim="maxSim[2]" />
+        <listView
+          class="block c1"
+          :assignId="assignId + 'Left'"
+          :data="ENDatas"
+          :isNode="true"
+        />
+        <listView
+          class="block c2"
+          :assignId="assignId + 'Right'"
+          :data="ENDatas"
+          :isNode="true"
+        />
+      </a-flex>
+    </div>
+
     <!-- 边列表 -->
-    <a-flex class="block">
-      <simView class="block c0" :sim="sim[4]" :row="3" :maxSim="maxSim[3]" />
-      <listView
-        class="block c1"
-        :assignId="assignId + 'Left'"
-        :data="RLDatas"
-        :isNode="false"
-      />
-      <listView
-        class="block c2"
-        :assignId="assignId + 'Right'"
-        :data="RLDatas"
-        :isNode="false"
-      />
-    </a-flex>
+    <div class="block">
+      <div class="sort-wrap block">
+        <SwapOutlined :rotate="90" :style="{ color: '#666' }" />
+      </div>
+      <a-flex>
+        <simView class="block c0" :sim="sim[4]" :row="3" :maxSim="maxSim[3]" />
+        <listView
+          class="block c1"
+          :assignId="assignId + 'Left'"
+          :data="RLDatas"
+          :isNode="false"
+        />
+        <listView
+          class="block c2"
+          :assignId="assignId + 'Right'"
+          :data="RLDatas"
+          :isNode="false"
+        />
+      </a-flex>
+    </div>
   </a-flex>
 </template>
 
@@ -69,7 +80,7 @@
 import WCView from "./WCView.vue";
 import listView from "./listView.vue";
 import simView from "./simView.vue";
-
+import { SwapOutlined } from "@ant-design/icons-vue";
 export default {
   name: "cardView",
   props: {
@@ -85,6 +96,7 @@ export default {
     WCView,
     listView,
     simView,
+    SwapOutlined,
   },
   data() {
     return {
@@ -128,5 +140,13 @@ label {
 
 .c2 {
   flex: 4;
+}
+
+.sort-wrap {
+  display: flex;
+  height: 15px;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5px;
 }
 </style>
