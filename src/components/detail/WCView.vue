@@ -59,7 +59,7 @@ export default {
           forceFit: true,
           wordStyle: {
             fontFamily: "Verdana",
-            fontSize: [5, 15],
+            fontSize: [5, 30],
             rotation: 0,
           },
           spiral: "archimedean",
