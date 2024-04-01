@@ -13,14 +13,13 @@
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
         <detailView
-          :style="{ flex: 9 }"
           :WCDatas="WCDatas"
           :tlbData="tlbData.slice(0, 5)"
           :ENDatas="ENDatas"
           :RLDatas="RLDatas"
         />
         <!-- 力导向图 -->
-        <a-flex class="block" :style="{ flex: 5 }">
+        <a-flex class="block" :style="{ flex: 1 }">
           <FView
             class="block"
             :style="{ flex: 1 }"
