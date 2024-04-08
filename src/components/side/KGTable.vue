@@ -4,7 +4,7 @@
     :columns="columns"
     :data-source="data"
     size="small"
-    :pagination="{ pageSize: 19 }"
+    :pagination="{ pageSize: 20 }"
   >
     <template #headerCell="{ column }">
       <template v-if="column.key === 'KG1'"> Kg1 </template>
@@ -92,9 +92,9 @@ export default {
 } */
 
 /*表格tbody*/
-/* ::v-deep .ant-table-tbody > tr > td {
+::v-deep .ant-table-tbody > tr > td {
   font-size: 12px;
-  height: 30px;
+  height: 40px;
   padding: 0px !important;
-} */
+} 
 </style>

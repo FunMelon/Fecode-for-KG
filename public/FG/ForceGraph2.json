@@ -2,48 +2,50 @@
     "nodes": [
         {
             "id": "17161",
-            "name": "Inter_Milan",
+            "name": "Inter Milan",
             "style": { "fill": "#EFF4FF" }
         },
         {
             "id": "10806",
-            "name": "Roberto_Carlos_(footballer)"
+            "name": "Roberto Carlos (footballer)",
+            "style": { "fill": "#52C41A" }
         },
         {
             "id": "11273",
-            "name": "Lothar_Matthäus"
+            "name": "Lothar Matthäus",
+            "style": { "fill": "#52C41A" }
         },
         {
             "id": "12134",
-            "name": "Patrick_Vieira"
+            "name": "Patrick Vieira",
+            "style": { "fill": "#52C41A" }
         },
         {
             "id": "14911",
-            "name": "Wesley_Sneijder"
+            "name": "Wesley Sneijder",
+            "style": { "fill": "#52C41A" }
         },
         {
             "id": "16319",
-            "name": "Leonardo_Bonucci"
+            "name": "Leonardo Bonucci",
+            "style": { "fill": "#52C41A" }
         },
         {
             "id": "15786",
-            "name": "Italy_national_football_team"
+            "name": "Italy national football team"
         },
         {
             "id": "20596",
             "name": "Sylvinho"
         },
         {
-            "id": "36321",
-            "name": "Clarence_Seedorf"
-        },
-        {
             "id": "35194",
-            "name": "Giorgos_Karagounis"
+            "name": "Giorgos Karagounis",
+            "style": { "fill": "#52C41A" }
         },
         {
             "id": "32052",
-            "name": "Fabio_Cannavaro"
+            "name": "Fabio Cannavaro"
         }
     ],
     "edges": [
@@ -74,10 +76,6 @@
         {
             "source": "17161",
             "target": "20596"
-        },
-        {
-            "source": "17161",
-            "target": "36321"
         },
         {
             "source": "17161",
@@ -118,10 +116,6 @@
         {
             "source": "20596",
             "target": "20596"
-        },
-        {
-            "source": "36321",
-            "target": "17161"
         },
         {
             "source": "35194",

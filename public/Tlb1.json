@@ -1,0 +1,602 @@
+[
+    {
+        "KG1": "布兰妮 (专辑)",
+        "KG2": "Britney (album)",
+        "Sim": 0.9392780780082616,
+        "Status": "marked"
+    },
+    {
+        "KG1": "缪斯乐队",
+        "KG2": "Muse (band)",
+        "Sim": 0.8597215471607255,
+        "Status": "marked"
+    },
+    {
+        "KG1": "卡南·巴納納",
+        "KG2": "Canaan Banana",
+        "Sim": 0.8551498182696373,
+        "Status": "marked"
+    },
+    {
+        "KG1": "华令加议会",
+        "KG2": "Warringah Council",
+        "Sim": 0.9208856674300097,
+        "Status": "marked"
+    },
+    {
+        "KG1": "瑪麗蓮·曼森 (樂隊)",
+        "KG2": "Marilyn Manson",
+        "Sim": 0.8793316721827168,
+        "Status": "marked"
+    },
+    {
+        "KG1": "斯利那加",
+        "KG2": "Srinagar",
+        "Sim": 0.8370744384067883,
+        "Status": "marked"
+    },
+    {
+        "KG1": "维旺迪",
+        "KG2": "Vivendi",
+        "Sim": 0.8870557431253945,
+        "Status": "marked"
+    },
+    {
+        "KG1": "联盟90/绿党",
+        "KG2": "Alliance '90/The Greens",
+        "Sim": 0.9083731185366163,
+        "Status": "marked"
+    },
+    {
+        "KG1": "朱鎮模",
+        "KG2": "Joo Jin-mo",
+        "Sim": 0.868755905276753,
+        "Status": "marked"
+    },
+    {
+        "KG1": "贾迈勒·阿卜杜-纳赛尔",
+        "KG2": "Gamal Abdel Nasser",
+        "Sim": 0.9094056208500676,
+        "Status": "marked"
+    },
+    {
+        "KG1": "瑪布亞科技學院",
+        "KG2": "Mapúa Institute of Technology",
+        "Sim": 0.9304998089939823,
+        "Status": "marked"
+    },
+    {
+        "KG1": "荻窪站",
+        "KG2": "Yotsuya Station",
+        "Sim": 0.9036044342779067,
+        "Status": "marked"
+    },
+    {
+        "KG1": "凯文·菲利普斯",
+        "KG2": "Kevin Phillips (footballer)",
+        "Sim": 0.8929618567304338,
+        "Status": "marked"
+    },
+    {
+        "KG1": "霍姆斯 (敘利亞)",
+        "KG2": "Homs",
+        "Sim": 0.8225166662837619,
+        "Status": "marked"
+    },
+    {
+        "KG1": "舒畅 (演员)",
+        "KG2": "Shu Chang (actress)",
+        "Sim": 0.8600406348041775,
+        "Status": "marked"
+    },
+    {
+        "KG1": "MY SUGAR CAT",
+        "KG2": "My Sugar Cat",
+        "Sim": 0.8207784082089162,
+        "Status": "marked"
+    },
+    {
+        "KG1": "溥傑",
+        "KG2": "Yang Kaihui",
+        "Sim": 0.9280096369495856,
+        "Status": "marked"
+    },
+    {
+        "KG1": "馬龍·京治",
+        "KG2": "Marlon King",
+        "Sim": 0.8421087226187602,
+        "Status": "marked"
+    },
+    {
+        "KG1": "奥匈帝国",
+        "KG2": "Austrian Empire",
+        "Sim": 0.8383089325890536,
+        "Status": "marked"
+    },
+    {
+        "KG1": "2014年亚洲运动会",
+        "KG2": "2014 Asian Games",
+        "Sim": 0.9136989415413445,
+        "Status": "marked"
+    },
+    {
+        "KG1": "塞缪尔·奥斯古德",
+        "KG2": "Samuel Osgood",
+        "Sim": 0.8119298272048528,
+        "Status": "marked"
+    },
+    {
+        "KG1": "维吾尔族",
+        "KG2": "Uyghurs",
+        "Sim": 0.8657213990026431,
+        "Status": "marked"
+    },
+    {
+        "KG1": "槙野智章",
+        "KG2": "Hideto Takahashi",
+        "Sim": 0.9402325668695242,
+        "Status": "marked"
+    },
+    {
+        "KG1": "澳門廣播電視股份有限公司",
+        "KG2": "TDM (Macau)",
+        "Sim": 0.8901790060491973,
+        "Status": "marked"
+    },
+    {
+        "KG1": "古比雪夫水庫",
+        "KG2": "Kuybyshev Reservoir",
+        "Sim": 0.8594174465884606,
+        "Status": "marked"
+    },
+    {
+        "KG1": "奥尔汗一世",
+        "KG2": "Orhan of the Ottoman Empire",
+        "Sim": 0.8148884054591338,
+        "Status": "marked"
+    },
+    {
+        "KG1": "重金属音乐",
+        "KG2": "Heavy metal music",
+        "Sim": 0.8657539938411211,
+        "Status": "marked"
+    },
+    {
+        "KG1": "多倫多大學",
+        "KG2": "University of Toronto",
+        "Sim": 0.9091451804244288,
+        "Status": "marked"
+    },
+    {
+        "KG1": "古纳尔·托罗德森",
+        "KG2": "Gunnar Thoroddsen",
+        "Sim": 0.8136520711740135,
+        "Status": "marked"
+    },
+    {
+        "KG1": "李佳薇 (歌手)",
+        "KG2": "Jess Lee (Malaysian singer)",
+        "Sim": 0.8421928794050656,
+        "Status": "marked"
+    },
+    {
+        "KG1": "中华人民共和国国务院总理",
+        "KG2": "President of the People's Republic of China",
+        "Sim": 0.8209106213196695,
+        "Status": "marked"
+    },
+    {
+        "KG1": "曼谷",
+        "KG2": "Bangkok",
+        "Sim": 0.8754011449533112,
+        "Status": "marked"
+    },
+    {
+        "KG1": "王兆国",
+        "KG2": "Wang Zhaoguo",
+        "Sim": 0.8513540104714706,
+        "Status": "marked"
+    },
+    {
+        "KG1": "怀俄明州",
+        "KG2": "Wyoming",
+        "Sim": 0.8129042263064046,
+        "Status": "marked"
+    },
+    {
+        "KG1": "虚幻引擎",
+        "KG2": "Unreal Engine",
+        "Sim": 0.8146506954640724,
+        "Status": "marked"
+    },
+    {
+        "KG1": "櫻花莊的寵物女孩",
+        "KG2": "The Pet Girl of Sakurasou",
+        "Sim": 0.8915578533326964,
+        "Status": "marked"
+    },
+    {
+        "KG1": "杜蘭杜蘭",
+        "KG2": "Duran Duran",
+        "Sim": 0.8353324693693694,
+        "Status": "marked"
+    },
+    {
+        "KG1": "路易斯·阿德里亚诺",
+        "KG2": "Luiz Adriano",
+        "Sim": 0.8896263909872767,
+        "Status": "marked"
+    },
+    {
+        "KG1": "诺尔省",
+        "KG2": "Nord (French department)",
+        "Sim": 0.88368203648615,
+        "Status": "marked"
+    },
+    {
+        "KG1": "魏孝文帝",
+        "KG2": "Emperor Wen of Sui",
+        "Sim": 0.9397172284624407,
+        "Status": "marked"
+    },
+    {
+        "KG1": "教宗斐理斯一世",
+        "KG2": "Pope Felix I",
+        "Sim": 0.8237691641407623,
+        "Status": "marked"
+    },
+    {
+        "KG1": "中国国家女子足球队",
+        "KG2": "China women's national football team",
+        "Sim": 0.8774743313827214,
+        "Status": "marked"
+    },
+    {
+        "KG1": "皇家馬略卡體育會",
+        "KG2": "RCD Mallorca",
+        "Sim": 0.9478309447134534,
+        "Status": "marked"
+    },
+    {
+        "KG1": "KAT-TUN",
+        "KG2": "KAT-TUN",
+        "Sim": 0.9210602843140225,
+        "Status": "marked"
+    },
+    {
+        "KG1": "特雷·库尔",
+        "KG2": "Tré Cool",
+        "Sim": 0.8690040292503284,
+        "Status": "marked"
+    },
+    {
+        "KG1": "茱迪·科士打",
+        "KG2": "Jodie Foster",
+        "Sim": 0.8104796247446246,
+        "Status": "marked"
+    },
+    {
+        "KG1": "Amerika",
+        "KG2": "Amerika (song)",
+        "Sim": 0.918591222160189,
+        "Status": "marked"
+    },
+    {
+        "KG1": "F4 (男子團體)",
+        "KG2": "F4 (band)",
+        "Sim": 0.8269182365608747,
+        "Status": "marked"
+    },
+    {
+        "KG1": "匹尔斯堡 (佛罗里达州)",
+        "KG2": "Fort Pierce, Florida",
+        "Sim": 0.911333607268033,
+        "Status": "marked"
+    },
+    {
+        "KG1": "本華·曼德博",
+        "KG2": "Bob Menendez",
+        "Sim": 0.8789313792232817,
+        "Status": "marked"
+    },
+    {
+        "KG1": "萊曼·史匹哲",
+        "KG2": "Lyman Spitzer",
+        "Sim": 0.8620069149647104,
+        "Status": "marked"
+    },
+    {
+        "KG1": "蕭亞軒",
+        "KG2": "Seohyun",
+        "Sim": 0.9110421179863353,
+        "Status": "marked"
+    },
+    {
+        "KG1": "李方子",
+        "KG2": "Yi Bangja",
+        "Sim": 0.8315013290270067,
+        "Status": "marked"
+    },
+    {
+        "KG1": "莫斯科中央陆军足球俱乐部",
+        "KG2": "PFC CSKA Moscow",
+        "Sim": 0.9252786999800146,
+        "Status": "marked"
+    },
+    {
+        "KG1": "宮澤佐江",
+        "KG2": "Sae Miyazawa",
+        "Sim": 0.8299501169184345,
+        "Status": "marked"
+    },
+    {
+        "KG1": "黑暗騎士:黎明昇起",
+        "KG2": "The Dark Knight Rises",
+        "Sim": 0.8213208210747723,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "T-50戰鬥機",
+        "KG2": "Sukhoi Su-24",
+        "Sim": 0.9066068155932219,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "IPad (第二代)",
+        "KG2": "IPad (1st generation)",
+        "Sim": 0.8496288549499411,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "保加利亞王國",
+        "KG2": "Kingdom of Bulgaria",
+        "Sim": 0.8071520206748891,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "密克罗尼西亚语",
+        "KG2": "Micronesian languages",
+        "Sim": 0.8754234809151027,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "贾雅·巴克罕",
+        "KG2": "Jaya Bachchan",
+        "Sim": 0.8225907055548075,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "伊迪芬斯·利馬",
+        "KG2": "Ildefons Lima",
+        "Sim": 0.9241771629024302,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "HTC One Mini 2",
+        "KG2": "HTC One Mini 2",
+        "Sim": 0.8846440461476577,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "約翰·康寧",
+        "KG2": "John Cornyn",
+        "Sim": 0.8361202981266597,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "Junkie XL",
+        "KG2": "Junkie XL",
+        "Sim": 0.8247088669633897,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "颶風戈登 (1994年)",
+        "KG2": "Hurricane Gordon (1994)",
+        "Sim": 0.8592655039211855,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "罗曼·帕夫柳琴科",
+        "KG2": "Roman Pavlyuchenko",
+        "Sim": 0.8127156708396452,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "路易·圣洛朗",
+        "KG2": "Louis St. Laurent",
+        "Sim": 0.8878218922803642,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "拿騷的毛里茨",
+        "KG2": "Maurice, Prince of Orange",
+        "Sim": 0.908825278748914,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "贺拉斯·兰姆",
+        "KG2": "Horace Lamb",
+        "Sim": 0.933610647223988,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "劉家豪 (監製)",
+        "KG2": "Ha Yu (actor)",
+        "Sim": 0.91909767675272,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "徐向前",
+        "KG2": "Su Yu",
+        "Sim": 0.8381821879220611,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "芬尼斯·摩利",
+        "KG2": "Ramiro Funes Mori",
+        "Sim": 0.8749282188818085,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "田纳西州行政区划",
+        "KG2": "List of counties in West Virginia",
+        "Sim": 0.9368266696314127,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "畢書盡",
+        "KG2": "Xiao Xun",
+        "Sim": 0.844784450163215,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "拉丁-法利希语支",
+        "KG2": "Latino-Faliscan languages",
+        "Sim": 0.9436366868884657,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "费利佩二世 (西班牙)",
+        "KG2": "Philip II of Spain",
+        "Sim": 0.9261223570754346,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "道格·里弗斯",
+        "KG2": "Doc Rivers",
+        "Sim": 0.9325535600836479,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "TIME (东方神起专辑)",
+        "KG2": "Time (TVXQ album)",
+        "Sim": 0.8108700710014837,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "李登輝",
+        "KG2": "Lee Teng-hui",
+        "Sim": 0.93038858748743,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "香港大學李嘉誠醫學院",
+        "KG2": "Li Ka Shing Faculty of Medicine",
+        "Sim": 0.8724890509863865,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "日利納足球俱樂部",
+        "KG2": "Helsingin Jalkapalloklubi",
+        "Sim": 0.8835209517624627,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "游騎兵8號",
+        "KG2": "Ranger 8",
+        "Sim": 0.9387805512542163,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "米南佳保語",
+        "KG2": "Minangkabau language",
+        "Sim": 0.816267267401142,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "仁心解碼",
+        "KG2": "Heart of Greed",
+        "Sim": 0.8290941356411748,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "努梅里安",
+        "KG2": "Numerian",
+        "Sim": 0.9378839249531197,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "列托-羅曼斯語",
+        "KG2": "Rhaeto-Romance languages",
+        "Sim": 0.8176965700107587,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "埃斯比约联合足球俱乐部",
+        "KG2": "Esbjerg fB",
+        "Sim": 0.8173264921733533,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "威爾士",
+        "KG2": "Wales",
+        "Sim": 0.8421207671366672,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "HTC First",
+        "KG2": "HTC First",
+        "Sim": 0.8144881809289202,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "江丙坤",
+        "KG2": "Jiang Yi-huah",
+        "Sim": 0.8505004049097856,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "王国明 (足球运动员)",
+        "KG2": "Yang Jun (footballer)",
+        "Sim": 0.8930966577078252,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "藤澤市",
+        "KG2": "Neyagawa, Osaka",
+        "Sim": 0.9358907111753244,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "英屬維爾京群島",
+        "KG2": "British Virgin Islands",
+        "Sim": 0.8125387417440291,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "翼號列車",
+        "KG2": "Jōetsu Shinkansen",
+        "Sim": 0.8123062414566575,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "格蘭特縣 (華盛頓州)",
+        "KG2": "Grant County, Washington",
+        "Sim": 0.9229795021826022,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "深水埗體育會足球隊",
+        "KG2": "HKFC Soccer Section",
+        "Sim": 0.9265390947031288,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "北汉",
+        "KG2": "Northern Han",
+        "Sim": 0.8587013019763577,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "邦克山戰役",
+        "KG2": "Battle of Bunker Hill",
+        "Sim": 0.8743991283591777,
+        "Status": "unmarked"
+    },
+    {
+        "KG1": "张纪中",
+        "KG2": "Zhang Jizhong",
+        "Sim": 0.8769273894658566,
+        "Status": "unmarked"
+    }
+]

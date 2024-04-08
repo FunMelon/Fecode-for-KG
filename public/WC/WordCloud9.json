@@ -1,0 +1,121 @@
+[
+    [
+        {
+            "x": "Knight",
+            "value": 15.0,
+            "category": "1"
+        },
+        {
+            "x": "Dark",
+            "value": 14.5,
+            "category": "1"
+        },
+        {
+            "x": "Night",
+            "value": 14.0,
+            "category": "1"
+        },
+        {
+            "x": "film",
+            "value": 13.5,
+            "category": "1"
+        },
+        {
+            "x": "Rises",
+            "value": 13.0,
+            "category": "1"
+        },
+        {
+            "x": "Nolan",
+            "value": 12.5,
+            "category": "1"
+        },
+        {
+            "x": "Movie",
+            "value": 12.0,
+            "category": "1"
+        },
+        {
+            "x": "Dawn",
+            "value": 11.5,
+            "category": "1"
+        },
+        {
+            "x": "Batman",
+            "value": 11.0,
+            "category": "1"
+        },
+        {
+            "x": "Company",
+            "value": 10.5,
+            "category": "1"
+        },
+        {
+            "x": "Emma",
+            "value": 10.0,
+            "category": "1"
+        },
+        {
+            "x": "Million",
+            "value": 9.5,
+            "category": "1"
+        },
+        {
+            "x": "Pictures",
+            "value": 9.0,
+            "category": "1"
+        },
+        {
+            "x": "Legendary",
+            "value": 8.5,
+            "category": "1"
+        },
+        {
+            "x": "dc",
+            "value": 8.0,
+            "category": "1"
+        }
+    ],
+    [
+        {
+            "x": "Hobbit",
+            "value": 8.0,
+            "category": "1"
+        },
+        {
+            "x": "Unexpected",
+            "value": 7.5,
+            "category": "1"
+        },
+        {
+            "x": "Journey",
+            "value": 7.0,
+            "category": "1"
+        },
+        {
+            "x": "New",
+            "value": 6.5,
+            "category": "1"
+        },
+        {
+            "x": "Release",
+            "value": 6.0,
+            "category": "1"
+        },
+        {
+            "x": "English",
+            "value": 5.5,
+            "category": "1"
+        },
+        {
+            "x": "States",
+            "value": 5.0,
+            "category": "1"
+        },
+        {
+            "x": "Theatrical",
+            "value": 4.5,
+            "category": "1"
+        }
+    ]
+]

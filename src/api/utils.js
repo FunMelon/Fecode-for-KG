@@ -1,7 +1,7 @@
 // 读取表的数据
 export async function getTlbData() {
     try {
-        const response = await fetch('./Tlb.json');
+        const response = await fetch('./Tlb1.json');
         const data = await response.json();
         return data;
     } catch (error) {

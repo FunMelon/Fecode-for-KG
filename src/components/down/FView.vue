@@ -67,15 +67,15 @@ export default {
             "zoom-canvas",
             "drag-node",
             "drag-canvas",
-            {
-              type: "tooltip",
-              formaText(model) {
-                const text =
-                  "label: " + model.label + "<br/> class: " + model.class;
-                return text;
-              },
-              offset: 10,
-            },
+            // {
+            //   type: "tooltip",
+            //   formaText(model) {
+            //     const text =
+            //       "label: " + model.label + "<br/> class: " + model.class;
+            //     return text;
+            //   },
+            //   offset: 10,
+            // },
           ],
         },
         animate: true,

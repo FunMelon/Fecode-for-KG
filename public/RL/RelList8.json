@@ -1,0 +1,38 @@
+[
+    [
+        {
+            "KG1": "distributor",
+            "KG2": "hahaha"
+        },
+        {
+            "KG1": "music",
+            "KG2": "hahaha"
+        },
+        {
+            "KG1": "starring",
+            "KG2": "hahaha"
+        },
+        {
+            "KG1": "language",
+            "KG2": "hahaha"
+        }
+    ],
+    [
+        {
+            "KG1": "distributor",
+            "KG2": "hahaha"
+        },
+        {
+            "KG1": "music",
+            "KG2": "hahaha"
+        },
+        {
+            "KG1": "artist",
+            "KG2": "hahaha"
+        },
+        {
+            "KG1": "allMusic",
+            "KG2": "hahaha"
+        }
+    ]
+]

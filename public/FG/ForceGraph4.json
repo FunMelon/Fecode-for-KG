@@ -1,0 +1,36 @@
+{
+    "nodes": [
+        {
+            "id": "35297",
+            "name": "The_Dark_Knight_Rises"
+        },
+        {
+            "id": "11876",
+            "name": "Hans_Zimmer",
+            "style": { "fill": "#52C41A" }
+        },
+        {
+            "id": "33940",
+            "name": "Warner_Bros.",
+            "style": { "fill": "#52C41A" }
+        }
+    ],
+    "edges": [
+        {
+            "source": "35297",
+            "target": "11876"
+        },
+        {
+            "source": "35297",
+            "target": "33940"
+        },
+        {
+            "source": "11876",
+            "target": "35297"
+        },
+        {
+            "source": "33940",
+            "target": "35297"
+        }
+    ]
+}

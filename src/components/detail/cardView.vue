@@ -91,7 +91,7 @@
     </div>
     <a-modal v-model:open="open" width="600px" title="词云" @ok="handleOk">
       <a-flex class="block modal-wrap">
-        <simView class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />
+        <!--<simView class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />-->
         <WCView
           class="block c1"
           :isModal="true"
@@ -134,7 +134,7 @@ export default {
   data() {
     return {
       // TODO: 死数据：最大相似性
-      maxSim: [0.84, 0.69, 0.9, 1.0],
+      maxSim: [0.88, 0.76, 0.8, 1.0],
       open: false,
       // modalAssignId: undefined,
     };
@@ -201,5 +201,6 @@ label {
 
 .modal-wrap {
   width: 100%;
+  height: 150px;
 }
 </style>
