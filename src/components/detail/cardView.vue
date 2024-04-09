@@ -26,25 +26,9 @@
     </a-flex>
     <!-- 属性 -->
     <a-flex class="block">
-      <simView
-        @click="() => showModal()"
-        class="block c0"
-        :sim="sim[2]"
-        :row="1"
-        :maxSim="maxSim[1]"
-      />
-      <WCView
-        @click="() => showModal()"
-        class="block c1"
-        :assignId="assignId + 'Left'"
-        :data="WCData"
-      />
-      <WCView
-        @click="() => showModal()"
-        class="block c2"
-        :assignId="assignId + 'Right'"
-        :data="WCData"
-      />
+      <simView @click="() => showModal()" class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />
+      <WCView @click="() => showModal()" class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
+      <WCView @click="() => showModal()" class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
     </a-flex>
     <!-- 实体列表 -->
     <div class="block">
@@ -53,18 +37,8 @@
       </div>
       <a-flex>
         <simView class="block c0" :sim="sim[3]" :row="2" :maxSim="maxSim[2]" />
-        <listView
-          class="block c1"
-          :assignId="assignId + 'Left'"
-          :data="ENDatas"
-          :isNode="true"
-        />
-        <listView
-          class="block c2"
-          :assignId="assignId + 'Right'"
-          :data="ENDatas"
-          :isNode="true"
-        />
+        <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" />
+        <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" />
       </a-flex>
     </div>
 
@@ -75,35 +49,16 @@
       </div>
       <a-flex>
         <simView class="block c0" :sim="sim[4]" :row="3" :maxSim="maxSim[3]" />
-        <listView
-          class="block c1"
-          :assignId="assignId + 'Left'"
-          :data="RLDatas"
-          :isNode="false"
-        />
-        <listView
-          class="block c2"
-          :assignId="assignId + 'Right'"
-          :data="RLDatas"
-          :isNode="false"
-        />
+        <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" />
+        <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" />
       </a-flex>
     </div>
+    <!-- 弹窗 -->
     <a-modal v-model:open="open" width="600px" title="词云" @ok="handleOk">
       <a-flex class="block modal-wrap">
-        <!--<simView class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />-->
-        <WCView
-          class="block c1"
-          :isModal="true"
-          :assignId="assignId + 'Left'"
-          :data="WCData"
-        />
-        <WCView
-          class="block c1"
-          :isModal="true"
-          :assignId="assignId + 'Right'"
-          :data="WCData"
-        />
+        <simViewMedia class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />
+        <WCView class="block c1" :isModal="true" :assignId="assignId + 'Left'" :data="WCData" />
+        <WCView class="block c1" :isModal="true" :assignId="assignId + 'Right'" :data="WCData" />
       </a-flex>
     </a-modal>
   </a-flex>
@@ -113,6 +68,7 @@
 import WCView from "./WCView.vue";
 import listView from "./listView.vue";
 import simView from "./simView.vue";
+import simViewMedia from "./simViewMedia.vue";
 import { SwapOutlined } from "@ant-design/icons-vue";
 export default {
   name: "cardView",
@@ -129,6 +85,7 @@ export default {
     WCView,
     listView,
     simView,
+    simViewMedia,
     SwapOutlined,
   },
   data() {
@@ -168,6 +125,7 @@ label {
   border: 1px solid #ccc;
   padding: 2px;
 }
+
 .card:hover {
   border: 3px solid blue;
 }

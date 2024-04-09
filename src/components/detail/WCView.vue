@@ -9,6 +9,7 @@ import { watch } from "vue";
 export default {
   name: "LWCView",
   mounted() {
+    console.log(this.assignId);
     this.setupG2();
     watch(
       () => this.data,
@@ -34,7 +35,7 @@ export default {
       if (this.WordCloud) {
         this.WordCloud.clear();
       }
-      console.log(this.assignId);
+      // console.log(this.assignId);
 
       // 确定渲染那边的数据
 
@@ -69,7 +70,7 @@ export default {
             active: {
               // 这里可以设置 active 时的样式
               style: {
-                lineWidth: 3,
+                lineWidth: 1,
               },
             },
           },
