@@ -10,7 +10,7 @@ export default {
   name: "LWCView",
   mounted() {
     // console.log(this.assignId);
-    // this.setupG2();
+    this.setupG2();
     watch(
       () => this.data,
       () => {

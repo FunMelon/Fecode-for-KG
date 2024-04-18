@@ -68,7 +68,7 @@
 import WCView from "./WCView.vue";
 import listView from "./listView.vue";
 import simView from "./simView.vue";
-// import simViewMedia from "./simViewMedia.vue";
+import simViewMedia from "./simViewMedia.vue";
 import { SwapOutlined } from "@ant-design/icons-vue";
 export default {
   name: "cardView",
@@ -85,7 +85,7 @@ export default {
     WCView,
     listView,
     simView,
-    // simViewMedia,
+    simViewMedia,
     SwapOutlined,
   },
   data() {

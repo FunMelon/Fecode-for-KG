@@ -4,7 +4,7 @@
     :columns="columns"
     :data-source="data"
     size="small"
-    :pagination="{ pageSize: 20 }"
+    :pagination="{ pageSize: 12 }"
   >
     <template #headerCell="{ column }">
       <template v-if="column.key === 'KG1'"> Kg1 </template>
