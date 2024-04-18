@@ -9,12 +9,13 @@ import { watch } from "vue";
 export default {
   name: "LWCView",
   mounted() {
-    console.log(this.assignId);
-    this.setupG2();
+    // console.log(this.assignId);
+    // this.setupG2();
     watch(
       () => this.data,
       () => {
         //console.log(this.data, this.assignId);
+        // console.log("发生更改")
         this.setupG2();
       },
       { deep: true }
@@ -32,6 +33,7 @@ export default {
   },
   methods: {
     setupG2() {
+      console.log("渲染")
       if (this.WordCloud) {
         this.WordCloud.clear();
       }
@@ -77,8 +79,9 @@ export default {
           random: () => 0.5,
         }
       );
-
+      // console.log("加载词云前");
       this.wordCloud.render();
+      // console.log("加载词云后");
     },
   },
 };

@@ -1,15 +1,15 @@
 <!-- 详情显示 -->
 <template>
     <a-flex>
-        <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :tlbData="tlbData" :ENDatas="ENDatas"
+        <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas"
             :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName1" :sim="sim[0]"/>
-        <cardView :style="{ flex: 1 }" assignId="2" :WCData="WCDatas" :tlbData="tlbData" :ENDatas="ENDatas"
+        <cardView :style="{ flex: 1 }" assignId="2" :WCData="WCDatas"  :ENDatas="ENDatas"
             :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName2" :sim="sim[1]"/>
-        <cardView :style="{ flex: 1 }" assignId="3" :WCData="WCDatas" :tlbData="tlbData" :ENDatas="ENDatas"
+        <cardView :style="{ flex: 1 }" assignId="3" :WCData="WCDatas"  :ENDatas="ENDatas"
             :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName3" :sim="sim[2]"/>
-        <cardView :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :tlbData="tlbData" :ENDatas="ENDatas"
+        <cardView :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :ENDatas="ENDatas"
             :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName4" :sim="sim[3]"/>
-        <cardView :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :tlbData="tlbData" :ENDatas="ENDatas"
+        <cardView :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :ENDatas="ENDatas"
             :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName5" :sim="sim[4]"/>
     </a-flex>
 </template>
