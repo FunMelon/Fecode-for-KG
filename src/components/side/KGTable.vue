@@ -1,12 +1,14 @@
 <!-- 侧边栏表格 -->
 <template>
-  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 12 }">
+  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 12 }"
+    :custom-row="handleCustomRow">
     <template #headerCell="{ column }">
       <template v-if="column.key === 'KG1'"> KG1 </template>
     </template>
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'Status'">
         <span>
+          <!-- TODO: 重新更改图标显示逻辑 -->
           <CheckCircleTwoTone v-if="record.Status === 'marked' || record.Status === 'unmarked'"
             :two-tone-color="'#52c41a'" @click="handleIconClick(record, 'marked')" />
           &nbsp;
@@ -23,7 +25,7 @@ import { CheckCircleTwoTone, CloseCircleTwoTone } from "@ant-design/icons-vue";
 export default {
   name: "KGTable",
   props: {
-    data: null,
+    data: Array, // 将原先的 data 属性声明修改为 tlbData
   },
   components: {
     CheckCircleTwoTone,
@@ -60,32 +62,15 @@ export default {
           width: "30px",
           ellipsis: true,
           align: "center",
-          // customCell: () => ({
-          //   // 设置单元格的onClick事件
-          //   onClick: (event) => {
-          //     // 在这里可以添加特定元素的事件处理逻辑
-          //     const targetElement = event.target;
-          //     const fill = targetElement.getAttribute('fill');
-
-          //     console.log(targetElement);
-          //     console.log(fill);
-          //     if (fill === '#52c41a' || fill === "#f6ffed") {
-          //       // 点击的是填充颜色为 rgb(246, 255, 237) 的元素
-          //       console.log('Yes');
-          //     } else {
-          //       // 其他情况
-          //       console.log('No');
-          //     }
-          //   },
-          // }),
         },
       ],
+      selectedRowIndex: -1 // 初始化为-1，表示没有选中的行
     };
   },
   methods: {
-    handleIconClick(record, clickedStatus) {
-      console.log(record.Status);
-      console.log(clickedStatus);
+    handleIconClick(record, clickedStatus) {  // 点击删除图标
+      // console.log(record.Status);
+      // console.log(clickedStatus);
       // if (record.Status === clickedStatus) {
       //   return;
       // }
@@ -97,6 +82,19 @@ export default {
         record.Status = 'unmarkable';
       }
     },
+    handleCustomRow(record, index) {
+      return {
+        onClick: () => {
+          // console.log(record); // 打印行数据到控制台
+          this.$emit('row-click', record);
+          this.selectedRowIndex = index; // 更新选中的行索引
+          console.log(index);
+        },
+        class: {
+          'highlight-row': index === this.selectedRowIndex // 如果当前行的索引等于选中的行索引，则添加高亮样式
+        }
+      };
+    }
   },
 };
 </script>
@@ -121,5 +119,10 @@ export default {
   font-size: 12px;
   height: 40px;
   padding: 0px !important;
+}
+
+.highlight-row {
+  background-color: #1111;
+  /* 高亮的背景色 */
 }
 </style>

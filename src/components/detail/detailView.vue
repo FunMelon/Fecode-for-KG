@@ -1,5 +1,6 @@
 <!-- 详情显示 -->
 <template>
+    <label>{{ testData }}</label>
     <a-flex>
         <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas"
             :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName1" :sim="sim[0]"/>
@@ -23,6 +24,7 @@ export default {
         WCDatas: null,  // 词云的数据
         ENDatas: null,  // 实体列表的数据
         RLDatas: null,  // 边列表的数据
+        testData: null,
     },
     components: {
         cardView
@@ -46,6 +48,9 @@ export default {
     },
     mounted() {
         // console.log(this.ENDatas);
-    }
+    },
+    // updated() {
+    //     console.log(this.testData)
+    // }
 }
 </script>
