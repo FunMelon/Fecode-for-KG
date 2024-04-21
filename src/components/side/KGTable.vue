@@ -90,8 +90,8 @@ export default {
           this.selectedRowIndex = index; // 更新选中的行索引
           console.log(index);
         },
-        class: {
-          'highlight-row': index === this.selectedRowIndex // 如果当前行的索引等于选中的行索引，则添加高亮样式
+        style: {
+          color: index === this.selectedRowIndex ? 'red' : '' // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
         }
       };
     }
@@ -119,10 +119,5 @@ export default {
   font-size: 12px;
   height: 40px;
   padding: 0px !important;
-}
-
-.highlight-row {
-  background-color: #1111;
-  /* 高亮的背景色 */
 }
 </style>

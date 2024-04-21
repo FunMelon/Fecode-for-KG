@@ -12,7 +12,7 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick"/>
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :WCDatas="WCDatas" :tlbData="tlbData.slice(0, 5)" :ENDatas="ENDatas" :RLDatas="RLDatas" :testData="selectedRowData"/>
+        <detailView :WCDatas="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas" :testData="selectedRowData"/>
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
           <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGDataL" />

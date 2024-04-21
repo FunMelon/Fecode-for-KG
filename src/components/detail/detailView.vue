@@ -1,5 +1,6 @@
 <!-- 详情显示 -->
 <template>
+    <!-- TODO:删除标签 -->
     <label>{{ testData }}</label>
     <a-flex>
         <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas"
