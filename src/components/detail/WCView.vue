@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     setupG2() {
-      console.log("渲染")
+      // console.log("渲染")
       if (this.WordCloud) {
         this.WordCloud.clear();
       }

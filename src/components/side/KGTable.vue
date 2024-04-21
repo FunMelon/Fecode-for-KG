@@ -1,26 +1,17 @@
 <!-- 侧边栏表格 -->
 <template>
-  <a-table
-    :columns="columns"
-    :data-source="data"
-    size="small"
-    :pagination="{ pageSize: 12 }"
-  >
+  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 12 }">
     <template #headerCell="{ column }">
-      <template v-if="column.key === 'KG1'"> Kg1 </template>
+      <template v-if="column.key === 'KG1'"> KG1 </template>
     </template>
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'Status'">
         <span>
-          <CheckCircleTwoTone
-            v-if="record.Status == 'marked' || record.Status == 'unmarked'"
-            two-tone-color="#52c41a"
-          />
+          <CheckCircleTwoTone v-if="record.Status === 'marked' || record.Status === 'unmarked'"
+            :two-tone-color="'#52c41a'" @click="handleIconClick(record, 'marked')" />
           &nbsp;
-          <CloseCircleTwoTone
-            v-if="record.Status == 'unmarkable' || record.Status == 'unmarked'"
-            two-tone-color="#eb2f96"
-          />
+          <CloseCircleTwoTone v-if="record.Status === 'unmarkable' || record.Status === 'unmarked'"
+            :two-tone-color="'#eb2f96'" @click="handleIconClick(record, 'unmarked')" />
         </span>
       </template>
     </template>
@@ -69,9 +60,43 @@ export default {
           width: "30px",
           ellipsis: true,
           align: "center",
+          // customCell: () => ({
+          //   // 设置单元格的onClick事件
+          //   onClick: (event) => {
+          //     // 在这里可以添加特定元素的事件处理逻辑
+          //     const targetElement = event.target;
+          //     const fill = targetElement.getAttribute('fill');
+
+          //     console.log(targetElement);
+          //     console.log(fill);
+          //     if (fill === '#52c41a' || fill === "#f6ffed") {
+          //       // 点击的是填充颜色为 rgb(246, 255, 237) 的元素
+          //       console.log('Yes');
+          //     } else {
+          //       // 其他情况
+          //       console.log('No');
+          //     }
+          //   },
+          // }),
         },
       ],
     };
+  },
+  methods: {
+    handleIconClick(record, clickedStatus) {
+      console.log(record.Status);
+      console.log(clickedStatus);
+      // if (record.Status === clickedStatus) {
+      //   return;
+      // }
+
+      // 如果点击了marked图标，则删除unmarked图标，反之亦然
+      if (clickedStatus === 'marked') {
+        record.Status = 'marked';
+      } else {
+        record.Status = 'unmarkable';
+      }
+    },
   },
 };
 </script>
@@ -92,9 +117,9 @@ export default {
 } */
 
 /*表格tbody*/
-::v-deep .ant-table-tbody > tr > td {
+::v-deep .ant-table-tbody>tr>td {
   font-size: 12px;
   height: 40px;
   padding: 0px !important;
-} 
+}
 </style>
