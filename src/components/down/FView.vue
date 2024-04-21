@@ -1,5 +1,6 @@
 <!-- 力导向图 -->
 <template>
+  <label>{{ testData }}</label>
   <div :id="this.assignId" />
 </template>
 
@@ -16,6 +17,7 @@ export default {
       nodes: [],
       edges: [],
     },
+    testData: null,
   },
   data() {
     return {
@@ -62,29 +64,59 @@ export default {
           type: "forceAtlas2",
           preventOverlap: true,
         },
-        modes: {
-          default: [
-            "zoom-canvas",
-            "drag-node",
-            "drag-canvas",
-            // {
-            //   type: "tooltip",
-            //   formaText(model) {
-            //     const text =
-            //       "label: " + model.label + "<br/> class: " + model.class;
-            //     return text;
-            //   },
-            //   offset: 10,
-            // },
-          ],
-        },
         animate: true,
       });
+
+      // 监听节点的鼠标移入事件，显示 tooltips
+      this.graph.on("node:mouseenter", (evt) => {
+        const node = evt.item;
+        const model = node.getModel();
+        const tooltipText = `ID: ${model.id}<br/>Name: ${model.name}`;
+        if (tooltipText) {
+          this.showTooltip(evt.clientX, evt.clientY, tooltipText);
+        }
+      });
+
+      // 监听节点的鼠标移出事件，隐藏 tooltips
+      this.graph.on('node:mouseleave', () => {
+        this.hideTooltip();
+      });
+
+      this.graph.on('node:mouseleave', () => {
+      this.hideTooltip();
+    });
 
       // console.log(JSON.stringify (this.data));
       this.graph.data(JSON.parse(JSON.stringify(this.FGData))); // 此处会修改data，因此必须使用深拷贝
       this.graph.render();
     },
+
+    showTooltip(x, y, text) {
+      // 创建 tooltip 元素
+      const tooltipElement = document.createElement('div');
+      tooltipElement.style.position = 'absolute';
+      tooltipElement.style.left = x + 'px';
+      tooltipElement.style.top = y + 'px';
+      tooltipElement.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      tooltipElement.style.color = '#fff';
+      tooltipElement.style.padding = '5px';
+      tooltipElement.textContent = text;
+      tooltipElement.innerHTML = text;
+
+      // 将 tooltip 元素添加到容器中
+      document.body.appendChild(tooltipElement);
+
+      // 存储 tooltip 元素的引用，以便在需要时移除
+      this.tooltipElement = tooltipElement;
+    },
+
+    hideTooltip() {
+      // 移除 tooltip 元素
+      if (this.tooltipElement) {
+        document.body.removeChild(this.tooltipElement);
+        this.tooltipElement = null;
+      }
+    }
   },
 };
 </script>

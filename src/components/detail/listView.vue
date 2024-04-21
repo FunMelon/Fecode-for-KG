@@ -1,7 +1,7 @@
 <!-- 列表显示器 -->
 <template>
     <a-table v-if="getData" :columns="columns" :data-source="getData" size="small" :showHeader="false"
-        :pagination="false">
+        :pagination="false" :custom-row="handleCustomRow">
         <template #bodyCell="{ column, record }">
             <template v-if="column.key === 'KG2' && isNode">
                 <span class="circle"> </span>
@@ -53,6 +53,7 @@ export default {
                     align: "left",
                 },
             ],
+            selectedRow: -1,
         };
     },
 
@@ -71,7 +72,7 @@ export default {
                 } else {
                     jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
                 }
-                
+
                 jsonData.sort((a, b) => {
                     if (this.isAscend) {
                         return a.KG1.localeCompare(b.KG1);
@@ -84,6 +85,23 @@ export default {
             return jsonData;
         },
     },
+
+    methods: {
+        handleCustomRow(record) {
+            return {
+                onMouseenter: () => {
+                    // console.log(record); // 打印行数据到控制台
+                    this.$emit('hover', record);
+                    this.selectedRow = record.KG1; // 更新选中的行索引
+                    // console.log(this.selectedRow);
+                    // console.log(index);
+                },
+                style: {
+                    color: record.KG1 === this.selectedRow ? 'red' : '', // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
+                }
+            };
+        }
+    }
 };
 </script>
 

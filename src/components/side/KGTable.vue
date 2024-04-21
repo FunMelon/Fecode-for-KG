@@ -1,6 +1,6 @@
 <!-- 侧边栏表格 -->
 <template>
-  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 12 }"
+  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 20 }" class="custom-table"
     :custom-row="handleCustomRow">
     <template #headerCell="{ column }">
       <template v-if="column.key === 'KG1'"> KG1 </template>
@@ -13,7 +13,7 @@
             :two-tone-color="'#52c41a'" @click="handleIconClick(record, 'marked')" />
           &nbsp;
           <CloseCircleTwoTone v-if="record.Status === 'unmarkable' || record.Status === 'unmarked'"
-            :two-tone-color="'#eb2f96'" @click="handleIconClick(record, 'unmarked')" />
+            :two-tone-color="'#eb2f96'" @click="handleIconClick(record, 'unmarkable')" />
         </span>
       </template>
     </template>
@@ -64,60 +64,30 @@ export default {
           align: "center",
         },
       ],
-      selectedRowIndex: -1 // 初始化为-1，表示没有选中的行
+      selectedRow: -1 // 初始化为-1，表示没有选中的行
     };
   },
   methods: {
     handleIconClick(record, clickedStatus) {  // 点击删除图标
       // console.log(record.Status);
       // console.log(clickedStatus);
-      // if (record.Status === clickedStatus) {
-      //   return;
-      // }
-
-      // 如果点击了marked图标，则删除unmarked图标，反之亦然
-      if (clickedStatus === 'marked') {
-        record.Status = 'marked';
-      } else {
-        record.Status = 'unmarkable';
-      }
+      
+      record.Status = clickedStatus;
     },
-    handleCustomRow(record, index) {
+
+    handleCustomRow(record) {
       return {
         onClick: () => {
           // console.log(record); // 打印行数据到控制台
           this.$emit('row-click', record);
-          this.selectedRowIndex = index; // 更新选中的行索引
+          this.selectedRow = record; // 更新选中的行索引
           // console.log(index);
         },
         style: {
-          color: index === this.selectedRowIndex ? 'red' : '' // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
+          background: record === this.selectedRow ? 'red' : '', // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
         }
       };
     }
   },
 };
 </script>
-
-<style scoped>
-.block {
-  width: 100%;
-  max-height: 100px;
-  max-width: 250px;
-  border-bottom: 1px solid gray;
-}
-
-/*表格thead*/
-/* ::v-deep .ant-table-thead > tr > th {
-  font-size: 10px;
-  height: 5px;
-  padding: 0px !important;
-} */
-
-/*表格tbody*/
-::v-deep .ant-table-tbody>tr>td {
-  font-size: 12px;
-  height: 40px;
-  padding: 0px !important;
-}
-</style>

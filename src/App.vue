@@ -9,14 +9,15 @@
     <!-- 下侧 -->
     <a-flex class="block" :style="{ flex: 13 }">
       <!-- 表格 -->
-      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick"/>
+      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :WCDatas="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas" :testData="selectedRowData"/>
+        <detailView :WCDatas="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas" :testData="selectedRowData"
+          @hover="handleHover" />
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
-          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGDataL" />
-          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGDataR" />
+          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGDataL" :testData="FGData"/>
+          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGDataR" :testData="FGData"/>
         </a-flex>
       </a-flex>
     </a-flex>
@@ -86,7 +87,8 @@ export default {
   },
   data() {
     return {
-      selectedRowData: null
+      selectedRowData: null,
+      FGData: null,
     }
   },
   methods: {
@@ -94,6 +96,10 @@ export default {
       // 监听子组件的行点击事件，并接收传递过来的行数据
       this.selectedRowData = rowData; // 将点击行的数据存储到 selectedRowData 中
       // console.log(this.selectedRowData); // 在控制台打印点击行的数据
+    },
+    handleHover(rowData) {  // 监听行被点击事件 
+      // console.log(rowData);
+      this.FGData = rowData;
     }
   }
 };
@@ -113,4 +119,4 @@ export default {
   top: 0px;
   left: 0px;
 }
-</style>./api/utils.js
+</style>

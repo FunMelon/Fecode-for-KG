@@ -3,16 +3,16 @@
     <!-- TODO:删除标签 -->
     <label>{{ testData }}</label>
     <a-flex>
-        <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas"
-            :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName1" :sim="sim[0]"/>
-        <cardView :style="{ flex: 1 }" assignId="2" :WCData="WCDatas"  :ENDatas="ENDatas"
-            :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName2" :sim="sim[1]"/>
-        <cardView :style="{ flex: 1 }" assignId="3" :WCData="WCDatas"  :ENDatas="ENDatas"
-            :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName3" :sim="sim[2]"/>
-        <cardView :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :ENDatas="ENDatas"
-            :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName4" :sim="sim[3]"/>
-        <cardView :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :ENDatas="ENDatas"
-            :RLDatas="RLDatas" :ZHName="ZHName" :ENName="ENName5" :sim="sim[4]"/>
+        <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="ZHName" :ENName="ENName1" :sim="sim[0]" @hover="handleHover" />
+        <cardView :style="{ flex: 1 }" assignId="2" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="ZHName" :ENName="ENName2" :sim="sim[1]" @hover="handleHover" />
+        <cardView :style="{ flex: 1 }" assignId="3" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="ZHName" :ENName="ENName3" :sim="sim[2]" @hover="handleHover" />
+        <cardView :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="ZHName" :ENName="ENName4" :sim="sim[3]" @hover="handleHover" />
+        <cardView :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="ZHName" :ENName="ENName5" :sim="sim[4]" @hover="handleHover" />
     </a-flex>
 </template>
 
@@ -39,11 +39,11 @@ export default {
             ENName2: 'Star Wars: The Force Awakens',
             ENName3: 'The Last Samurai',
             sim: [ // TODO:死数据，相似度
-            [0.821, 0.88, 0.76, 0.80, 1],
-            [0.733, 0.77, 0.68, 0.75, 0.79],
-            [0.726, 0.67, 0.73, 0.74, 0.96],
-            [0.724, 0.71, 0.72, 0.75, 0.65],
-            [0.692, 0.64, 0.69, 0.73, 0.75]
+                [0.821, 0.88, 0.76, 0.80, 1],
+                [0.733, 0.77, 0.68, 0.75, 0.79],
+                [0.726, 0.67, 0.73, 0.74, 0.96],
+                [0.724, 0.71, 0.72, 0.75, 0.65],
+                [0.692, 0.64, 0.69, 0.73, 0.75]
             ],
         }
     },
@@ -52,6 +52,11 @@ export default {
     },
     // updated() {
     //     console.log(this.testData)
-    // }
+    // },
+    methods: {
+        handleHover(rowData) {  // 监听行被点击事件 
+            this.$emit('hover', rowData); // 将点击行的数据存储到 selectedRowData 中
+        }
+    }
 }
 </script>
