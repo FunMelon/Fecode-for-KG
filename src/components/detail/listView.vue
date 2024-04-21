@@ -26,6 +26,7 @@ import { toRaw } from "vue";
 
 export default {
     props: {
+        isAscend: Boolean,  // 排序类型
         isNode: Boolean,
         data: null,
         assignId: String,
@@ -57,21 +58,30 @@ export default {
 
     computed: {
         getData() {
-            // TODO:此处有bug，渲染顺序会影响，请在保证页面加载完毕后，修改本文件的代码以重新渲染
             // 首先尝试使用 toRaw 获取原始数据
             let rawData = toRaw(this.data);
 
+            // console.log(JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0])));
             // 检查 rawData 是否存在并且是预期的数组结构
+            var jsonData = null;
             if (rawData && Array.isArray(rawData[0]) && rawData[0].length > 0) {
                 // 如果需要深拷贝转换为普通对象，可以使用 JSON.parse(JSON.stringify(data))
                 if (this.assignId[1] == "L") {
-                    return JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0]));
+                    jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0]));
                 } else {
-                    return JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
+                    jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
                 }
+                
+                jsonData.sort((a, b) => {
+                    if (this.isAscend) {
+                        return a.KG1.localeCompare(b.KG1);
+                    } else {
+                        return b.KG1.localeCompare(a.KG1);
+                    }
+                });
             }
             // 返回 null 或其他适当的默认值以处理错误的数据结构
-            return null;
+            return jsonData;
         },
     },
 };

@@ -88,7 +88,7 @@ export default {
           // console.log(record); // 打印行数据到控制台
           this.$emit('row-click', record);
           this.selectedRowIndex = index; // 更新选中的行索引
-          console.log(index);
+          // console.log(index);
         },
         style: {
           color: index === this.selectedRowIndex ? 'red' : '' // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色

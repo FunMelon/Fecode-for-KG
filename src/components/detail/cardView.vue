@@ -33,24 +33,24 @@
     <!-- 实体列表 -->
     <div class="block">
       <div class="sort-wrap block">
-        <SwapOutlined :rotate="90" :style="{ color: '#666' }" />
+        <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend"/>
       </div>
       <a-flex>
         <simView class="block c0" :sim="sim[3]" :row="2" :maxSim="maxSim[2]" />
-        <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" />
-        <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" />
+        <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend"/>
+        <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend"/>
       </a-flex>
     </div>
 
     <!-- 边列表 -->
     <div class="block">
       <div class="sort-wrap block">
-        <SwapOutlined :rotate="90" :style="{ color: '#666' }" />
+        <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend"/>
       </div>
       <a-flex>
         <simView class="block c0" :sim="sim[4]" :row="3" :maxSim="maxSim[3]" />
-        <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" />
-        <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" />
+        <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend"/>
+        <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend"/>
       </a-flex>
     </div>
     <!-- 弹窗 -->
@@ -93,7 +93,8 @@ export default {
       // TODO: 死数据：最大相似性
       maxSim: [0.88, 0.76, 0.8, 1.0],
       open: false,
-      // modalAssignId: undefined,
+      entityAscend: true,
+      edgeAscend: true,
     };
   },
   mounted() {
@@ -108,6 +109,14 @@ export default {
     handleOk() {
       this.open = false;
     },
+
+    changeEntityAscend() {  // 更改实体列表的方向
+      this.entityAscend = !this.entityAscend;
+    },
+
+    changeEdgeAscend() {  // 更改边列表的方向
+      this.edgeAscend = !this.edgeAscend;
+    }
   },
 };
 </script>
