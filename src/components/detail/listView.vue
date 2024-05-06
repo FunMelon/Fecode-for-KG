@@ -3,17 +3,20 @@
     <a-table v-if="getData" :columns="columns" :data-source="getData" size="small" :showHeader="false"
         :pagination="false" :custom-row="handleCustomRow">
         <template #bodyCell="{ column, record }">
-            <template v-if="column.key === 'KG2' && isNode">
+            <template v-if="column.key === 'Sim' && isNode">
                 <span class="circle"> </span>
             </template>
-            <template v-else-if="column.key === 'KG2' && !isNode">
+            <template v-else-if="column.key === 'Sim' && !isNode">
                 <span>
                     <SwapRightOutlined />
                 </span>
             </template>
-            <template v-else-if="column.key === 'KG1'">
-                <span>
+            <template v-else-if="column.key === 'KG'">
+                <span v-if="this.assignId[1] == 'L'">
                     {{ record.KG1 }}
+                </span>
+                <span v-else>
+                    {{ record.KG2 }}
                 </span>
             </template>
         </template>
@@ -22,7 +25,7 @@
 
 <script>
 import { SwapRightOutlined } from "@ant-design/icons-vue";
-import { toRaw } from "vue";
+// import { toRaw } from "vue";
 
 export default {
     props: {
@@ -39,16 +42,16 @@ export default {
         return {
             columns: [
                 {
-                    name: "KG2",
-                    dataIndex: "KG2",
-                    key: "KG2",
+                    name: "Sim",
+                    dataIndex: "Sim",
+                    key: "Sim",
                     align: "left",
                     width: "20%",
                 },
                 {
-                    title: "Name",
-                    dataIndex: "name",
-                    key: "KG1",
+                    title: "KG",
+                    dataIndex: "kg",
+                    key: "KG",
                     ellipsis: true,
                     align: "left",
                 },
@@ -60,29 +63,40 @@ export default {
     computed: {
         getData() {
             // 首先尝试使用 toRaw 获取原始数据
-            let rawData = toRaw(this.data);
+            // let rawData = toRaw(this.data);
 
-            // console.log(JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0])));
-            // 检查 rawData 是否存在并且是预期的数组结构
-            var jsonData = null;
-            if (rawData && Array.isArray(rawData[0]) && rawData[0].length > 0) {
-                // 如果需要深拷贝转换为普通对象，可以使用 JSON.parse(JSON.stringify(data))
+            // // console.log(JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0])));
+            // // 检查 rawData 是否存在并且是预期的数组结构
+            // var jsonData = null;
+            // if (rawData && Array.isArray(rawData[0]) && rawData[0].length > 0) {
+            //     // 如果需要深拷贝转换为普通对象，可以使用 JSON.parse(JSON.stringify(data))
+            //     if (this.assignId[1] == "L") {
+            //         jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0]));
+            //     } else {
+            //         jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
+            //     }
+
+            //     jsonData.sort((a, b) => {
+            //         if (this.isAscend) {
+            //             return a.KG1.localeCompare(b.KG1);
+            //         } else {
+            //             return b.KG1.localeCompare(a.KG1);
+            //         }
+            //     });
+            // }
+            // // 返回 null 或其他适当的默认值以处理错误的数据结构
+            // return jsonData;
+            var data = null;
+            if (this.data) {
                 if (this.assignId[1] == "L") {
-                    jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0]));
+                    data = this.data.Res[0];
                 } else {
-                    jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
+                    data = this.data.Res[1];
                 }
-
-                jsonData.sort((a, b) => {
-                    if (this.isAscend) {
-                        return a.KG1.localeCompare(b.KG1);
-                    } else {
-                        return b.KG1.localeCompare(a.KG1);
-                    }
-                });
             }
-            // 返回 null 或其他适当的默认值以处理错误的数据结构
-            return jsonData;
+            console.log(data);
+            data = data.slice(0, 5)
+            return data;
         },
     },
 
@@ -127,5 +141,19 @@ export default {
     height: 8px;
     border-radius: 50%;
     margin-left: 4px;
+}
+
+/* 自定义分页器按钮样式 */
+.ant-pagination-item-link:not(.ant-pagination-item-active) {
+    font-size: 12px; /* 按钮字体大小 */
+    padding: 5px 8px; /* 按钮内边距 */
+    margin: 0 2px; /* 按钮外边距 */
+}
+
+/* 自定义分页器当前页按钮样式 */
+.ant-pagination-item.ant-pagination-item-active .ant-pagination-item-link {
+    font-size: 12px; /* 当前页按钮字体大小 */
+    padding: 5px 8px; /* 当前页按钮内边距 */
+    margin: 0 2px; /* 当前页按钮外边距 */
 }
 </style>

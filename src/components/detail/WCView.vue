@@ -45,9 +45,9 @@ export default {
       try {
         
         if (this.assignId[1] == "L") {
-          data = this.data[0];
+          data = this.data.Res[0];
         } else {
-          data = this.data[1];
+          data = this.data.Res[1];
         }
       } catch (e) {
         console.log(e);
