@@ -1,7 +1,19 @@
-// 读取表的数据
-export async function getTlbData() {
+const url = "http://127.0.0.1:8000";
+
+// 读取表的数据`
+export async function getTlbData(round) {
     try {
-        const response = await fetch('./Tlb1.json');
+        const response = await fetch(url + '/get_table_data/?round=' + round);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+export async function getSimData(id) {
+    try {
+        const response = await fetch(url + '/get_sim_data/?ID1=' + id);
         const data = await response.json();
         return data;
     } catch (error) {

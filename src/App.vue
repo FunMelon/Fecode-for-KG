@@ -45,7 +45,7 @@ export default {
 
     onMounted(async () => {
       // 读取表格数据
-      tlbData.value = await getTlbData();
+      tlbData.value = await getTlbData(0);
 
       // 读取词云数据
       const WCList = [];
