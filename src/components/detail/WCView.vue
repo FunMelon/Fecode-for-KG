@@ -43,12 +43,14 @@ export default {
 
       var data;
       try {
+        
         if (this.assignId[1] == "L") {
-          data = this.data[this.assignId[0] - 1][0];
+          data = this.data[0];
         } else {
-          data = this.data[this.assignId[0] - 1][1];
+          data = this.data[1];
         }
       } catch (e) {
+        console.log(e);
         return;
       }
 

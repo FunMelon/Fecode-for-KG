@@ -1,0 +1,277 @@
+[
+    {
+        "nodes": [
+            {
+                "id": 8471,
+                "name": "潮州民系"
+            },
+            {
+                "id": 29466,
+                "name": "闽南民系"
+            },
+            {
+                "id": 4136,
+                "name": "臺灣人"
+            },
+            {
+                "id": 27144,
+                "name": "日本"
+            },
+            {
+                "id": 465,
+                "name": "洪森"
+            },
+            {
+                "id": 27077,
+                "name": "法国"
+            },
+            {
+                "id": 27326,
+                "name": "郑信"
+            },
+            {
+                "id": 29038,
+                "name": "海南民系"
+            },
+            {
+                "id": 22224,
+                "name": "潮州话"
+            },
+            {
+                "id": 22053,
+                "name": "香港"
+            },
+            {
+                "id": 22240,
+                "name": "大韩民国"
+            }
+        ],
+        "edges": [
+            {
+                "source": 8471,
+                "target": 29466,
+                "rels": [
+                    "related"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 4136,
+                "rels": [
+                    "related"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 27144,
+                "rels": [
+                    "popplace"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 465,
+                "rels": [
+                    "caption"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 27077,
+                "rels": [
+                    "place"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 27326,
+                "rels": [
+                    "caption"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 29038,
+                "rels": [
+                    "related"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 22224,
+                "rels": [
+                    "langs",
+                    "language"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 22053,
+                "rels": [
+                    "place"
+                ]
+            },
+            {
+                "source": 8471,
+                "target": 22240,
+                "rels": [
+                    "popplace"
+                ]
+            },
+            {
+                "source": 29466,
+                "target": 4136,
+                "rels": [
+                    "pop",
+                    "related"
+                ]
+            },
+            {
+                "source": 29466,
+                "target": 29038,
+                "rels": [
+                    "related"
+                ]
+            },
+            {
+                "source": 29466,
+                "target": 8471,
+                "rels": [
+                    "related"
+                ]
+            },
+            {
+                "source": 22224,
+                "target": 27077,
+                "rels": [
+                    "states"
+                ]
+            },
+            {
+                "source": 22224,
+                "target": 22053,
+                "rels": [
+                    "states"
+                ]
+            }
+        ]
+    },
+    {
+        "nodes": [
+            {
+                "id": 14701,
+                "name": "Fuzhou dialect"
+            },
+            {
+                "id": 29957,
+                "name": "Min Chinese"
+            },
+            {
+                "id": 33660,
+                "name": "Eastern Min"
+            },
+            {
+                "id": 11562,
+                "name": "Chinese language"
+            },
+            {
+                "id": 15035,
+                "name": "Malaysian Chinese"
+            },
+            {
+                "id": 17660,
+                "name": "Taiwan"
+            },
+            {
+                "id": 19216,
+                "name": "Jinny Ng"
+            }
+        ],
+        "edges": [
+            {
+                "source": 14701,
+                "target": 29957,
+                "rels": [
+                    "fam"
+                ]
+            },
+            {
+                "source": 14701,
+                "target": 33660,
+                "rels": [
+                    "fam"
+                ]
+            },
+            {
+                "source": 14701,
+                "target": 11562,
+                "rels": [
+                    "fam"
+                ]
+            },
+            {
+                "source": 29957,
+                "target": 33660,
+                "rels": [
+                    "child"
+                ]
+            },
+            {
+                "source": 29957,
+                "target": 11562,
+                "rels": [
+                    "fam"
+                ]
+            },
+            {
+                "source": 33660,
+                "target": 29957,
+                "rels": [
+                    "fam"
+                ]
+            },
+            {
+                "source": 33660,
+                "target": 11562,
+                "rels": [
+                    "fam"
+                ]
+            },
+            {
+                "source": 15035,
+                "target": 14701,
+                "rels": [
+                    "langs"
+                ]
+            },
+            {
+                "source": 17660,
+                "target": 14701,
+                "rels": [
+                    "regionalLanguages"
+                ]
+            },
+            {
+                "source": 19216,
+                "target": 14701,
+                "rels": [
+                    "language"
+                ]
+            },
+            {
+                "source": 11562,
+                "target": 17660,
+                "rels": [
+                    "states"
+                ]
+            },
+            {
+                "source": 11562,
+                "target": 33660,
+                "rels": [
+                    "ld"
+                ]
+            }
+        ]
+    }
+]

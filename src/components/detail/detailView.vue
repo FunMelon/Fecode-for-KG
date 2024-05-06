@@ -1,16 +1,42 @@
 <!-- 详情显示 -->
 <template>
+    <!-- <label>{{ simData.attr[0].Res }}</label> -->
     <a-flex>
-        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="simData.name[0].Res[0]" :ENName="simData.name[0].Res[1]" :sim="sim[0]" @hover="handleHover" />
-        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="2" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="simData.name[1].Res[0]" :ENName="simData.name[1].Res[1]" :sim="sim[1]" @hover="handleHover" />
-        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="3" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="simData.name[2].Res[0]" :ENName="simData.name[2].Res[1]" :sim="sim[2]" @hover="handleHover" />
-        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="simData.name[3].Res[0]" :ENName="simData.name[3].Res[1]" :sim="sim[3]" @hover="handleHover" />
-        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="simData.name[4].Res[0]" :ENName="simData.name[4].Res[1]" :sim="sim[4]" @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="1" 
+            :WCData="simData.attr[0].Res" 
+            :ENDatas="ENDatas" 
+            :RLDatas="RLDatas"
+            :ZHName="simData.name[0].Res[0]" :ENName="simData.name[0].Res[1]" 
+            :sim="sim[0]" :simMix="simData.sim_mix[0].Sim"
+            @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="2" 
+            :WCData="simData.attr[1].Res" 
+            :ENDatas="ENDatas" 
+            :RLDatas="RLDatas"
+            :ZHName="simData.name[1].Res[0]" :ENName="simData.name[1].Res[1]"
+            :sim="sim[1]" :simMix="simData.sim_mix[1].Sim"
+            @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="3" 
+            :WCData="simData.attr[2].Res" 
+            :ENDatas="ENDatas" 
+            :RLDatas="RLDatas"
+            :ZHName="simData.name[2].Res[0]" :ENName="simData.name[2].Res[1]"
+            :sim="sim[2]" :simMix="simData.sim_mix[2].Sim"
+            @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="4" 
+            :WCData="simData.attr[3].Res"  
+            :ENDatas="ENDatas" 
+            :RLDatas="RLDatas"
+            :ZHName="simData.name[3].Res[0]" :ENName="simData.name[3].Res[1]" 
+            :sim="sim[3]" :simMix="simData.sim_mix[3].Sim"
+            @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="5" 
+            :WCData="simData.attr[4].Res"  
+            :ENDatas="ENDatas" 
+            :RLDatas="RLDatas"
+            :ZHName="simData.name[4].Res[0]" :ENName="simData.name[4].Res[1]" 
+            :sim="sim[4]" :simMix="simData.sim_mix[4].Sim"
+            @hover="handleHover" />
     </a-flex>
 </template>
 
@@ -27,12 +53,6 @@ export default {
     },
     data() {
         return {
-            ZHName: '黑暗騎士:黎明昇起', // TODO:死数据，实体名称
-            ENName1: 'The Dark Knight Rises',
-            ENName4: 'Star Wars: The Clone Wars (film)',
-            ENName5: 'The Hobbit: An Unexpected Journey',
-            ENName2: 'Star Wars: The Force Awakens',
-            ENName3: 'The Last Samurai',
             sim: [ // TODO:死数据，相似度
                 [0.821, 0.88, 0.76, 0.80, 1],
                 [0.733, 0.77, 0.68, 0.75, 0.79],

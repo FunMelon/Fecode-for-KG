@@ -1,115 +1,405 @@
 [
     [
         {
-            "x": "Milan",
-            "value": 15.0,
+            "x": "2500",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Inter",
-            "value": 14.5,
+            "x": "3000",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Pirelli",
-            "value": 14.0,
+            "x": "teochew",
+            "value": 1.4488124772896052,
             "category": "1"
         },
         {
-            "x": "Tohill",
-            "value": 13.5,
+            "x": "一百二十多个",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Milano",
-            "value": 13.0,
+            "x": "中国",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "SpA",
-            "value": 12.5,
+            "x": "中國大陸",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Italy",
-            "value": 12.0,
+            "x": "全世界",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Football",
-            "value": 11.5,
+            "x": "全球",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Club",
-            "value": 11.0,
+            "x": "加拿大",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Eric",
-            "value": 10.5,
+            "x": "北美洲",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Nerazzurri",
-            "value": 10.0,
+            "x": "千萬",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Biscione",
-            "value": 9.5,
+            "x": "台湾",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Beneamata",
-            "value": 9.0,
+            "x": "国家",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "Debao",
-            "value": 8.5,
+            "x": "地区",
+            "value": 1.7668136617924424,
             "category": "1"
         },
         {
-            "x": "2015",
-            "value": 8.0,
+            "x": "地區",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "大洋洲",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "大陸",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "广东",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "新西兰",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "欧洲",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "民系",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "法国",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "潮州",
+            "value": 2.8976249545792103,
+            "category": "1"
+        },
+        {
+            "x": "潮州人",
+            "value": 1.4488124772896052,
+            "category": "1"
+        },
+        {
+            "x": "潮汕",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "澳大利亚",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "澳门",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "美国",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "英国",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "非洲",
+            "value": 1.7668136617924424,
+            "category": "1"
+        },
+        {
+            "x": "香港",
+            "value": 1.7668136617924424,
             "category": "1"
         }
     ],
     [
         {
-            "x": "Stacchini",
-            "value": 7.0,
+            "x": "10",
+            "value": 1.0618294348865167,
             "category": "1"
         },
         {
-            "x": "Giancarlo",
-            "value": 6.5,
+            "x": "12",
+            "value": 1.0618294348865167,
             "category": "1"
         },
         {
-            "x": "Enrico",
-            "value": 6.0,
+            "x": "15",
+            "value": 1.0618294348865167,
             "category": "1"
         },
         {
-            "x": "Stacchini",
-            "value": 5.5,
+            "x": "announcements",
+            "value": 1.0618294348865167,
             "category": "1"
         },
         {
-            "x": "ITA",
-            "value": 5.0,
+            "x": "asia",
+            "value": 0.8707153262875775,
             "category": "1"
         },
         {
-            "x": "GUI",
-            "value": 4.5,
+            "x": "blue",
+            "value": 1.0618294348865167,
             "category": "1"
         },
         {
-            "x": "ARG",
-            "value": 4.0,
+            "x": "characters",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "china",
+            "value": 2.6121459788627326,
+            "category": "1"
+        },
+        {
+            "x": "chinatowns",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "chinese",
+            "value": 1.470235416600124,
+            "category": "1"
+        },
+        {
+            "x": "chiu",
+            "value": 1.741430652575155,
+            "category": "1"
+        },
+        {
+            "x": "city",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "communities",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "deep",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "dialect",
+            "value": 4.247317739546067,
+            "category": "1"
+        },
+        {
+            "x": "foochow",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "foochowese",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "form",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "fujian",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "fuzh1239",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "fuzhou",
+            "value": 3.1854883046595504,
+            "category": "1"
+        },
+        {
+            "x": "fuzhounese",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "fzho",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "hok",
+            "value": 2.1236588697730334,
+            "category": "1"
+        },
+        {
+            "x": "houguan",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "indonesia",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "ipa",
+            "value": 0.8707153262875775,
+            "category": "1"
+        },
+        {
+            "x": "islands",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "languages",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "malaysia",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "matsu",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "people",
+            "value": 0.8707153262875775,
+            "category": "1"
+        },
+        {
+            "x": "province",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "public",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "regions",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "republic",
+            "value": 3.1854883046595504,
+            "category": "1"
+        },
+        {
+            "x": "romanized",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "singapore",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "sino",
+            "value": 0.8707153262875775,
+            "category": "1"
+        },
+        {
+            "x": "southeast",
+            "value": 0.8707153262875775,
+            "category": "1"
+        },
+        {
+            "x": "spoken",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "standard",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "statutory",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "subgroup",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "thailand",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "tibetan",
+            "value": 0.8707153262875775,
+            "category": "1"
+        },
+        {
+            "x": "transport",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "west",
+            "value": 1.0618294348865167,
+            "category": "1"
+        },
+        {
+            "x": "york",
+            "value": 1.0618294348865167,
             "category": "1"
         }
     ]

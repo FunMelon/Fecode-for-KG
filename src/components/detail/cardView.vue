@@ -7,7 +7,7 @@
         {{ "Pair" + this.assignId }}
       </label>
       <label align="right" style="margin-right: 10px">
-        {{ "相似性: " + sim[0] }}
+        {{ "相似性: " + simMix.toFixed(2) }}
       </label>
     </a-flex>
     <!-- 名称 -->
@@ -79,6 +79,7 @@ export default {
     RLDatas: null, // 边列表的数据
     ZHName: String, // 中文名
     ENName: String, // 实体名
+    simMix: null, // 融合相似性
     sim: null, // 相似度
   },
   components: {
