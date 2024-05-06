@@ -12,21 +12,21 @@
     </a-flex>
     <!-- 名称 -->
     <a-flex class="block">
-      <simView class="block c0" :sim="sim[1]" :row="0" :maxSim="maxSim[0]" />
+      <simView class="block c0" :sim="this.nameDatas.Sim" :row="0" :maxSim="this.MaxSims[0]" />
       <a-flex class="block c1" justify="space-around" align="center">
         <label>
-          {{ this.ZHName }}
+          {{ this.nameDatas.Res[0] }}
         </label>
       </a-flex>
       <a-flex class="block c2" justify="space-around" align="center">
         <label>
-          {{ this.ENName }}
+          {{ this.nameDatas.Res[1] }}
         </label>
       </a-flex>
     </a-flex>
     <!-- 属性 -->
     <a-flex class="block">
-      <simView @click="() => showModal()" class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />
+      <simView @click="() => showModal()" class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" />
       <WCView @click="() => showModal()" class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
       <WCView @click="() => showModal()" class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
     </a-flex>
@@ -36,7 +36,7 @@
         <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend"/>
       </div>
       <a-flex>
-        <simView class="block c0" :sim="sim[3]" :row="2" :maxSim="maxSim[2]" />
+        <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
         <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @hover="handleHover"/>
         <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @hover="handleHover"/>
       </a-flex>
@@ -48,7 +48,7 @@
         <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend"/>
       </div>
       <a-flex>
-        <simView class="block c0" :sim="sim[4]" :row="3" :maxSim="maxSim[3]" />
+        <simView class="block c0" :sim="RLDatas.Sim" :row="3" :maxSim="this.MaxSims[3]" />
         <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @hover="handleHover"/>
         <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @hover="handleHover"/>
       </a-flex>
@@ -77,10 +77,9 @@ export default {
     WCData: null, // 词云的数据
     ENDatas: null, // 实体列表的数据
     RLDatas: null, // 边列表的数据
-    ZHName: String, // 中文名
-    ENName: String, // 实体名
+    nameDatas: null,  // 名称信息
     simMix: null, // 融合相似性
-    sim: null, // 相似度
+    MaxSims: null,  // 最大的相似性
   },
   components: {
     WCView,
@@ -122,7 +121,7 @@ export default {
     handleHover(rowData) {  // 监听行被点击事件 
       this.$emit('hover', rowData); // 将点击行的数据存储到 selectedRowData 中
     }
-  },
+  }
 };
 </script>
 
