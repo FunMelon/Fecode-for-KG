@@ -1,18 +1,16 @@
 <!-- 详情显示 -->
 <template>
-    <!-- TODO:删除标签 -->
-    <label>{{ testData }}</label>
     <a-flex>
-        <cardView :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="ZHName" :ENName="ENName1" :sim="sim[0]" @hover="handleHover" />
-        <cardView :style="{ flex: 1 }" assignId="2" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="ZHName" :ENName="ENName2" :sim="sim[1]" @hover="handleHover" />
-        <cardView :style="{ flex: 1 }" assignId="3" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="ZHName" :ENName="ENName3" :sim="sim[2]" @hover="handleHover" />
-        <cardView :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="ZHName" :ENName="ENName4" :sim="sim[3]" @hover="handleHover" />
-        <cardView :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
-            :ZHName="ZHName" :ENName="ENName5" :sim="sim[4]" @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="1" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="simData.name[0].Res[0]" :ENName="simData.name[0].Res[1]" :sim="sim[0]" @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="2" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="simData.name[1].Res[0]" :ENName="simData.name[1].Res[1]" :sim="sim[1]" @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="3" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="simData.name[2].Res[0]" :ENName="simData.name[2].Res[1]" :sim="sim[2]" @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="4" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="simData.name[3].Res[0]" :ENName="simData.name[3].Res[1]" :sim="sim[3]" @hover="handleHover" />
+        <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="5" :WCData="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas"
+            :ZHName="simData.name[4].Res[0]" :ENName="simData.name[4].Res[1]" :sim="sim[4]" @hover="handleHover" />
     </a-flex>
 </template>
 
@@ -22,10 +20,7 @@ import cardView from './cardView.vue'
 export default {
     name: 'detailView',
     props: {
-        WCDatas: null,  // 词云的数据
-        ENDatas: null,  // 实体列表的数据
-        RLDatas: null,  // 边列表的数据
-        testData: null,
+        simData: null,
     },
     components: {
         cardView

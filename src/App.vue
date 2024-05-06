@@ -12,7 +12,7 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :WCDatas="WCDatas" :ENDatas="ENDatas" :RLDatas="RLDatas" :testData="selectedRowData"
+        <detailView :simData="simData"
           @hover="handleHover" />
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { getFGData, getTlbData, getWCData, getLiData } from "./api/utils.js";
+import { getTlbData, getSimData } from "./api/utils.js";
 import detailView from "./components/detail/detailView.vue";
 import FView from "./components/down/FView.vue";
 import KGTable from "./components/side/KGTable.vue";
@@ -37,46 +37,15 @@ export default {
   setup() {
     // 读取Json数据
     const tlbData = ref([]);
-    const WCDatas = ref([]);
-    const FGDataL = ref({});
-    const FGDataR = ref({});
-    const ENDatas = ref([]);
-    const RLDatas = ref([]);
-
+    const simData = ref([]);
     onMounted(async () => {
       // 读取表格数据
       tlbData.value = await getTlbData(0);
-
       // 读取词云数据
-      const WCList = [];
-      for (let i = 6; i <= 10; ++i) {
-        const res = await getWCData("WordCloud" + i + ".json");
-        WCList.push(res);
-      }
-      WCDatas.value = WCList;
-
-      // 读取力导向图数据
-      FGDataL.value = await getFGData("ForceGraph3.json");
-      FGDataR.value = await getFGData("ForceGraph4.json");
-
-      // 读取节点列表数据
-      const ENList = [];
-      for (let i = 6; i <= 10; ++i) {
-        const res = await getLiData("./EL/EntityList" + i + ".json");
-        ENList.push(res);
-      }
-      ENDatas.value = ENList;
-
-      // 读取边列表数据
-      const RLList = [];
-      for (let i = 6; i <= 10; ++i) {
-        const res = await getLiData("./RL/RelList" + i + ".json");
-        RLList.push(res);
-      }
-      RLDatas.value = RLList;
+      simData.value = await getSimData(8471);
     });
 
-    return { tlbData, WCDatas, FGDataL, FGDataR, ENDatas, RLDatas };
+    return { tlbData, simData };
   },
   components: {
     detailView,
