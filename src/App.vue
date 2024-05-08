@@ -58,7 +58,7 @@ export default {
       // 读取表格数据
       tlbData.value = await getTlbData(0);
       // 读取词云数据
-      simData.value = await getSimData(8471);
+      simData.value = null;
       // 读取力导向图数据
       FGDataL.value = await getFGData("ForceGraph1.json");
       FGDataR.value = await getFGData("ForceGraph2.json");
@@ -75,15 +75,14 @@ export default {
   },
   data() {
     return {
-      selectedRowData: null,
       FGData: null,
     }
   },
   methods: {
-    handleRowClick(rowData) {  // 监听行被点击事件 
+    
+    async handleRowClick(rowData) {  // 监听行被点击事件 
       // 监听子组件的行点击事件，并接收传递过来的行数据
-      this.selectedRowData = rowData; // 将点击行的数据存储到 selectedRowData 中
-      // console.log(this.selectedRowData); // 在控制台打印点击行的数据
+      this.simData = await getSimData(rowData.ID1); // 将点击行的数据存储到 selectedRowData 中
     },
     handleHover(rowData) {  // 监听行被点击事件 
       // console.log(rowData);

@@ -94,7 +94,7 @@ export default {
                     data = this.data.Res[1];
                 }
             }
-            console.log(data);
+            // console.log(data);
             data = data.slice(0, 5)
             return data;
         },

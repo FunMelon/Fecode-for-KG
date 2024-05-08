@@ -33,9 +33,13 @@ export default {
   },
   methods: {
     setupG2() {
-      // console.log("渲染")
+      console.log(this.WordCloud)
+      // this.WordCloud.destroy();
       if (this.WordCloud) {
-        this.WordCloud.clear();
+        this.WordCloud.destroy();
+        console.log("清空词云")
+      } else {
+        // console.log("没有")
       }
       // console.log(this.assignId);
 
@@ -54,7 +58,7 @@ export default {
         return;
       }
 
-      this.wordCloud = new WordCloud(
+      this.WordCloud = new WordCloud(
         this.isModal ? "pp" + this.assignId : this.assignId,
         {
           data,
@@ -82,7 +86,7 @@ export default {
         }
       );
       // console.log("加载词云前");
-      this.wordCloud.render();
+      this.WordCloud.render();
       // console.log("加载词云后");
     },
   },
