@@ -12,12 +12,20 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :simData="simData"
-          @hover="handleHover" />
+        <detailView :simData="simData" @hover="handleHover" />
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
-          <FView class="block" :style="{ flex: 1 }" assignId="LFView" :FGData="FGDataL" :testData="FGData"/>
-          <FView class="block" :style="{ flex: 1 }" assignId="RFView" :FGData="FGDataR" :testData="FGData"/>
+          <FView class="block" :style="{ width: '50%' }" assignId="LFView" :FGData="FGDataL" type="base"
+            :centerNodePairIds="['6661', '17161']" :alignNodePairListIds="[
+              ['306', '10806'],
+              ['773', '11273'],
+              ['1634', '12134'],
+              ['4411', '14911'],
+              ['5819', '16319'],
+              ['24113', '35194'],
+            ]" @startFollow="startFollow" />
+          <FView class="block" :style="{ width: '50%' }" assignId="RFView" type="follow" :FGData="FGDataR"
+            :followNodes="followNodes" />
         </a-flex>
       </a-flex>
     </a-flex>
@@ -25,7 +33,7 @@
 </template>
 
 <script>
-import { getTlbData, getSimData } from "./api/utils.js";
+import { getTlbData, getSimData, getFGData } from "./api/utils.js";
 import detailView from "./components/detail/detailView.vue";
 import FView from "./components/down/FView.vue";
 import KGTable from "./components/side/KGTable.vue";
@@ -36,16 +44,27 @@ import { ref, onMounted } from "vue";
 export default {
   setup() {
     // 读取Json数据
+    const followNodes = ref({});
     const tlbData = ref([]);
     const simData = ref([]);
+    const FGDataL = ref({});
+    const FGDataR = ref({});
+
+    function startFollow(data) {
+      followNodes.value = data;
+    }
+
     onMounted(async () => {
       // 读取表格数据
       tlbData.value = await getTlbData(0);
       // 读取词云数据
       simData.value = await getSimData(8471);
+      // 读取力导向图数据
+      FGDataL.value = await getFGData("ForceGraph1.json");
+      FGDataR.value = await getFGData("ForceGraph2.json");
     });
 
-    return { tlbData, simData };
+    return { tlbData, simData, FGDataL, FGDataR, startFollow, followNodes };
   },
   components: {
     detailView,

@@ -25,10 +25,21 @@ export async function getSimData(id) {
     }
 }
 
+// // 读取力导向图的数据
+// export async function getFGData(id1, id2) {
+//     try {
+//         const response = await fetch('/get_force_graph_data/?ID1=' + id1 + '&ID2=' + id2);
+//         const data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//     }
+// }
+
 // 读取力导向图的数据
-export async function getFGData(id1, id2) {
+export async function getFGData(file) {
     try {
-        const response = await fetch('/get_force_graph_data/?ID1=' + id1 + '&ID2=' + id2);
+        const response = await fetch('./FG/' + file);
         const data = await response.json();
         return data;
     } catch (error) {
