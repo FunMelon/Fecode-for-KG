@@ -33,11 +33,13 @@
     <!-- 实体列表 -->
     <div class="block">
       <div class="sort-wrap block">
-        <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend"/>
+        <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
       </div>
       <a-flex>
         <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
-        <listView class="block c3" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/>
+        <listView class="block c3" :assignId="assignId + 'Ent'" :data="ENDatas" :isNode="true"
+          :chosenId="this.chosenId"
+          :isAscend="this.entityAscend" @click="handleClick" />
         <!-- <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/> -->
       </a-flex>
     </div>
@@ -45,11 +47,13 @@
     <!-- 边列表 -->
     <div class="block">
       <div class="sort-wrap block">
-        <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend"/>
+        <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend" />
       </div>
       <a-flex>
         <simView class="block c0" :sim="RLDatas.Sim" :row="3" :maxSim="this.MaxSims[3]" />
-        <listView class="block c3" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/>
+        <listView class="block c3" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false"
+        :chosenId="this.chosenId"
+          :isAscend="this.edgeAscend" @click="handleClick" />
         <!-- <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/> -->
       </a-flex>
     </div>
@@ -80,6 +84,7 @@ export default {
     nameDatas: null,  // 名称信息
     simMix: null, // 融合相似性
     MaxSims: null,  // 最大的相似性
+    chosenId: String,
   },
   components: {
     WCView,

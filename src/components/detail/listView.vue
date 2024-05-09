@@ -31,6 +31,7 @@ export default {
         isNode: Boolean,
         data: null,
         assignId: String,
+        chosenId: String,
     },
     components: {
         SwapRightOutlined,
@@ -69,11 +70,19 @@ export default {
     computed: {
         getData() {
             var data = []
-            for(var i = 0; i < 5 && i < this.data.Res[0].length; ++i) {
+            for (var i = 0; i < 5 && i < this.data.Res[0].length; ++i) {
                 data.push({
+                    IDPair: {
+                        ID1: this.data.ID1,
+                        ID2: this.data.ID2,
+                    },
                     left: this.data.Res[0][i],
                     right: this.data.Res[1][i]
                 })
+            }
+
+            if (this.chosenId !== this.assignId) {
+                this.clearSelectedRow(); // 清空选中的行索引
             }
             // console.log (data)
             return data;
@@ -85,13 +94,20 @@ export default {
             return {
                 onClick: () => {
                     // console.log(record); // 打印行数据到控制台
-                    this.$emit('click', record);
+                    this.$emit('click', {
+                        selectList: this.assignId,
+                        record: record
+                    });
+
                     this.selectedRow = record.left.KG1 // 更新选中的行索引
                 },
                 style: {
                     color: record.left.KG1 === this.selectedRow ? 'red' : '', // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
                 }
             };
+        },
+        clearSelectedRow() {
+            this.selectedRow = -1;
         }
     }
 };
@@ -123,15 +139,21 @@ export default {
 
 /* 自定义分页器按钮样式 */
 .ant-pagination-item-link:not(.ant-pagination-item-active) {
-    font-size: 12px; /* 按钮字体大小 */
-    padding: 5px 8px; /* 按钮内边距 */
-    margin: 0 2px; /* 按钮外边距 */
+    font-size: 12px;
+    /* 按钮字体大小 */
+    padding: 5px 8px;
+    /* 按钮内边距 */
+    margin: 0 2px;
+    /* 按钮外边距 */
 }
 
 /* 自定义分页器当前页按钮样式 */
 .ant-pagination-item.ant-pagination-item-active .ant-pagination-item-link {
-    font-size: 12px; /* 当前页按钮字体大小 */
-    padding: 5px 8px; /* 当前页按钮内边距 */
-    margin: 0 2px; /* 当前页按钮外边距 */
+    font-size: 12px;
+    /* 当前页按钮字体大小 */
+    padding: 5px 8px;
+    /* 当前页按钮内边距 */
+    margin: 0 2px;
+    /* 当前页按钮外边距 */
 }
 </style>

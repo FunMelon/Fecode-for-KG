@@ -81,7 +81,7 @@ export default {
     },
 
     async handleListClick(listData) {
-      if (listData == 1) {
+      if (listData != 1) {
         console.log(listData)
       }
     }
