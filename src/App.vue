@@ -82,7 +82,7 @@ export default {
     },
 
     async handleListClick(listData) {
-      // console.log(listData)
+      console.log(listData)
       const id1 = listData.record.IDPair.ID1
       const id2 = listData.record.IDPair.ID2
       if (id1 != this.FGID1 || id2 != this.FGID2) {
@@ -91,7 +91,7 @@ export default {
     },
 
     async handleFGIDClick(FGIDData) {
-      console.log("换新图")
+      // console.log("换新图")
       this.refreshFG(FGIDData.ID1, FGIDData.ID2)
     },
   }

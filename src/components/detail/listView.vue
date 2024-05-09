@@ -4,18 +4,18 @@
         :pagination="paginationConfig" :custom-row="handleCustomRow">
         <template #bodyCell="{ column, record }">
             <template v-if="column.key === 'Icon1' && isNode">
-                <span class="circle"> </span>
+                <span class="circle" :style="{ background: record.left.KG1 === selectedRow ? 'red' : '' }"> </span>
             </template>
             <template v-else-if="column.key === 'Icon1' && !isNode">
                 <span>
-                    <SwapRightOutlined />
+                    <SwapRightOutlined/>
                 </span>
             </template>
             <template v-if="column.key === 'KG1'">
                 {{ record.left.KG1 }}
             </template>
             <template v-if="column.key === 'Icon2' && isNode">
-                <span class="circle"> </span>
+                <span class="circle" :style="{ background: record.left.KG1 === selectedRow ? 'red' : '' }"> </span>
             </template>
             <template v-else-if="column.key === 'Icon2' && !isNode">
                 <span>
@@ -139,6 +139,9 @@ export default {
         handleCustomRow(record) {
             return {
                 onClick: () => {
+                    if (!this.isNode) {
+                        return
+                    }
                     // console.log(record); // 打印行数据到控制台
                     this.$emit('listClick', {
                         selectList: this.assignId,
@@ -148,7 +151,7 @@ export default {
                     this.selectedRow = record.left.KG1 // 更新选中的行索引
                 },
                 style: {
-                    color: record.left.KG1 === this.selectedRow ? 'red' : '', // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
+                    color: record.left.KG1 === this.selectedRow ? 'red' : '',
                 }
             };
         },
@@ -176,7 +179,7 @@ export default {
 
 .circle {
     display: block;
-    background: #52c41a;
+    background: #E0E0E0;
     width: 8px;
     height: 8px;
     border-radius: 50%;
