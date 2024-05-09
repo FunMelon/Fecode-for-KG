@@ -8,7 +8,6 @@
     <template #bodyCell="{ column, record }">
       <template v-if="column.key === 'Status'">
         <span>
-          <!-- TODO: 重新更改图标显示逻辑 -->
           <CheckCircleTwoTone v-if="record.Status === 'marked' || record.Status === 'unmarked'"
             :two-tone-color="'#52c41a'" @click="handleIconClick(record, 'marked')" />
           &nbsp;

@@ -63,9 +63,30 @@ export default {
     if (this.graph) {
       this.graph.clear();
     }
+    const tooltip = new G6.Tooltip({
+      offsetX: 0,
+      offsetY: 0,
+      itemTypes: ['node', 'edge'],
+      getContent: (e) => {
+        const outDiv = document.createElement('div');
+        outDiv.style.width = 'fit-content';
+        if (e.item.getType() === 'node') {
+          outDiv.innerHTML = `
+          <h4>name: ${e.item.getModel().name}</h4>
+        <h4>id: ${e.item.getModel().id}</h4>
+      `;
+        } else if (e.item.getType() === 'edge') {
+          outDiv.innerHTML = `
+        <h4>rel: ${e.item.getModel().rels}</h4>
+      `;
+        }
+        return outDiv;
+      },
+    });
 
     this.graph = new G6.Graph({
       container: this.assignId,
+      plugins: [tooltip],
       fitView: false,
       //oom: 0.001,
       fitViewPadding: [10, 10, 10, 10],
@@ -137,15 +158,6 @@ export default {
           "zoom-canvas",
           "drag-node",
           "drag-canvas",
-          // {
-          //   type: "tooltip",
-          //   formaText(model) {
-          //     const text =
-          //       "label: " + model.label + "<br/> class: " + model.class;
-          //     return text;
-          //   },
-          //   offset: 10,
-          // },
         ],
       },
       animate: true,
@@ -182,14 +194,9 @@ export default {
 
 <style>
 /* 提示框的样式 */
-.g6-tooltip {
-  offset: 0;
-  border: 1px solid #e2e2e2;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #545454;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 8px;
+.g6-component-tooltip {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0px 10px 24px 10px;
   box-shadow: rgb(174, 174, 174) 0px 0px 10px;
 }
 
