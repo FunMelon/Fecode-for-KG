@@ -1,4 +1,3 @@
-<!-- 力导向图 -->
 <template>
   <div :id="this.assignId" />
 </template>
@@ -19,6 +18,7 @@ export default {
     alignNodePairListIds: Array,
     type: String,
     followNodes: Object,
+    highlightNodeId: String, // 新增prop，用于接收要高亮的节点ID
   },
   data() {
     return {
@@ -34,6 +34,17 @@ export default {
     },
   },
   watch: {
+    highlightNodeId(newId) {
+      // console.log(newId)
+      if (!this.graph) {  // 没有力导向图实例
+        return
+      } else if (newId == null) {
+        // console.log("清空力导向图")
+        this.graph.clear();
+      } else {
+        this.highlightNode(newId);
+      }
+    },
     FGData(data) {
       if (!data || !this.graph) return;
       if (this.type === "follow") return;
@@ -78,7 +89,7 @@ export default {
         type: "force2",
         preventOverlap: true,
         nodeStrength: 50,
-        linkDistance:100,
+        linkDistance: 100,
         onTick: () => {
           const nodes = this.graph.getNodes().map((item) => item.getModel());
           nodes.forEach((item) => {
@@ -140,7 +151,32 @@ export default {
       animate: true,
     });
   },
-  methods: {},
+  methods: {
+    highlightNode(nodeId) {
+      // console.log(nodeId)
+
+      // 取消所有其他节点的高亮
+      const allNodes = this.graph.getNodes();
+      allNodes.forEach(node => {
+        if (node.getModel().id !== nodeId) {
+          node.update({
+            style: {
+              fill: "#E0E0E0", // 恢复默认颜色
+            },
+          });
+        }
+      });
+
+      const node = this.graph.findById(nodeId);
+      if (node) {
+        node.update({
+          style: {
+            fill: "red", // 高亮颜色
+          },
+        });
+      }
+    },
+  },
 };
 </script>
 

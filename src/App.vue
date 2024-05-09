@@ -23,9 +23,9 @@
               ['4411', '14911'],
               ['5819', '16319'],
               ['24113', '35194'],
-            ]" @startFollow="startFollow" />
+            ]" @startFollow="startFollow" :highlightNodeId="highlightId1" />
           <FView class="block" :style="{ width: '50%' }" assignId="RFView" type="follow" :FGData="FGDataR"
-            :followNodes="followNodes" />
+            :followNodes="followNodes" :highlightNodeId="highlightId2" />
         </a-flex>
       </a-flex>
     </a-flex>
@@ -57,6 +57,8 @@ export default {
       followNodes: null,
       FGID1: null,
       FGID2: null,
+      highlightId1: null,
+      highlightId2: null,
     }
   },
   methods: {
@@ -70,6 +72,7 @@ export default {
 
     async handleRowClick(rowData) {  // 监听行被点击事件 
       // 监听子组件的行点击事件，并接收传递过来的行数据
+      this.highlightId1 = this.highlightId2 = null
       this.simData = await getSimData(rowData.ID1); // 将点击行的数据存储到 selectedRowData 中
     },
 
@@ -82,12 +85,18 @@ export default {
     },
 
     async handleListClick(listData) {
-      console.log(listData)
+      // console.log(listData)
       const id1 = listData.record.IDPair.ID1
       const id2 = listData.record.IDPair.ID2
       if (id1 != this.FGID1 || id2 != this.FGID2) {
-        this.refreshFG(id1, id2)
+        await this.refreshFG(id1, id2)
       }
+      setTimeout(() => {
+        this.highlightId1 = listData.record.left.ID1
+        this.highlightId2 = listData.record.right.ID2
+      }, 100); // 1000毫秒等于1秒
+
+      // console.log(this.highlightId1 + " " + this.highlightId2)
     },
 
     async handleFGIDClick(FGIDData) {

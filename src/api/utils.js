@@ -21,7 +21,7 @@ export async function getSimData(id) {
         const response = await fetch(url + '/get_sim_data/?ID1=' + id);
         // const response = await fetch('./data/sim.json');
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         return data;
     } catch (error) {
         console.error('Error fetching data:', error);
