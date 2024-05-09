@@ -1,7 +1,7 @@
 <!-- 列表显示器 -->
 <template>
     <a-table v-if="getData" :columns="columns" :data-source="getData" size="small" :showHeader="false"
-        :pagination="false" :custom-row="handleCustomRow">
+        :pagination="paginationConfig" :custom-row="handleCustomRow">
         <template #bodyCell="{ column, record }">
             <template v-if="column.key === 'Sim' && isNode">
                 <span class="circle"> </span>
@@ -32,6 +32,7 @@ export default {
         data: null,
         assignId: String,
         chosenId: String,
+        isModal: Boolean,
     },
     components: {
         SwapRightOutlined,
@@ -80,7 +81,10 @@ export default {
                 res[0].sort((a, b) => b.Sim - a.Sim);
                 res[1].sort((a, b) => b.Sim - a.Sim);
             }
-            for (var i = 0; i < 5 && i < res[0].length; ++i) {
+            for (var i = 0; i < res[0].length; ++i) {
+                if (!this.isModal && i == 5) {
+                    break;
+                }
                 data.push({
                     IDPair: {
                         ID1: this.data.ID1,
@@ -97,6 +101,13 @@ export default {
             // console.log (data)
             return data;
         },
+        paginationConfig() {
+            if (this.isModal) {
+                return { pageSize: 5 }; // 如果 isModal 为 true，则每页显示 5 个条目
+            } else {
+                return false; // 如果 isModal 为 false，则不显示分页器
+            }
+        }
     },
 
     methods: {

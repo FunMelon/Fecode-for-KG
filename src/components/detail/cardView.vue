@@ -26,43 +26,54 @@
     </a-flex>
     <!-- 属性 -->
     <a-flex class="block">
-      <simView @click="() => showModal()" class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" />
-      <WCView @click="() => showModal()" class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
-      <WCView @click="() => showModal()" class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
+      <simView class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" />
+      <WCView @click="showWC()" class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
+      <WCView @click="showWC()" class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
     </a-flex>
     <!-- 实体列表 -->
     <div class="block">
       <div class="sort-wrap block">
+        <a-button @click="showEN()">显示更多</a-button>
         <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
       </div>
       <a-flex>
         <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
-        <listView class="block c3" :assignId="assignId + 'Ent'" :data="ENDatas" :isNode="true"
-          :chosenId="this.chosenId"
+        <listView class="block c3" :assignId="assignId + 'Ent'" :data="ENDatas" :isNode="true" :chosenId="this.chosenId"
           :isAscend="this.entityAscend" @click="handleClick" />
-        <!-- <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/> -->
       </a-flex>
     </div>
 
     <!-- 边列表 -->
     <div class="block">
       <div class="sort-wrap block">
+        <a-button @click="showRL()">显示更多</a-button>
         <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend" />
       </div>
       <a-flex>
         <simView class="block c0" :sim="RLDatas.Sim" :row="3" :maxSim="this.MaxSims[3]" />
         <listView class="block c3" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false"
-        :chosenId="this.chosenId"
-          :isAscend="this.edgeAscend" @click="handleClick" />
-        <!-- <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/> -->
+          :chosenId="this.chosenId" :isAscend="this.edgeAscend" @click="handleClick" />
       </a-flex>
     </div>
     <!-- 弹窗 -->
-    <a-modal v-model:open="open" width="600px" title="词云" @ok="handleOk" @cancel="handleOk">
+    <a-modal v-model:open="WCOpen" width="600px" title="词云" @ok="handleOk" @cancel="handleOk">
       <a-flex class="block modal-wrap">
         <WCView class="block c1" :isModal="true" :assignId="assignId + 'Left'" :data="WCData" />
         <WCView class="block c1" :isModal="true" :assignId="assignId + 'Right'" :data="WCData" />
       </a-flex>
+    </a-modal>
+
+    <a-modal v-model:open="ENOpen" width="600px" title="实体" @ok="handleOk" @cancel="handleOk">
+      <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
+      <a-flex class="block modal-wrap">
+        <listView class="block c3" :isModal="true" :assignId="assignId + 'EntPop'" :data="ENDatas" :isNode="true"
+          :chosenId="this.chosenId" :isAscend="this.entityAscend" @click="handleClick" />
+      </a-flex>
+    </a-modal>
+
+    <a-modal v-model:open="RLOpen" width="600px" title="属性" @ok="handleOk" @cancel="handleOk">
+      <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false" :chosenId="this.chosenId"
+        :isAscend="this.edgeAscend" @click="handleClick" />
     </a-modal>
   </a-flex>
 </template>
@@ -82,7 +93,7 @@ export default {
     nameDatas: null,  // 名称信息
     simMix: null, // 融合相似性
     MaxSims: null,  // 最大的相似性
-    chosenId: String,
+    chosenId: String,  // 当前显示的列表页面的id
   },
   components: {
     WCView,
@@ -92,8 +103,9 @@ export default {
   },
   data() {
     return {
-      open: false,
-      showType: String,
+      WCOpen: false,
+      ENOpen: false,
+      RLOpen: false,
       entityAscend: true,
       edgeAscend: true,
     };
@@ -102,13 +114,18 @@ export default {
     // console.log(this.RLDatas)
   },
   methods: {
-    showModal() {
-      this.open = true;
+    showWC() {
+      this.WCOpen = true;
       //this.modalAssignId = assign;
     },
-
+    showEN() {
+      this.ENOpen = true;
+    },
+    showRL() {
+      this.RLOpen = true;
+    },
     handleOk() {
-      this.open = false;
+      this.WCOpen = this.ENOpen = this.RLOpen = false;
     },
 
     changeEntityAscend() {  // 更改实体列表的方向
