@@ -76,8 +76,7 @@ export default {
   methods: {
 
     async handleStartClick(round) {
-      console.log(round);
-      this.tlbData = await getTlbData(0)
+      this.tlbData = await getTlbData(round)
     },
 
     async handleRowClick(rowData) {  // 监听行被点击事件 

@@ -70,14 +70,24 @@ export default {
     computed: {
         getData() {
             var data = []
-            for (var i = 0; i < 5 && i < this.data.Res[0].length; ++i) {
+            var res = this.data.Res
+            if (this.isAscend) {
+                // 升序排序
+                res[0].sort((a, b) => a.Sim - b.Sim);
+                res[1].sort((a, b) => a.Sim - b.Sim);
+            } else {
+                // 降序排序
+                res[0].sort((a, b) => b.Sim - a.Sim);
+                res[1].sort((a, b) => b.Sim - a.Sim);
+            }
+            for (var i = 0; i < 5 && i < res[0].length; ++i) {
                 data.push({
                     IDPair: {
                         ID1: this.data.ID1,
                         ID2: this.data.ID2,
                     },
-                    left: this.data.Res[0][i],
-                    right: this.data.Res[1][i]
+                    left: res[0][i],
+                    right: res[1][i]
                 })
             }
 

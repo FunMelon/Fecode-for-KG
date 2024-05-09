@@ -60,7 +60,6 @@
     <!-- 弹窗 -->
     <a-modal v-model:open="open" width="600px" title="词云" @ok="handleOk" @cancel="handleOk">
       <a-flex class="block modal-wrap">
-        <simViewMedia class="block c0" :sim="sim[2]" :row="1" :maxSim="maxSim[1]" />
         <WCView class="block c1" :isModal="true" :assignId="assignId + 'Left'" :data="WCData" />
         <WCView class="block c1" :isModal="true" :assignId="assignId + 'Right'" :data="WCData" />
       </a-flex>
@@ -72,7 +71,6 @@
 import WCView from "./WCView.vue";
 import listView from "./listView.vue";
 import simView from "./simView.vue";
-import simViewMedia from "./simViewMedia.vue";
 import { SwapOutlined } from "@ant-design/icons-vue";
 export default {
   name: "cardView",
@@ -90,12 +88,12 @@ export default {
     WCView,
     listView,
     simView,
-    simViewMedia,
     SwapOutlined,
   },
   data() {
     return {
       open: false,
+      showType: String,
       entityAscend: true,
       edgeAscend: true,
     };
