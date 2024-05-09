@@ -74,18 +74,16 @@ export default {
     menuView,
   },
   methods: {
-    
+
     async handleRowClick(rowData) {  // 监听行被点击事件 
       // 监听子组件的行点击事件，并接收传递过来的行数据
       this.simData = await getSimData(rowData.ID1); // 将点击行的数据存储到 selectedRowData 中
     },
-    handleHover(rowData) {  // 监听行被点击事件 
-      // console.log(rowData);
-      this.FGData = rowData;
-    },
 
     async handleListClick(listData) {
-      console.log(listData)
+      if (listData == 1) {
+        console.log(listData)
+      }
     }
   }
 };

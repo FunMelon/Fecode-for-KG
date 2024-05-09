@@ -37,8 +37,8 @@
       </div>
       <a-flex>
         <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
-        <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/>
-        <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/>
+        <listView class="block c3" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/>
+        <!-- <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/> -->
       </a-flex>
     </div>
 
@@ -49,8 +49,8 @@
       </div>
       <a-flex>
         <simView class="block c0" :sim="RLDatas.Sim" :row="3" :maxSim="this.MaxSims[3]" />
-        <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/>
-        <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/>
+        <listView class="block c3" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/>
+        <!-- <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/> -->
       </a-flex>
     </div>
     <!-- 弹窗 -->
@@ -90,8 +90,6 @@ export default {
   },
   data() {
     return {
-      // TODO: 死数据：最大相似性
-      maxSim: [0.88, 0.76, 0.8, 1.0],
       open: false,
       entityAscend: true,
       edgeAscend: true,
@@ -160,6 +158,10 @@ label {
 
 .c2 {
   flex: 4;
+}
+
+.c3 {
+  flex: 8
 }
 
 .sort-wrap {

@@ -11,13 +11,11 @@
                     <SwapRightOutlined />
                 </span>
             </template>
-            <template v-else-if="column.key === 'KG'">
-                <span v-if="this.assignId[1] == 'L'">
-                    {{ record.KG1 }}
-                </span>
-                <span v-else>
-                    {{ record.KG2 }}
-                </span>
+            <template v-if="column.key === 'KG1'">
+                {{ record.left.KG1 }}
+            </template>
+            <template v-if="column.key === 'KG2'">
+                {{ record.right.KG2 }}
             </template>
         </template>
     </a-table>
@@ -46,12 +44,20 @@ export default {
                     dataIndex: "Sim",
                     key: "Sim",
                     align: "left",
-                    width: "20%",
+                    width: "10%",
                 },
                 {
-                    title: "KG",
-                    dataIndex: "kg",
-                    key: "KG",
+                    title: "KG1",
+                    dataIndex: "kg1",
+                    key: "KG1",
+                    ellipsis: true,
+                    align: "left",
+                    width: "40%"
+                },
+                {
+                    title: "KG2",
+                    dataIndex: "kg2",
+                    key: "KG2",
                     ellipsis: true,
                     align: "left",
                 },
@@ -62,40 +68,14 @@ export default {
 
     computed: {
         getData() {
-            // 首先尝试使用 toRaw 获取原始数据
-            // let rawData = toRaw(this.data);
-
-            // // console.log(JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0])));
-            // // 检查 rawData 是否存在并且是预期的数组结构
-            // var jsonData = null;
-            // if (rawData && Array.isArray(rawData[0]) && rawData[0].length > 0) {
-            //     // 如果需要深拷贝转换为普通对象，可以使用 JSON.parse(JSON.stringify(data))
-            //     if (this.assignId[1] == "L") {
-            //         jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][0]));
-            //     } else {
-            //         jsonData = JSON.parse(JSON.stringify(rawData[this.assignId[0] - 1][1]));
-            //     }
-
-            //     jsonData.sort((a, b) => {
-            //         if (this.isAscend) {
-            //             return a.KG1.localeCompare(b.KG1);
-            //         } else {
-            //             return b.KG1.localeCompare(a.KG1);
-            //         }
-            //     });
-            // }
-            // // 返回 null 或其他适当的默认值以处理错误的数据结构
-            // return jsonData;
-            var data = null;
-            if (this.data) {
-                if (this.assignId[1] == "L") {
-                    data = this.data.Res[0];
-                } else {
-                    data = this.data.Res[1];
-                }
+            var data = []
+            for(var i = 0; i < 5 && i < this.data.Res[0].length; ++i) {
+                data.push({
+                    left: this.data.Res[0][i],
+                    right: this.data.Res[1][i]
+                })
             }
-            // console.log(data);
-            data = data.slice(0, 5)
+            // console.log (data)
             return data;
         },
     },
@@ -106,12 +86,10 @@ export default {
                 onClick: () => {
                     // console.log(record); // 打印行数据到控制台
                     this.$emit('click', record);
-                    this.selectedRow = record.KG1; // 更新选中的行索引
-                    // console.log(this.selectedRow);
-                    // console.log(index);
+                    this.selectedRow = record.left.KG1 // 更新选中的行索引
                 },
                 style: {
-                    color: record.KG1 === this.selectedRow ? 'red' : '', // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
+                    color: record.left.KG1 === this.selectedRow ? 'red' : '', // 如果当前行的索引等于选中的行索引，则设置字体颜色为红色
                 }
             };
         }
