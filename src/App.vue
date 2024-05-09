@@ -60,8 +60,8 @@ export default {
       // 读取词云数据
       simData.value = null;
       // 读取力导向图数据
-      FGDataL.value = await getFGData("ForceGraph1.json");
-      FGDataR.value = await getFGData("ForceGraph2.json");
+      FGDataL.value = null;
+      FGDataR.value = null;
     });
 
     return { tlbData, simData, FGDataL, FGDataR, startFollow, followNodes };
@@ -81,9 +81,11 @@ export default {
     },
 
     async handleListClick(listData) {
-      if (listData != 1) {
-        console.log(listData)
-      }
+      console.log(listData)
+      const data = await getFGData(listData.record.IDPair.ID1, listData.record.IDPair.ID2)
+      // console.log(data)
+      this.FGDataL = data[0]
+      this.FGDataR = data[1]
     }
   }
 };
