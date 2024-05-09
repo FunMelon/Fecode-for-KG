@@ -35,14 +35,30 @@
             <label :style="{ flex: 1 }" align="center">
                         当前进度
                     </label>
-            <a-progress :percent="30" :style="{ flex: 4 }"/>
+            <a-progress :percent="this.round" :style="{ flex: 4 }"/>
         </a-flex>
         <a-flex class="block" :style="{ flex: 1}" justify="space-around" align='center'>
-            <a-button type="primary">开始</a-button>
+            <a-button type="primary" @click="handleStartBtnClicked">开始</a-button>
             <a-button>停止</a-button>
         </a-flex>
     </a-flex>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            round: 0
+        }
+    },
+    methods: {
+        handleStartBtnClicked() {
+            this.$emit('start-click', this.round);
+            this.round += 10;
+        }
+    }
+}
+</script>
 
 <style scoped>
 .block {

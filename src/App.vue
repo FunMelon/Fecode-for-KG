@@ -4,7 +4,7 @@
     <!-- 上侧 -->
     <a-flex class="block" :style="{ flex: 1 }">
       <selectView class="block" :style="{ flex: 1 }" />
-      <menuView class="block" :style="{ flex: 5 }" />
+      <menuView class="block" :style="{ flex: 5 }" @start-click="handleStartClick"/>
     </a-flex>
     <!-- 下侧 -->
     <a-flex class="block" :style="{ flex: 13 }">
@@ -56,7 +56,7 @@ export default {
 
     onMounted(async () => {
       // 读取表格数据
-      tlbData.value = await getTlbData(0);
+      tlbData.value = null;
       // 读取词云数据
       simData.value = null;
       // 读取力导向图数据
@@ -74,6 +74,11 @@ export default {
     menuView,
   },
   methods: {
+
+    async handleStartClick(round) {
+      console.log(round);
+      this.tlbData = await getTlbData(0)
+    },
 
     async handleRowClick(rowData) {  // 监听行被点击事件 
       // 监听子组件的行点击事件，并接收传递过来的行数据

@@ -6,8 +6,8 @@ export async function getTlbData(round) {
         if (round == 114514) {
             console.log(round);
         }
-        const response = await fetch(url + '/get_table_data/?round=' + round);
-        // const response = await fetch('./data/tlb.json');
+        // const response = await fetch(url + '/get_table_data/?round=' + round);
+        const response = await fetch('./data/tlb.json');
         // console.log(round);
         const data = await response.json();
         return data;
