@@ -12,14 +12,14 @@
     </a-flex>
     <!-- 名称 -->
     <a-flex class="block">
-      <simView class="block c0" :sim="this.nameDatas.Sim" :row="0" :maxSim="this.MaxSims[0]" />
+      <simView class="block c0" :sim="this.nameDatas.Sim" :row="0" :maxSim="this.MaxSims[0]"  @click="handleFGIDClick"/>
       <a-flex class="block c1" justify="space-around" align="center">
-        <label>
+        <label @click="handleFGIDClick">
           {{ this.nameDatas.Res[0] }}
         </label>
       </a-flex>
       <a-flex class="block c2" justify="space-around" align="center">
-        <label>
+        <label @click="handleFGIDClick">
           {{ this.nameDatas.Res[1] }}
         </label>
       </a-flex>
@@ -39,7 +39,7 @@
       <a-flex>
         <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
         <listView class="block c3" :assignId="assignId + 'Ent'" :data="ENDatas" :isNode="true" :chosenId="this.chosenId"
-          :isAscend="this.entityAscend" @click="handleClick" />
+          :isAscend="this.entityAscend" @listClick="handleListClick" />
       </a-flex>
     </div>
 
@@ -52,7 +52,7 @@
       <a-flex>
         <simView class="block c0" :sim="RLDatas.Sim" :row="3" :maxSim="this.MaxSims[3]" />
         <listView class="block c3" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false"
-          :chosenId="this.chosenId" :isAscend="this.edgeAscend" @click="handleClick" />
+          :chosenId="this.chosenId" :isAscend="this.edgeAscend" @listClick="handleListClick" />
       </a-flex>
     </div>
     <!-- 弹窗 -->
@@ -66,13 +66,13 @@
     <a-modal v-model:open="ENOpen" title="实体" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
         <listView class="block c3" :isModal="true" :assignId="assignId + 'EntPop'" :data="ENDatas" :isNode="true"
-          :chosenId="this.chosenId" :isAscend="this.entityAscend" @click="handleClick" />
+          :chosenId="this.chosenId" :isAscend="this.entityAscend" @listClick="handleListClick" />
     </a-modal>
 
     <a-modal v-model:open="RLOpen" title="属性" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
       <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false" :chosenId="this.chosenId"
-        :isAscend="this.edgeAscend" @click="handleClick" />
+        :isAscend="this.edgeAscend" @listClick="handleListClick" />
     </a-modal>
   </a-flex>
 </template>
@@ -109,9 +109,6 @@ export default {
       edgeAscend: true,
     };
   },
-  mounted() {
-    // console.log(this.RLDatas)
-  },
   methods: {
     showWC() {
       this.WCOpen = true;
@@ -135,8 +132,13 @@ export default {
       this.edgeAscend = !this.edgeAscend;
     },
 
-    handleClick(rowData) {  // 监听行被点击事件 
-      this.$emit('click', rowData); // 将点击行的数据存储到 selectedRowData 中
+    handleListClick(rowData) {  // 监听行被点击事件 
+      this.$emit('ListClick', rowData); // 将点击行的数据存储到 selectedRowData 中
+    },
+
+    handleFGIDClick() {
+      this.$emit('FGIDClick', this.nameDatas)
+      // console.log(this.nameDatas)
     }
   }
 };

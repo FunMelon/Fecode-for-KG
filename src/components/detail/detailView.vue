@@ -5,23 +5,23 @@
         <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="1" :WCData="simData.attr[0]"
             :ENDatas="simData.stru[0]" :RLDatas="simData.rel[0]" :nameDatas="simData.name[0]"
             :chosenId="this.chosenId"
-            :simMix="simData.sim_mix[0].Sim" :MaxSims="getMaxSims" @click="handleClick" />
+            :simMix="simData.sim_mix[0].Sim" :MaxSims="getMaxSims" @ListClick="handleListClick" @FGIDClick="handleFGClick"/>
         <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="2" :WCData="simData.attr[1]"
             :ENDatas="simData.stru[1]" :RLDatas="simData.rel[1]" :nameDatas="simData.name[1]"
             :chosenId="this.chosenId"
-            :simMix="simData.sim_mix[1].Sim" :MaxSims="getMaxSims" @click="handleClick" />
+            :simMix="simData.sim_mix[1].Sim" :MaxSims="getMaxSims" @ListClick="handleListClick" @FGIDClick="handleFGClick"/>
         <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="3" :WCData="simData.attr[2]"
             :ENDatas="simData.stru[2]" :RLDatas="simData.rel[2]" :nameDatas="simData.name[2]"
             :chosenId="this.chosenId"
-            :simMix="simData.sim_mix[2].Sim" :MaxSims="getMaxSims" @click="handleClick" />
+            :simMix="simData.sim_mix[2].Sim" :MaxSims="getMaxSims" @ListClick="handleListClick" @FGIDClick="handleFGClick"/>
         <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="4" :WCData="simData.attr[3]"
             :ENDatas="simData.stru[3]" :RLDatas="simData.rel[3]" :nameDatas="simData.name[3]"
             :chosenId="this.chosenId"
-            :simMix="simData.sim_mix[3].Sim" :MaxSims="getMaxSims" @click="handleClick" />
+            :simMix="simData.sim_mix[3].Sim" :MaxSims="getMaxSims" @ListClick="handleListClick" @FGIDClick="handleFGClick"/>
         <cardView v-if="simData && simData.name" :style="{ flex: 1 }" assignId="5" :WCData="simData.attr[4]"
             :ENDatas="simData.stru[4]" :RLDatas="simData.rel[4]" :nameDatas="simData.name[4]"
             :chosenId="this.chosenId"
-            :simMix="simData.sim_mix[4].Sim" :MaxSims="getMaxSims" @click="handleClick" />
+            :simMix="simData.sim_mix[4].Sim" :MaxSims="getMaxSims" @ListClick="handleListClick" @FGIDClick="handleFGClick"/>
     </a-flex>
 </template>
 
@@ -48,10 +48,13 @@ export default {
     //     console.log(this.testData)
     // },
     methods: {
-        handleClick(rowData) {  // 监听行被点击事件 
+        handleListClick(rowData) {  // 监听行被点击事件 
             this.chosenId = rowData.selectList;
             // console.log(rowData.selectList)
-            this.$emit('click', rowData); // 将点击行的数据存储到 selectedRowData 中
+            this.$emit('ListClick', rowData); // 将点击行的数据存储到 selectedRowData 中
+        },
+        handleFGClick(data) {
+            this.$emit('FGIDClick', data)
         }
     },
     computed: {

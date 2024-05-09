@@ -4,7 +4,7 @@
     <!-- 上侧 -->
     <a-flex class="block" :style="{ flex: 1 }">
       <selectView class="block" :style="{ flex: 1 }" />
-      <menuView class="block" :style="{ flex: 5 }" @start-click="handleStartClick"/>
+      <menuView class="block" :style="{ flex: 5 }" @start-click="handleStartClick" />
     </a-flex>
     <!-- 下侧 -->
     <a-flex class="block" :style="{ flex: 13 }">
@@ -12,7 +12,7 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :simData="simData" @click="handleListClick" />
+        <detailView :simData="simData" @ListClick="handleListClick" @FGIDClick="handleFGIDClick" />
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
           <FView class="block" :style="{ width: '50%' }" assignId="LFView" :FGData="FGDataL" type="base"
@@ -39,33 +39,8 @@ import FView from "./components/down/FView.vue";
 import KGTable from "./components/side/KGTable.vue";
 import selectView from "./components/top/selectView.vue";
 import menuView from "./components/top/menuView.vue";
-import { ref, onMounted } from "vue";
 
 export default {
-  setup() {
-    // 读取Json数据
-    const followNodes = ref({});
-    const tlbData = ref([]);
-    const simData = ref([]);
-    const FGDataL = ref({});
-    const FGDataR = ref({});
-
-    function startFollow(data) {
-      followNodes.value = data;
-    }
-
-    onMounted(async () => {
-      // 读取表格数据
-      tlbData.value = null;
-      // 读取词云数据
-      simData.value = null;
-      // 读取力导向图数据
-      FGDataL.value = null;
-      FGDataR.value = null;
-    });
-
-    return { tlbData, simData, FGDataL, FGDataR, startFollow, followNodes };
-  },
   components: {
     detailView,
     FView,
@@ -73,7 +48,21 @@ export default {
     selectView,
     menuView,
   },
+  data() {
+    return {
+      tlbData: null,
+      simData: null,
+      FGDataL: null,
+      FGDataR: null,
+      followNodes: null,
+      FGID1: null,
+      FGID2: null,
+    }
+  },
   methods: {
+    startFollow(data) {
+      this.followNodes = data;
+    },
 
     async handleStartClick(round) {
       this.tlbData = await getTlbData(round)
@@ -84,13 +73,27 @@ export default {
       this.simData = await getSimData(rowData.ID1); // 将点击行的数据存储到 selectedRowData 中
     },
 
-    async handleListClick(listData) {
-      console.log(listData)
-      const data = await getFGData(listData.record.IDPair.ID1, listData.record.IDPair.ID2)
-      // console.log(data)
+    async refreshFG(id1, id2) {
+      this.FGID1 = id1
+      this.FGID2 = id2
+      const data = await getFGData(id1, id2)
       this.FGDataL = data[0]
       this.FGDataR = data[1]
-    }
+    },
+
+    async handleListClick(listData) {
+      // console.log(listData)
+      const id1 = listData.record.IDPair.ID1
+      const id2 = listData.record.IDPair.ID2
+      if (id1 != this.FGID1 || id2 != this.FGID2) {
+        this.refreshFG(id1, id2)
+      }
+    },
+
+    async handleFGIDClick(FGIDData) {
+      console.log("换新图")
+      this.refreshFG(FGIDData.ID1, FGIDData.ID2)
+    },
   }
 };
 </script>

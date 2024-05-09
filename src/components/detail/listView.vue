@@ -140,7 +140,7 @@ export default {
             return {
                 onClick: () => {
                     // console.log(record); // 打印行数据到控制台
-                    this.$emit('click', {
+                    this.$emit('listClick', {
                         selectList: this.assignId,
                         record: record
                     });
