@@ -37,8 +37,8 @@
       </div>
       <a-flex>
         <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
-        <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @hover="handleHover"/>
-        <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @hover="handleHover"/>
+        <listView class="block c1" :assignId="assignId + 'Left'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/>
+        <listView class="block c2" :assignId="assignId + 'Right'" :data="ENDatas" :isNode="true" :isAscend="this.entityAscend" @click="handleClick"/>
       </a-flex>
     </div>
 
@@ -49,8 +49,8 @@
       </div>
       <a-flex>
         <simView class="block c0" :sim="RLDatas.Sim" :row="3" :maxSim="this.MaxSims[3]" />
-        <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @hover="handleHover"/>
-        <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @hover="handleHover"/>
+        <listView class="block c1" :assignId="assignId + 'Left'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/>
+        <listView class="block c2" :assignId="assignId + 'Right'" :data="RLDatas" :isNode="false" :isAscend="this.edgeAscend" @click="handleClick"/>
       </a-flex>
     </div>
     <!-- 弹窗 -->
@@ -118,8 +118,8 @@ export default {
       this.edgeAscend = !this.edgeAscend;
     },
 
-    handleHover(rowData) {  // 监听行被点击事件 
-      this.$emit('hover', rowData); // 将点击行的数据存储到 selectedRowData 中
+    handleClick(rowData) {  // 监听行被点击事件 
+      this.$emit('click', rowData); // 将点击行的数据存储到 selectedRowData 中
     }
   }
 };

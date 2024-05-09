@@ -4,699 +4,799 @@
         "ID1": 8471,
         "KG2": "Fuzhou dialect",
         "ID2": 14701,
-        "Sim": 0.7645149016214343
+        "Sim": 0.7645149016214343,
+        "Status": "unmarked"
     },
     {
         "KG1": "曼努埃尔·佩莱格里尼",
         "ID1": 8971,
         "KG2": "Manuel Pellegrini",
         "ID2": 19471,
-        "Sim": 0.8838361599748998
+        "Sim": 0.8838361599748998,
+        "Status": "unmarked"
     },
     {
         "KG1": "勒沃库森足球俱乐部",
         "ID1": 5542,
         "KG2": "Bayer 04 Leverkusen",
         "ID2": 16042,
-        "Sim": 0.8572483945278722
+        "Sim": 0.8572483945278722,
+        "Status": "unmarked"
     },
     {
         "KG1": "黑鎮市",
         "ID1": 5082,
         "KG2": "City of Blacktown",
         "ID2": 15582,
-        "Sim": 0.8394573781643517
+        "Sim": 0.8394573781643517,
+        "Status": "unmarked"
     },
     {
         "KG1": "IPod touch",
         "ID1": 4650,
         "KG2": "IPod Touch",
         "ID2": 15150,
-        "Sim": 0.9719707362434333
+        "Sim": 0.9719707362434333,
+        "Status": "unmarked"
     },
     {
         "KG1": "周一嶽",
         "ID1": 1262,
         "KG2": "Sun Fo",
         "ID2": 20532,
-        "Sim": 0.7545404765331488
+        "Sim": 0.7545404765331488,
+        "Status": "unmarked"
     },
     {
         "KG1": "密尔沃基",
         "ID1": 29151,
         "KG2": "Milwaukee",
         "ID2": 31031,
-        "Sim": 0.8814083139274962
+        "Sim": 0.8814083139274962,
+        "Status": "unmarked"
     },
     {
         "KG1": "教宗哈德良三世",
         "ID1": 2015,
         "KG2": "Pope Adrian III",
         "ID2": 12515,
-        "Sim": 0.8328201716075557
+        "Sim": 0.8328201716075557,
+        "Status": "unmarked"
     },
     {
         "KG1": "教宗思伟",
         "ID1": 6332,
         "KG2": "Pope Severinus",
         "ID2": 16832,
-        "Sim": 0.8421934659905654
+        "Sim": 0.8421934659905654,
+        "Status": "unmarked"
     },
     {
         "KG1": "萨克森-科堡-哥达",
         "ID1": 2050,
         "KG2": "Saxe-Coburg and Gotha",
         "ID2": 12550,
-        "Sim": 0.8742639137784001
+        "Sim": 0.8742639137784001,
+        "Status": "unmarked"
     },
     {
         "KG1": "印度东北部",
         "ID1": 29688,
         "KG2": "Northeast India",
         "ID2": 35683,
-        "Sim": 0.9056279607434448
+        "Sim": 0.9056279607434448,
+        "Status": "unmarked"
     },
     {
         "KG1": "印度國家足球隊",
         "ID1": 6243,
         "KG2": "India national football team",
         "ID2": 16743,
-        "Sim": 0.8531941445066529
+        "Sim": 0.8531941445066529,
+        "Status": "unmarked"
     },
     {
         "KG1": "多愁善感的瞬間",
         "ID1": 22772,
         "KG2": "Shunkan Sentimental",
         "ID2": 30901,
-        "Sim": 0.7339208339446112
+        "Sim": 0.7339208339446112,
+        "Status": "unmarked"
     },
     {
         "KG1": "密尔沃基雄鹿",
         "ID1": 5081,
         "KG2": "Milwaukee Bucks",
         "ID2": 15581,
-        "Sim": 0.8644038826097682
+        "Sim": 0.8644038826097682,
+        "Status": "unmarked"
     },
     {
         "KG1": "何塞·保罗·贝塞拉·马希尔·儒尼奥尔",
         "ID1": 9426,
         "KG2": "Paulinho (footballer)",
         "ID2": 19926,
-        "Sim": 0.8062056572600393
+        "Sim": 0.8062056572600393,
+        "Status": "unmarked"
     },
     {
         "KG1": "大長今 (電視劇)",
         "ID1": 23747,
         "KG2": "Orange Marmalade (TV series)",
         "ID2": 30122,
-        "Sim": 0.8139611974967224
+        "Sim": 0.8139611974967224,
+        "Status": "unmarked"
     },
     {
         "KG1": "伊達市 (福島縣)",
         "ID1": 3823,
         "KG2": "Okegawa, Saitama",
         "ID2": 13956,
-        "Sim": 0.8240127193259615
+        "Sim": 0.8240127193259615,
+        "Status": "unmarked"
     },
     {
         "KG1": "孟漢娜",
         "ID1": 25105,
         "KG2": "Hannah Montana",
         "ID2": 30630,
-        "Sim": 0.8775479613051911
+        "Sim": 0.8775479613051911,
+        "Status": "unmarked"
     },
     {
         "KG1": "周恩来",
         "ID1": 5522,
         "KG2": "Zhou Enlai",
         "ID2": 16022,
-        "Sim": 0.8622651792897201
+        "Sim": 0.8622651792897201,
+        "Status": "unmarked"
     },
     {
         "KG1": "富明尼斯足球會",
         "ID1": 2660,
         "KG2": "Fluminense FC",
         "ID2": 13160,
-        "Sim": 0.8876217220146672
+        "Sim": 0.8876217220146672,
+        "Status": "unmarked"
     },
     {
         "KG1": "南宁市",
         "ID1": 6772,
         "KG2": "Nanning",
         "ID2": 17272,
-        "Sim": 0.8416677630031777
+        "Sim": 0.8416677630031777,
+        "Status": "unmarked"
     },
     {
         "KG1": "維多利亞州",
         "ID1": 25735,
         "KG2": "Australia",
         "ID2": 11512,
-        "Sim": 0.7643587813026784
+        "Sim": 0.7643587813026784,
+        "Status": "unmarked"
     },
     {
         "KG1": "工黨 (香港)",
         "ID1": 1793,
         "KG2": "Labour Party (Hong Kong)",
         "ID2": 12293,
-        "Sim": 0.8527182560828771
+        "Sim": 0.8527182560828771,
+        "Status": "unmarked"
     },
     {
         "KG1": "阿根廷國家足球隊",
         "ID1": 24875,
         "KG2": "Argentina national football team",
         "ID2": 38140,
-        "Sim": 0.9170852906292216
+        "Sim": 0.9170852906292216,
+        "Status": "unmarked"
     },
     {
         "KG1": "蒙古族",
         "ID1": 23976,
         "KG2": "Samoans",
         "ID2": 19393,
-        "Sim": 0.7649642271185206
+        "Sim": 0.7649642271185206,
+        "Status": "unmarked"
     },
     {
         "KG1": "唐纳德三世 (苏格兰)",
         "ID1": 26767,
         "KG2": "Donald III of Scotland",
         "ID2": 30783,
-        "Sim": 0.8943798744475564
+        "Sim": 0.8943798744475564,
+        "Status": "unmarked"
     },
     {
         "KG1": "乔·史密斯",
         "ID1": 2811,
         "KG2": "Joe Smith (basketball)",
         "ID2": 13311,
-        "Sim": 0.826206103935708
+        "Sim": 0.826206103935708,
+        "Status": "unmarked"
     },
     {
         "KG1": "爱尔兰共和国",
         "ID1": 29292,
         "KG2": "Republic of Ireland",
         "ID2": 34917,
-        "Sim": 0.8729908318416143
+        "Sim": 0.8729908318416143,
+        "Status": "unmarked"
     },
     {
         "KG1": "布莱克·格里芬",
         "ID1": 24126,
         "KG2": "Blackburn Rovers F.C.",
         "ID2": 32639,
-        "Sim": 0.7111800255954647
+        "Sim": 0.7111800255954647,
+        "Status": "unmarked"
     },
     {
         "KG1": "本扬·沃拉吉",
         "ID1": 29210,
         "KG2": "Bounnhang Vorachith",
         "ID2": 33399,
-        "Sim": 0.8033791712135732
+        "Sim": 0.8033791712135732,
+        "Status": "unmarked"
     },
     {
         "KG1": "宜昌市",
         "ID1": 4887,
         "KG2": "Jiangsu",
         "ID2": 14601,
-        "Sim": 0.8295331496944256
+        "Sim": 0.8295331496944256,
+        "Status": "unmarked"
     },
     {
         "KG1": "林佳龍",
         "ID1": 10325,
         "KG2": "Lin Chia-lung",
         "ID2": 20825,
-        "Sim": 0.8183007895854792
+        "Sim": 0.8183007895854792,
+        "Status": "unmarked"
     },
     {
         "KG1": "西部聯盟 (NBA)",
         "ID1": 7190,
         "KG2": "Western Conference (NBA)",
         "ID2": 17690,
-        "Sim": 0.8824541768515256
+        "Sim": 0.8824541768515256,
+        "Status": "unmarked"
     },
     {
         "KG1": "鲁迅",
         "ID1": 845,
         "KG2": "Xu Shousheng",
         "ID2": 20119,
-        "Sim": 0.7242195609446557
+        "Sim": 0.7242195609446557,
+        "Status": "unmarked"
     },
     {
         "KG1": "仁孝天皇",
         "ID1": 29458,
         "KG2": "Daoguang Emperor",
         "ID2": 18594,
-        "Sim": 0.7887631632213381
+        "Sim": 0.7887631632213381,
+        "Status": "unmarked"
     },
     {
         "KG1": "費利佩六世",
         "ID1": 5655,
         "KG2": "Felipe VI of Spain",
         "ID2": 16155,
-        "Sim": 0.8318815719342032
+        "Sim": 0.8318815719342032,
+        "Status": "unmarked"
     },
     {
         "KG1": "Superfly",
         "ID1": 9072,
         "KG2": "Superfly (band)",
         "ID2": 19572,
-        "Sim": 0.8265212168606968
+        "Sim": 0.8265212168606968,
+        "Status": "unmarked"
     },
     {
         "KG1": "芬蘭議會",
         "ID1": 7428,
         "KG2": "Parliament of Finland",
         "ID2": 17928,
-        "Sim": 0.9486887680314201
+        "Sim": 0.9486887680314201,
+        "Status": "unmarked"
     },
     {
         "KG1": "喬治亞州",
         "ID1": 22695,
         "KG2": "Georgia (U.S. state)",
         "ID2": 31982,
-        "Sim": 0.8773431713276932
+        "Sim": 0.8773431713276932,
+        "Status": "unmarked"
     },
     {
         "KG1": "教宗西西诺",
         "ID1": 7333,
         "KG2": "Pope Sisinnius",
         "ID2": 17833,
-        "Sim": 0.8680793024961702
+        "Sim": 0.8680793024961702,
+        "Status": "unmarked"
     },
     {
         "KG1": "老挝",
         "ID1": 24716,
         "KG2": "Laos",
         "ID2": 36800,
-        "Sim": 0.8472876083486868
+        "Sim": 0.8472876083486868,
+        "Status": "unmarked"
     },
     {
         "KG1": "阿南德·阿玛尔",
         "ID1": 5549,
         "KG2": "Anandyn Amar",
         "ID2": 16049,
-        "Sim": 0.8182742067043383
+        "Sim": 0.8182742067043383,
+        "Status": "unmarked"
     },
     {
         "KG1": "天津西站",
         "ID1": 27567,
         "KG2": "Hangzhou East Railway Station",
         "ID2": 11466,
-        "Sim": 0.82399147520267
+        "Sim": 0.82399147520267,
+        "Status": "unmarked"
     },
     {
         "KG1": "亨利·戴维·梭罗",
         "ID1": 6948,
         "KG2": "Henry David Thoreau",
         "ID2": 17448,
-        "Sim": 0.8947349561263074
+        "Sim": 0.8947349561263074,
+        "Status": "unmarked"
     },
     {
         "KG1": "穆罕默德-阿里·納傑菲",
         "ID1": 5877,
         "KG2": "Mohammad-Ali Najafi",
         "ID2": 16377,
-        "Sim": 0.8932664715144149
+        "Sim": 0.8932664715144149,
+        "Status": "unmarked"
     },
     {
         "KG1": "米高伊斯·干斯坦天奴",
         "ID1": 21833,
         "KG2": "Michalis Konstantinou",
         "ID2": 35227,
-        "Sim": 0.8203031247809982
+        "Sim": 0.8203031247809982,
+        "Status": "unmarked"
     },
     {
         "KG1": "大流士三世",
         "ID1": 5076,
         "KG2": "Darius III",
         "ID2": 15576,
-        "Sim": 0.8825869977979558
+        "Sim": 0.8825869977979558,
+        "Status": "unmarked"
     },
     {
         "KG1": "Windows Phone",
         "ID1": 8899,
         "KG2": "Windows Phone",
         "ID2": 19399,
-        "Sim": 0.9300861065397594
+        "Sim": 0.9300861065397594,
+        "Status": "unmarked"
     },
     {
         "KG1": "突尼西亞國家足球隊",
         "ID1": 9983,
         "KG2": "Tunisia national football team",
         "ID2": 20483,
-        "Sim": 0.8506487817521334
+        "Sim": 0.8506487817521334,
+        "Status": "unmarked"
     },
     {
         "KG1": "Mono",
         "ID1": 21032,
         "KG2": "Mono (software)",
         "ID2": 31241,
-        "Sim": 0.7727648834761214
+        "Sim": 0.7727648834761214,
+        "Status": "unmarked"
     },
     {
         "KG1": "布鲁斯·戈尔丁",
         "ID1": 4475,
         "KG2": "Bruce Golding",
         "ID2": 14975,
-        "Sim": 0.8649346849448853
+        "Sim": 0.8649346849448853,
+        "Status": "unmarked"
     },
     {
         "KG1": "比利时",
         "ID1": 7972,
         "KG2": "Belgium",
         "ID2": 18472,
-        "Sim": 0.8214203315422004
+        "Sim": 0.8214203315422004,
+        "Status": "unmarked"
     },
     {
         "KG1": "JPN (Perfume專輯)",
         "ID1": 9590,
         "KG2": "JPN (album)",
         "ID2": 20090,
-        "Sim": 0.8882826087663479
+        "Sim": 0.8882826087663479,
+        "Status": "unmarked"
     },
     {
         "KG1": "德国国家女子足球队",
         "ID1": 25571,
         "KG2": "Germany women's national football team",
         "ID2": 35424,
-        "Sim": 0.8933401680141299
+        "Sim": 0.8933401680141299,
+        "Status": "unmarked"
     },
     {
         "KG1": "杜紫軍",
         "ID1": 6497,
         "KG2": "Wu Den-yih",
         "ID2": 12154,
-        "Sim": 0.7684991871065342
+        "Sim": 0.7684991871065342,
+        "Status": "unmarked"
     },
     {
         "KG1": "花漾年華：甜心全記錄",
         "ID1": 8924,
         "KG2": "Teenage Dream: The Complete Confection",
         "ID2": 19424,
-        "Sim": 0.8040981912339005
+        "Sim": 0.8040981912339005,
+        "Status": "unmarked"
     },
     {
         "KG1": "越南共和国",
         "ID1": 25369,
         "KG2": "South Vietnam",
         "ID2": 32171,
-        "Sim": 0.8626787988796761
+        "Sim": 0.8626787988796761,
+        "Status": "unmarked"
     },
     {
         "KG1": "貝爾維尤山",
         "ID1": 2722,
         "KG2": "Bellevue Hill, New South Wales",
         "ID2": 13222,
-        "Sim": 0.8505591005439351
+        "Sim": 0.8505591005439351,
+        "Status": "unmarked"
     },
     {
         "KG1": "帕拉瓦文",
         "ID1": 7424,
         "KG2": "Grantha alphabet",
         "ID2": 17924,
-        "Sim": 0.7327345627984899
+        "Sim": 0.7327345627984899,
+        "Status": "unmarked"
     },
     {
         "KG1": "喀山红宝石足球俱乐部",
         "ID1": 27723,
         "KG2": "FC Rubin Kazan",
         "ID2": 38180,
-        "Sim": 0.843416904903913
+        "Sim": 0.843416904903913,
+        "Status": "unmarked"
     },
     {
         "KG1": "大英帝國勳章",
         "ID1": 1574,
         "KG2": "Order of the British Empire",
         "ID2": 12074,
-        "Sim": 0.872297656144769
+        "Sim": 0.872297656144769,
+        "Status": "unmarked"
     },
     {
         "KG1": "南特足球俱乐部",
         "ID1": 22508,
         "KG2": "FC Nantes",
         "ID2": 30633,
-        "Sim": 0.870585657998342
+        "Sim": 0.870585657998342,
+        "Status": "unmarked"
     },
     {
         "KG1": "丹尼·古爾沙",
         "ID1": 25888,
         "KG2": "Daniel Güiza",
         "ID2": 32347,
-        "Sim": 0.8307579826062078
+        "Sim": 0.8307579826062078,
+        "Status": "unmarked"
     },
     {
         "KG1": "Windows PowerShell",
         "ID1": 8606,
         "KG2": "Windows PowerShell",
         "ID2": 19106,
-        "Sim": 0.9016712128148778
+        "Sim": 0.9016712128148778,
+        "Status": "unmarked"
     },
     {
         "KG1": "五十鈴Elf",
         "ID1": 2587,
         "KG2": "Kanjani Eight",
         "ID2": 20045,
-        "Sim": 0.6482778649756622
+        "Sim": 0.6482778649756622,
+        "Status": "unmarked"
     },
     {
         "KG1": "比利時足球甲級聯賽",
         "ID1": 8654,
         "KG2": "Malaysia Premier League",
         "ID2": 11336,
-        "Sim": 0.794359836228932
+        "Sim": 0.794359836228932,
+        "Status": "unmarked"
     },
     {
         "KG1": "源城区",
         "ID1": 1555,
         "KG2": "Huizhou",
         "ID2": 14133,
-        "Sim": 0.7978811226710036
+        "Sim": 0.7978811226710036,
+        "Status": "unmarked"
     },
     {
         "KG1": "动视",
         "ID1": 29843,
         "KG2": "Activision",
         "ID2": 37178,
-        "Sim": 0.8542075579352764
+        "Sim": 0.8542075579352764,
+        "Status": "unmarked"
     },
     {
         "KG1": "佐賀市",
         "ID1": 8288,
         "KG2": "Okegawa, Saitama",
         "ID2": 13956,
-        "Sim": 0.8707653648127692
+        "Sim": 0.8707653648127692,
+        "Status": "unmarked"
     },
     {
         "KG1": "叛逃 (電視劇)",
         "ID1": 23932,
         "KG2": "The Return of the Condor Heroes (2006 TV series)",
         "ID2": 13344,
-        "Sim": 0.7223694219241261
+        "Sim": 0.7223694219241261,
+        "Status": "unmarked"
     },
     {
         "KG1": "查尔斯·达尔文",
         "ID1": 4972,
         "KG2": "Charles Darwin",
         "ID2": 15472,
-        "Sim": 0.8801001667184427
+        "Sim": 0.8801001667184427,
+        "Status": "unmarked"
     },
     {
         "KG1": "大白鲨",
         "ID1": 646,
         "KG2": "Great white shark",
         "ID2": 11146,
-        "Sim": 0.8269833972534791
+        "Sim": 0.8269833972534791,
+        "Status": "unmarked"
     },
     {
         "KG1": "俄罗斯军事",
         "ID1": 26943,
         "KG2": "Russian Armed Forces",
         "ID2": 37234,
-        "Sim": 0.8896774608252391
+        "Sim": 0.8896774608252391,
+        "Status": "unmarked"
     },
     {
         "KG1": "琴韵心声",
         "ID1": 29062,
         "KG2": "Rock music",
         "ID2": 17292,
-        "Sim": 0.7173385414683181
+        "Sim": 0.7173385414683181,
+        "Status": "unmarked"
     },
     {
         "KG1": "伊拉克",
         "ID1": 24579,
         "KG2": "Iraqi Kurdistan",
         "ID2": 38147,
-        "Sim": 0.8550484664603459
+        "Sim": 0.8550484664603459,
+        "Status": "unmarked"
     },
     {
         "KG1": "蓝精灵2",
         "ID1": 9391,
         "KG2": "The Smurfs 2",
         "ID2": 19891,
-        "Sim": 0.7969580394736173
+        "Sim": 0.7969580394736173,
+        "Status": "unmarked"
     },
     {
         "KG1": "拉米拉达 (加利福尼亚州)",
         "ID1": 3001,
         "KG2": "La Mirada, California",
         "ID2": 13501,
-        "Sim": 0.90869183367824
+        "Sim": 0.90869183367824,
+        "Status": "unmarked"
     },
     {
         "KG1": "尼歐 (歌手)",
         "ID1": 6928,
         "KG2": "Ne-Yo",
         "ID2": 17428,
-        "Sim": 0.847454530297188
+        "Sim": 0.847454530297188,
+        "Status": "unmarked"
     },
     {
         "KG1": "新宿站",
         "ID1": 28996,
         "KG2": "Ochanomizu Station",
         "ID2": 13579,
-        "Sim": 0.8724558713888599
+        "Sim": 0.8724558713888599,
+        "Status": "unmarked"
     },
     {
         "KG1": "夏德施普列特足球會",
         "ID1": 4607,
         "KG2": "HNK Hajduk Split",
         "ID2": 15107,
-        "Sim": 0.8382966571420514
+        "Sim": 0.8382966571420514,
+        "Status": "unmarked"
     },
     {
         "KG1": "费多尔·冯·博克",
         "ID1": 7209,
         "KG2": "Karl Dönitz",
         "ID2": 19434,
-        "Sim": 0.7749352850029202
+        "Sim": 0.7749352850029202,
+        "Status": "unmarked"
     },
     {
         "KG1": "宋庆龄",
         "ID1": 7747,
         "KG2": "Soong Ching-ling",
         "ID2": 18247,
-        "Sim": 0.821648055422987
+        "Sim": 0.821648055422987,
+        "Status": "unmarked"
     },
     {
         "KG1": "大韓民國國軍",
         "ID1": 884,
         "KG2": "South Korea",
         "ID2": 35754,
-        "Sim": 0.8260535534822689
+        "Sim": 0.8260535534822689,
+        "Status": "unmarked"
     },
     {
         "KG1": "索麦拉·库里巴利",
         "ID1": 6259,
         "KG2": "Soumaila Coulibaly",
         "ID2": 16759,
-        "Sim": 0.8678975624580472
+        "Sim": 0.8678975624580472,
+        "Status": "unmarked"
     },
     {
         "KG1": "阿拉伯聯合大公國國家足球隊",
         "ID1": 10040,
         "KG2": "United Arab Emirates national football team",
         "ID2": 20540,
-        "Sim": 0.8953027348828866
+        "Sim": 0.8953027348828866,
+        "Status": "unmarked"
     },
     {
         "KG1": "社会党 (法国)",
         "ID1": 24495,
         "KG2": "Socialist Party (France)",
         "ID2": 37102,
-        "Sim": 0.8667531268398612
+        "Sim": 0.8667531268398612,
+        "Status": "unmarked"
     },
     {
         "KG1": "卡洛曼 (巴伐利亚国王)",
         "ID1": 275,
         "KG2": "Carloman of Bavaria",
         "ID2": 10775,
-        "Sim": 0.8691897407391411
+        "Sim": 0.8691897407391411,
+        "Status": "unmarked"
     },
     {
         "KG1": "葡萄牙足球超级联赛",
         "ID1": 23039,
         "KG2": "Portuguese Second Division",
         "ID2": 33052,
-        "Sim": 0.8131923582083016
+        "Sim": 0.8131923582083016,
+        "Status": "unmarked"
     },
     {
         "KG1": "瑞典帝國",
         "ID1": 6431,
         "KG2": "Swedish Empire",
         "ID2": 16931,
-        "Sim": 0.8793019830946308
+        "Sim": 0.8793019830946308,
+        "Status": "unmarked"
     },
     {
         "KG1": "荷蘭21歲以下國家足球隊",
         "ID1": 23669,
         "KG2": "Netherlands national under-21 football team",
         "ID2": 31807,
-        "Sim": 0.8886015631796748
+        "Sim": 0.8886015631796748,
+        "Status": "unmarked"
     },
     {
         "KG1": "史蒂芬·哈珀",
         "ID1": 8149,
         "KG2": "Stephen Harper",
         "ID2": 18649,
-        "Sim": 0.9214496083257046
+        "Sim": 0.9214496083257046,
+        "Status": "unmarked"
     },
     {
         "KG1": "因德尔·库马尔·古杰拉尔",
         "ID1": 24922,
         "KG2": "I. K. Gujral",
         "ID2": 33404,
-        "Sim": 0.8845650600864418
+        "Sim": 0.8845650600864418,
+        "Status": "unmarked"
     },
     {
         "KG1": "长野县",
         "ID1": 4609,
         "KG2": "Suwa, Nagano",
         "ID2": 10796,
-        "Sim": 0.8565504778196854
+        "Sim": 0.8565504778196854,
+        "Status": "unmarked"
     },
     {
         "KG1": "布莱克本流浪者足球俱乐部",
         "ID1": 26465,
         "KG2": "Blackburn Rovers F.C.",
         "ID2": 32639,
-        "Sim": 0.8712056062295865
+        "Sim": 0.8712056062295865,
+        "Status": "unmarked"
     },
     {
         "KG1": "蔣孝嚴",
         "ID1": 9956,
         "KG2": "Wen Jiabao",
         "ID2": 10990,
-        "Sim": 0.8210331013264172
+        "Sim": 0.8210331013264172,
+        "Status": "unmarked"
     },
     {
         "KG1": "阿卜杜尔·卡拉姆",
         "ID1": 5425,
         "KG2": "A. P. J. Abdul Kalam",
         "ID2": 15925,
-        "Sim": 0.868327703962378
+        "Sim": 0.868327703962378,
+        "Status": "unmarked"
     },
     {
         "KG1": "东加拿大因纽特语",
         "ID1": 9451,
         "KG2": "Inuktitut",
         "ID2": 19951,
-        "Sim": 0.8267271661901262
+        "Sim": 0.8267271661901262,
+        "Status": "unmarked"
     },
     {
         "KG1": "苹果",
         "ID1": 9587,
         "KG2": "Apple",
         "ID2": 20087,
-        "Sim": 0.8777903899065095
+        "Sim": 0.8777903899065095,
+        "Status": "unmarked"
     },
     {
         "KG1": "葵區",
         "ID1": 1159,
         "KG2": "Okegawa, Saitama",
         "ID2": 13956,
-        "Sim": 0.8163072854066152
+        "Sim": 0.8163072854066152,
+        "Status": "unmarked"
     },
     {
         "KG1": "U2樂團",
         "ID1": 6732,
         "KG2": "U2",
         "ID2": 17232,
-        "Sim": 0.8517282612253941
+        "Sim": 0.8517282612253941,
+        "Status": "unmarked"
     }
 ]

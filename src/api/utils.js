@@ -3,7 +3,7 @@ const url = "http://127.0.0.1:8000";
 // 读取表的数据`
 export async function getTlbData(round) {
     try {
-        if (!round) {
+        if (round == 114514) {
             console.log(round);
         }
         // const response = await fetch(url + '/get_table_data/?round=' + round);
@@ -20,7 +20,6 @@ export async function getSimData(id) {
     try {
         const response = await fetch(url + '/get_sim_data/?ID1=' + id);
         // const response = await fetch('./data/sim.json');
-        console.log(id);
         const data = await response.json();
         return data;
     } catch (error) {

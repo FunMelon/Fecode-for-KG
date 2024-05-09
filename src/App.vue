@@ -12,7 +12,7 @@
       <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
-        <detailView :simData="simData" @hover="handleHover" />
+        <detailView :simData="simData" @click="handleListClick" />
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
           <FView class="block" :style="{ width: '50%' }" assignId="LFView" :FGData="FGDataL" type="base"
@@ -73,11 +73,6 @@ export default {
     selectView,
     menuView,
   },
-  data() {
-    return {
-      FGData: null,
-    }
-  },
   methods: {
     
     async handleRowClick(rowData) {  // 监听行被点击事件 
@@ -87,6 +82,10 @@ export default {
     handleHover(rowData) {  // 监听行被点击事件 
       // console.log(rowData);
       this.FGData = rowData;
+    },
+
+    async handleListClick(listData) {
+      console.log(listData)
     }
   }
 };

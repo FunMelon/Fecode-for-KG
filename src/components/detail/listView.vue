@@ -103,9 +103,9 @@ export default {
     methods: {
         handleCustomRow(record) {
             return {
-                onMouseenter: () => {
+                onClick: () => {
                     // console.log(record); // 打印行数据到控制台
-                    this.$emit('hover', record);
+                    this.$emit('click', record);
                     this.selectedRow = record.KG1; // 更新选中的行索引
                     // console.log(this.selectedRow);
                     // console.log(index);

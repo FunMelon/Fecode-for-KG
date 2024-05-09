@@ -33,11 +33,10 @@ export default {
   },
   methods: {
     setupG2() {
-      console.log(this.WordCloud)
-      // this.WordCloud.destroy();
+      // console.log(this.WordCloud)
       if (this.WordCloud) {
         this.WordCloud.destroy();
-        console.log("清空词云")
+        // console.log("清空词云")
       } else {
         // console.log("没有")
       }
