@@ -26,7 +26,7 @@
     </a-flex>
     <!-- 属性 -->
     <a-flex class="block">
-      <simView class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" />
+      <simView class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" :width="800" :height="600"/>
       <WCView @click="showWC()" class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
       <WCView @click="showWC()" class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
     </a-flex>
@@ -56,22 +56,21 @@
       </a-flex>
     </div>
     <!-- 弹窗 -->
-    <a-modal v-model:open="WCOpen" width="600px" title="词云" @ok="handleOk" @cancel="handleOk">
+    <a-modal v-model:open="WCOpen" title="词云" @ok="handleOk" @cancel="handleOk">
       <a-flex class="block modal-wrap">
         <WCView class="block c1" :isModal="true" :assignId="assignId + 'Left'" :data="WCData" />
         <WCView class="block c1" :isModal="true" :assignId="assignId + 'Right'" :data="WCData" />
       </a-flex>
     </a-modal>
 
-    <a-modal v-model:open="ENOpen" width="600px" title="实体" @ok="handleOk" @cancel="handleOk">
+    <a-modal v-model:open="ENOpen" title="实体" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
-      <a-flex class="block modal-wrap">
         <listView class="block c3" :isModal="true" :assignId="assignId + 'EntPop'" :data="ENDatas" :isNode="true"
           :chosenId="this.chosenId" :isAscend="this.entityAscend" @click="handleClick" />
-      </a-flex>
     </a-modal>
 
-    <a-modal v-model:open="RLOpen" width="600px" title="属性" @ok="handleOk" @cancel="handleOk">
+    <a-modal v-model:open="RLOpen" title="属性" @ok="handleOk" @cancel="handleOk">
+      <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
       <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false" :chosenId="this.chosenId"
         :isAscend="this.edgeAscend" @click="handleClick" />
     </a-modal>
@@ -194,6 +193,6 @@ label {
 
 .modal-wrap {
   width: 100%;
-  height: 150px;
+  height: 300px;
 }
 </style>

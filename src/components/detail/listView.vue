@@ -1,12 +1,12 @@
 <!-- 列表显示器 -->
 <template>
-    <a-table v-if="getData" :columns="columns" :data-source="getData" size="small" :showHeader="false"
+    <a-table v-if="getData" :columns="columns" :data-source="getData" size="small" :showHeader="this.isModal"
         :pagination="paginationConfig" :custom-row="handleCustomRow">
         <template #bodyCell="{ column, record }">
-            <template v-if="column.key === 'Sim' && isNode">
+            <template v-if="column.key === 'Icon1' && isNode">
                 <span class="circle"> </span>
             </template>
-            <template v-else-if="column.key === 'Sim' && !isNode">
+            <template v-else-if="column.key === 'Icon1' && !isNode">
                 <span>
                     <SwapRightOutlined />
                 </span>
@@ -14,8 +14,19 @@
             <template v-if="column.key === 'KG1'">
                 {{ record.left.KG1 }}
             </template>
+            <template v-if="column.key === 'Icon2' && isNode">
+                <span class="circle"> </span>
+            </template>
+            <template v-else-if="column.key === 'Icon2' && !isNode">
+                <span>
+                    <SwapRightOutlined />
+                </span>
+            </template>
             <template v-if="column.key === 'KG2'">
                 {{ record.right.KG2 }}
+            </template>
+            <template v-if="this.isModal && column.key === 'Sim'">
+                {{ record.right.Sim }}
             </template>
         </template>
     </a-table>
@@ -42,11 +53,11 @@ export default {
         return {
             columns: [
                 {
-                    name: "Sim",
-                    dataIndex: "Sim",
-                    key: "Sim",
-                    align: "left",
-                    width: "10%",
+                    name: "Icon1",
+                    dataIndex: "icon1",
+                    key: "Icon1",
+                    align: "right",
+                    width: this.isModal ? "5%" : "10%"
                 },
                 {
                     title: "KG1",
@@ -54,7 +65,14 @@ export default {
                     key: "KG1",
                     ellipsis: true,
                     align: "left",
-                    width: "40%"
+                    width: this.isModal ? "30%" : "40%"
+                },
+                {
+                    name: "Icon2",
+                    dataIndex: "icon2",
+                    key: "Icon2",
+                    align: "left",
+                    width: this.isModal ? "5%" : "10%"
                 },
                 {
                     title: "KG2",
@@ -62,7 +80,14 @@ export default {
                     key: "KG2",
                     ellipsis: true,
                     align: "left",
+                    width: this.isModal ? "30%" : "40%"
                 },
+                {
+                    title: "Sim",
+                    dataIndex: "sim",
+                    key: "Sim",
+                    ellipsis: true,
+                }
             ],
             selectedRow: -1,
         };

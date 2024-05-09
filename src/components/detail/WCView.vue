@@ -67,7 +67,7 @@ export default {
           forceFit: true,
           wordStyle: {
             fontFamily: "Verdana",
-            fontSize: [5, 30],
+            fontSize: this.isModal ? [15, 50]: [5, 30],
             rotation: 0,
           },
           spiral: "archimedean",
@@ -91,10 +91,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#LWCNode {
-  width: 100%;
-  height: 100%;
-}
-</style>
