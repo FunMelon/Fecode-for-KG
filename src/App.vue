@@ -55,8 +55,8 @@ export default {
       FGID2: null,
       highlightId1: null,
       highlightId2: null,
-      alignNodePair: null,
-      centerNodePair: null,
+      alignNodePair: [],
+      centerNodePair: [],
       newRow: null,
     }
   },
@@ -95,6 +95,8 @@ export default {
         await this.refreshFG(id1, id2)
       }
       setTimeout(() => {
+        this.alignNodePair = listData.ENDatas.alignNodePair
+      this.centerNodePair = listData.ENDatas.centerNodePair
         this.highlightId1 = listData.record.left.ID1
         this.highlightId2 = listData.record.right.ID2
       }, 100); // 1000毫秒等于1秒
