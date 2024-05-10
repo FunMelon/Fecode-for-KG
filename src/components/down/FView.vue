@@ -42,7 +42,7 @@ export default {
         // console.log("清空力导向图")
         this.graph.clear();
       } else {
-        this.highlightNode(newId);
+        this.setNodeColors();
       }
     },
     FGData(data) {
@@ -58,6 +58,9 @@ export default {
       this.graph.data(JSON.parse(JSON.stringify(graph))); // 此处会修改data，因此必须使用深拷贝
       this.graph.render();
     },
+    centerNodePairIds() {
+      this.setNodeColors()
+    }
   },
   mounted() {
     if (this.graph) {
@@ -127,6 +130,7 @@ export default {
         onLayoutEnd: () => {
           if (this.type === "follow") {
             // TODO: follow图缩放设置
+            this.setNodeColors()
             return;
           }
           const nodes = this.graph.getNodes().map((item) => item.getModel());
@@ -151,6 +155,7 @@ export default {
           });
           this.$emit("startFollow", followNodes);
           // TODO: base 图 缩放设置
+          this.setNodeColors()
         },
       },
       modes: {
@@ -164,29 +169,56 @@ export default {
     });
   },
   methods: {
-    highlightNode(nodeId) {
-      // console.log(nodeId)
-
-      // 取消所有其他节点的高亮
-      const allNodes = this.graph.getNodes();
-      allNodes.forEach(node => {
-        if (node.getModel().id !== nodeId) {
+    // 设置节点颜色
+    setNodeColors() {
+      setTimeout(() => {
+        const nodes = this.graph.getNodes();
+        // console.log(this.centerNodePairIds)
+        // console.log(this.alignNodePairListIds)
+        nodes.forEach(node => {
+          // 灰色
+          if (node.getModel().id !== this.highlightNodeId) {
+            node.update({
+              style: {
+                fill: "#E0E0E0", // 恢复默认颜色
+              },
+            });
+          }
+          const model = node.getModel();
+          if (this.centerNodePairIds && this.centerNodePairIds.includes(model.id)) {
+            // 中心节点颜色为 "#EFF4FF"
+            console.log("中心节点")
+            node.update({
+              style: {
+                fill: "#EFF4FF",
+              },
+            });
+          } else {
+            const alignNode = this.alignNodePairListIds.find(
+              (pair) => pair.includes(model.id)
+            );
+            if (alignNode) {
+              // 对齐节点颜色为 "#52C41A"
+              console.log("对齐节点")
+              node.update({
+                style: {
+                  fill: "#52C41A",
+                },
+              });
+            }
+          }
+        });
+        const node = this.graph.findById(this.highlightNodeId);
+        console.log(this.highlightNodeId + "高亮节点")
+        // 高亮
+        if (node) {
           node.update({
             style: {
-              fill: "#E0E0E0", // 恢复默认颜色
+              fill: "red", // 高亮颜色
             },
           });
         }
-      });
-
-      const node = this.graph.findById(nodeId);
-      if (node) {
-        node.update({
-          style: {
-            fill: "red", // 高亮颜色
-          },
-        });
-      }
+      }, 100)
     },
   },
 };

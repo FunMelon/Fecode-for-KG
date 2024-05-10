@@ -179,7 +179,7 @@ export default {
 
 .circle {
     display: block;
-    background: #E0E0E0;
+    background: #52C41A;
     width: 8px;
     height: 8px;
     border-radius: 50%;

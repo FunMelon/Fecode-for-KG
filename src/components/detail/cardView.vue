@@ -70,7 +70,7 @@
     </a-modal>
 
     <a-modal v-model:open="RLOpen" title="属性" @ok="handleOk" @cancel="handleOk">
-      <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
+      <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend" />
       <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false" :chosenId="this.chosenId"
         :isAscend="this.edgeAscend" @listClick="handleListClick" />
     </a-modal>
@@ -105,8 +105,8 @@ export default {
       WCOpen: false,
       ENOpen: false,
       RLOpen: false,
-      entityAscend: true,
-      edgeAscend: true,
+      entityAscend: false,
+      edgeAscend: false,
     };
   },
   methods: {
@@ -137,8 +137,7 @@ export default {
     },
 
     handleFGIDClick() {
-      this.$emit('FGIDClick', this.nameDatas)
-      // console.log(this.nameDatas)
+      this.$emit('FGIDClick', {nameDatas: this.nameDatas, ENDatas: this.ENDatas})
     }
   }
 };

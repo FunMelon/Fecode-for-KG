@@ -16,15 +16,10 @@
         <!-- 力导向图 -->
         <a-flex class="block" :style="{ flex: 1 }">
           <FView class="block" :style="{ width: '50%' }" assignId="LFView" :FGData="FGDataL" type="base"
-            :centerNodePairIds="['6661', '17161']" :alignNodePairListIds="[
-              ['306', '10806'],
-              ['773', '11273'],
-              ['1634', '12134'],
-              ['4411', '14911'],
-              ['5819', '16319'],
-              ['24113', '35194'],
-            ]" @startFollow="startFollow" :highlightNodeId="highlightId1" />
+            :centerNodePairIds="this.centerNodePair" :alignNodePairListIds="this.alignNodePair"
+            @startFollow="startFollow" :highlightNodeId="highlightId1" />
           <FView class="block" :style="{ width: '50%' }" assignId="RFView" type="follow" :FGData="FGDataR"
+          :centerNodePairIds="this.centerNodePair" :alignNodePairListIds="this.alignNodePair"
             :followNodes="followNodes" :highlightNodeId="highlightId2" />
         </a-flex>
       </a-flex>
@@ -59,6 +54,8 @@ export default {
       FGID2: null,
       highlightId1: null,
       highlightId2: null,
+      alignNodePair: null,
+      centerNodePair: null,
     }
   },
   methods: {
@@ -85,7 +82,7 @@ export default {
     },
 
     async handleListClick(listData) {
-      // console.log(listData)
+      console.log(listData)
       const id1 = listData.record.IDPair.ID1
       const id2 = listData.record.IDPair.ID2
       if (id1 != this.FGID1 || id2 != this.FGID2) {
@@ -95,13 +92,18 @@ export default {
         this.highlightId1 = listData.record.left.ID1
         this.highlightId2 = listData.record.right.ID2
       }, 100); // 1000毫秒等于1秒
-
       // console.log(this.highlightId1 + " " + this.highlightId2)
     },
 
     async handleFGIDClick(FGIDData) {
       // console.log("换新图")
-      this.refreshFG(FGIDData.ID1, FGIDData.ID2)
+      // console.log(FGIDData)
+      this.alignNodePair = FGIDData.ENDatas.alignNodePair
+      this.centerNodePair = FGIDData.ENDatas.centerNodePair
+      // console.log(this.alignNodePair)
+      // console.log(this.centerNodePair)
+      this.highlightId1 = this.highlightId2 = null
+      this.refreshFG(FGIDData.nameDatas.ID1, FGIDData.nameDatas.ID2)
     },
   }
 };

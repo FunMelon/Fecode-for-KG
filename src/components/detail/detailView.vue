@@ -54,6 +54,7 @@ export default {
             this.$emit('ListClick', rowData); // 将点击行的数据存储到 selectedRowData 中
         },
         handleFGClick(data) {
+            // console.log(data)
             this.$emit('FGIDClick', data)
         }
     },
