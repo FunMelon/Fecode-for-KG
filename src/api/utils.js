@@ -1,4 +1,4 @@
-const url = "http://192.168.1.151:8008";
+const url = "http://127.0.0.1:8000";
 
 // 读取表的数据`
 export async function getTlbData(round) {

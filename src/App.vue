@@ -9,7 +9,8 @@
     <!-- 下侧 -->
     <a-flex class="block" :style="{ flex: 13 }">
       <!-- 表格 -->
-      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" :newRow="newRow" @updateData="handleUpdateData"/>
+      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" :newRow="newRow"
+        @updateData="handleUpdateData" />
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
         <detailView :simData="simData" @ListClick="handleListClick" @FGIDClick="handleFGIDClick" />
@@ -19,7 +20,7 @@
             :centerNodePairIds="this.centerNodePair" :alignNodePairListIds="this.alignNodePair"
             @startFollow="startFollow" :highlightNodeId="highlightId1" />
           <FView class="block" :style="{ width: '50%' }" assignId="RFView" type="follow" :FGData="FGDataR"
-          :centerNodePairIds="this.centerNodePair" :alignNodePairListIds="this.alignNodePair"
+            :centerNodePairIds="this.centerNodePair" :alignNodePairListIds="this.alignNodePair"
             :followNodes="followNodes" :highlightNodeId="highlightId2" />
         </a-flex>
       </a-flex>
@@ -102,7 +103,7 @@ export default {
 
     async handleFGIDClick(FGIDData) {
       // console.log("换新图")
-      const index = FGIDData.Pos;
+      const index = FGIDData.Pos - 1;
       this.newRow = {
         "ID1": this.simData.sim_mix[index].ID1,
         "ID2": this.simData.sim_mix[index].ID2,

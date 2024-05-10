@@ -68,9 +68,6 @@ export default {
     };
   },
   watch: {
-    data(n) {
-      console.log(n)
-    },
     newRow(newData) {
       if (newData != null && this.data != null && this.selectedRow != -1) {
         //TODO: 创建一个data的副本，在其中找到selectedRow对应的行，将改行替换为newData的数据，传递给父组件信息让其修改data

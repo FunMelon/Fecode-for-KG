@@ -1,6 +1,6 @@
 <!-- 一列显示的卡片 -->
 <template>
-  <a-flex vertical class="card">
+  <a-flex vertical class="card" :style="{ border: highlighted ? '3px solid blue' : 'none' }" @click="$emit('click')">
     <!-- 卡片头 -->
     <a-flex class="block">
       <label @click="handleFGIDClick" :style="{ flex: 1 }" align="center">
@@ -93,12 +93,22 @@ export default {
     simMix: null, // 融合相似性
     MaxSims: null,  // 最大的相似性
     chosenId: String,  // 当前显示的列表页面的id
+    highlightedId: null,
   },
   components: {
     WCView,
     listView,
     simView,
     SwapOutlined,
+  },
+  watch: {
+    highlightedId(newId) {
+      if (newId == this.assignId) {
+        this.highlighted = true;
+      } else {
+        this.highlighted = false;
+      }
+    }
   },
   data() {
     return {
@@ -107,6 +117,7 @@ export default {
       RLOpen: false,
       entityAscend: false,
       edgeAscend: false,
+      highlighted: false,
     };
   },
   methods: {
@@ -140,7 +151,7 @@ export default {
       this.$emit('FGIDClick', {
         nameDatas: this.nameDatas,
         ENDatas: this.ENDatas,
-        Pos: this.assignId - 1
+        Pos: this.assignId
       })
     }
   }
