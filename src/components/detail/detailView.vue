@@ -57,6 +57,7 @@ export default {
     methods: {
         handleListClick(rowData) {  // 监听行被点击事件 
             this.chosenId = rowData.selectList;
+            this.highlightedId = rowData.Pos
             // console.log(rowData.selectList)
             this.$emit('ListClick', rowData); // 将点击行的数据存储到 selectedRowData 中
         },

@@ -145,6 +145,7 @@ export default {
 
     handleListClick(rowData) {  // 监听行被点击事件 
       rowData.ENDatas = this.ENDatas
+      rowData.Pos = this.assignId
       this.$emit('ListClick', rowData); // 将点击行的数据存储到 selectedRowData 中
     },
 

@@ -67,8 +67,8 @@ export default {
       this.graph.clear();
     }
     const tooltip = new G6.Tooltip({
-      offsetX: 0,
-      offsetY: 0,
+      offsetX: 10,
+      offsetY: 10,
       itemTypes: ['node', 'edge'],
       getContent: (e) => {
         const outDiv = document.createElement('div');
@@ -76,12 +76,19 @@ export default {
         if (e.item.getType() === 'node') {
           outDiv.innerHTML = `
           <h4>name: ${e.item.getModel().name}</h4>
-        <h4>id: ${e.item.getModel().id}</h4>
-      `;
+          <h4>id: ${e.item.getModel().id}</h4>
+          `;
         } else if (e.item.getType() === 'edge') {
+
           outDiv.innerHTML = `
-        <h4>rel: ${e.item.getModel().rels}</h4>
-      `;
+          <h4>${e.item.getModel().source_name} → ${e.item.getModel().target_name}</h4>
+          <h4>关系:</h4>
+          <ul>
+          `;
+          e.item.getModel().rels.forEach((item) => {
+            outDiv.innerHTML += `<li>${item}</li>`
+          })
+          outDiv.innerHTML += `</ul>`
         }
         return outDiv;
       },
@@ -228,7 +235,7 @@ export default {
 /* 提示框的样式 */
 .g6-component-tooltip {
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 0px 10px 24px 10px;
+  padding: 10px 10px 10px 10px;
   box-shadow: rgb(174, 174, 174) 0px 0px 10px;
 }
 
