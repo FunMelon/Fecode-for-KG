@@ -9,7 +9,7 @@
     <!-- 下侧 -->
     <a-flex class="block" :style="{ flex: 13 }">
       <!-- 表格 -->
-      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" />
+      <KGTable class="block" :style="{ flex: 1 }" :data="tlbData" @row-click="handleRowClick" :newRow="newRow" @updateData="handleUpdateData"/>
       <a-flex vertical class="block" :style="{ flex: 5 }">
         <!-- 详细视图 -->
         <detailView :simData="simData" @ListClick="handleListClick" @FGIDClick="handleFGIDClick" />
@@ -56,11 +56,16 @@ export default {
       highlightId2: null,
       alignNodePair: null,
       centerNodePair: null,
+      newRow: null,
     }
   },
   methods: {
     startFollow(data) {
       this.followNodes = data;
+    },
+
+    handleUpdateData(data) {
+      this.tlbData = data
     },
 
     async handleStartClick(round) {
@@ -97,7 +102,16 @@ export default {
 
     async handleFGIDClick(FGIDData) {
       // console.log("换新图")
-      // console.log(FGIDData)
+      const index = FGIDData.Pos;
+      this.newRow = {
+        "ID1": this.simData.sim_mix[index].ID1,
+        "ID2": this.simData.sim_mix[index].ID2,
+        "Sim": this.simData.sim_mix[index].Sim,
+        "KG1": this.simData.name[index].Res[0],
+        "KG2": this.simData.name[index].Res[1]
+      };
+
+      // console.log(newRow)
       this.alignNodePair = FGIDData.ENDatas.alignNodePair
       this.centerNodePair = FGIDData.ENDatas.centerNodePair
       // console.log(this.alignNodePair)

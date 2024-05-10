@@ -7,13 +7,13 @@
                     <label :style="{ flex: 3 }" align="center">
                         名称权重
                     </label>
-                    <a-slider :style="{ flex: 4 }"/>
+                    <a-slider v-model:value="nameWeight" :style="{ flex: 4 }"/>
                 </a-flex>
                 <a-flex :style="{ flex: 1 }" justify="space-around" align='center'>
                     <label :style="{ flex: 3 }" align="center">
                         属性权重
                     </label>
-                    <a-slider :style="{ flex: 4 }"/>
+                    <a-slider v-model:value="attrWeight" :style="{ flex: 4 }"/>
                 </a-flex>
             </a-flex>
             <a-flex :style="{ flex: 1 }">
@@ -21,13 +21,13 @@
                     <label :style="{ flex: 3 }" align="center">
                         结构权重
                     </label>
-                    <a-slider :style="{ flex: 4 }"/>
+                    <a-slider v-model:value="struWeight" :style="{ flex: 4 }"/>
                 </a-flex>
                 <a-flex :style="{ flex: 1 }" justify="space-around" align='center'>
                     <label :style="{ flex: 3 }" align="center">
                         关系权重
                     </label>
-                    <a-slider :style="{ flex: 4 }" />
+                    <a-slider v-model:value="relWeight" :style="{ flex: 4 }" />
                 </a-flex>
             </a-flex>
         </a-flex>
@@ -48,7 +48,11 @@
 export default {
     data() {
         return {
-            round: 0
+            round: 0,
+            nameWeight: 25,
+            attrWeight: 25,
+            struWeight: 25,
+            relWeight: 25,
         }
     },
     methods: {

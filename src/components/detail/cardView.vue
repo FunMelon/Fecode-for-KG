@@ -3,30 +3,30 @@
   <a-flex vertical class="card">
     <!-- 卡片头 -->
     <a-flex class="block">
-      <label :style="{ flex: 1 }" align="center">
+      <label @click="handleFGIDClick" :style="{ flex: 1 }" align="center">
         {{ "Pair" + this.assignId }}
       </label>
-      <label align="right" style="margin-right: 10px">
+      <label @click="handleFGIDClick" align="right" style="margin-right: 10px">
         {{ "相似性: " + simMix.toFixed(2) }}
       </label>
     </a-flex>
     <!-- 名称 -->
     <a-flex class="block">
-      <simView class="block c0" :sim="this.nameDatas.Sim" :row="0" :maxSim="this.MaxSims[0]"  @click="handleFGIDClick"/>
+      <simView class="block c0" :sim="this.nameDatas.Sim" :row="0" :maxSim="this.MaxSims[0]" @click="handleFGIDClick" />
       <a-flex class="block c1" justify="space-around" align="center">
-        <label @click="handleFGIDClick">
+        <label @click="handleFGIDClick" style="font-size: large;">
           {{ this.nameDatas.Res[0] }}
         </label>
       </a-flex>
       <a-flex class="block c2" justify="space-around" align="center">
-        <label @click="handleFGIDClick">
+        <label @click="handleFGIDClick" style="font-size: large;">
           {{ this.nameDatas.Res[1] }}
         </label>
       </a-flex>
     </a-flex>
     <!-- 属性 -->
     <a-flex class="block">
-      <simView class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" :width="800" :height="600"/>
+      <simView class="block c0" :sim="WCData.Sim" :row="1" :maxSim="this.MaxSims[1]" :width="800" :height="600" />
       <WCView @click="showWC()" class="block c1" :assignId="assignId + 'Left'" :data="WCData" />
       <WCView @click="showWC()" class="block c2" :assignId="assignId + 'Right'" :data="WCData" />
     </a-flex>
@@ -65,14 +65,14 @@
 
     <a-modal v-model:open="ENOpen" title="实体" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
-        <listView class="block c3" :isModal="true" :assignId="assignId + 'EntPop'" :data="ENDatas" :isNode="true"
-          :chosenId="this.chosenId" :isAscend="this.entityAscend" @listClick="handleListClick" />
+      <listView class="block c3" :isModal="true" :assignId="assignId + 'EntPop'" :data="ENDatas" :isNode="true"
+        :chosenId="this.chosenId" :isAscend="this.entityAscend" @listClick="handleListClick" />
     </a-modal>
 
     <a-modal v-model:open="RLOpen" title="属性" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend" />
-      <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false" :chosenId="this.chosenId"
-        :isAscend="this.edgeAscend" @listClick="handleListClick" />
+      <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false"
+        :chosenId="this.chosenId" :isAscend="this.edgeAscend" @listClick="handleListClick" />
     </a-modal>
   </a-flex>
 </template>
@@ -137,7 +137,11 @@ export default {
     },
 
     handleFGIDClick() {
-      this.$emit('FGIDClick', {nameDatas: this.nameDatas, ENDatas: this.ENDatas})
+      this.$emit('FGIDClick', {
+        nameDatas: this.nameDatas,
+        ENDatas: this.ENDatas,
+        Pos: this.assignId - 1
+      })
     }
   }
 };

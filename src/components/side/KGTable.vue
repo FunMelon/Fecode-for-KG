@@ -25,6 +25,7 @@ export default {
   name: "KGTable",
   props: {
     data: Array, // 将原先的 data 属性声明修改为 tlbData
+    newRow: null
   },
   components: {
     CheckCircleTwoTone,
@@ -66,11 +67,27 @@ export default {
       selectedRow: -1 // 初始化为-1，表示没有选中的行
     };
   },
+  watch: {
+    data(n) {
+      console.log(n)
+    },
+    newRow(newData) {
+      if (newData != null && this.data != null && this.selectedRow != -1) {
+        //TODO: 创建一个data的副本，在其中找到selectedRow对应的行，将改行替换为newData的数据，传递给父组件信息让其修改data
+        const index = this.data.findIndex(item => item === this.selectedRow);
+        newData.Status = this.data[index].Status
+        const updatedData = [...this.data]; // 创建数据的副本
+        updatedData[index] = newData; // 更新对应行的数据，保持 Status 不变
+        this.selectedRow = newData
+        this.$emit('updateData', updatedData); // 向父组件发送更新后的数据
+      }
+    }
+  },
   methods: {
     handleIconClick(record, clickedStatus) {  // 点击删除图标
       // console.log(record.Status);
       // console.log(clickedStatus);
-      
+
       record.Status = clickedStatus;
     },
 

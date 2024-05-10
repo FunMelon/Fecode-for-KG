@@ -187,7 +187,7 @@ export default {
           const model = node.getModel();
           if (this.centerNodePairIds && this.centerNodePairIds.includes(model.id)) {
             // 中心节点颜色为 "#EFF4FF"
-            console.log("中心节点")
+            // console.log("中心节点")
             node.update({
               style: {
                 fill: "#EFF4FF",
@@ -199,7 +199,7 @@ export default {
             );
             if (alignNode) {
               // 对齐节点颜色为 "#52C41A"
-              console.log("对齐节点")
+              // console.log("对齐节点")
               node.update({
                 style: {
                   fill: "#52C41A",
@@ -209,7 +209,7 @@ export default {
           }
         });
         const node = this.graph.findById(this.highlightNodeId);
-        console.log(this.highlightNodeId + "高亮节点")
+        // console.log(this.highlightNodeId + "高亮节点")
         // 高亮
         if (node) {
           node.update({
