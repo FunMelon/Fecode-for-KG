@@ -35,7 +35,7 @@ import FView from "./components/down/FView.vue";
 import KGTable from "./components/side/KGTable.vue";
 import selectView from "./components/top/selectView.vue";
 import menuView from "./components/top/menuView.vue";
-
+import { Modal } from 'ant-design-vue';
 export default {
   components: {
     detailView,
@@ -61,6 +61,14 @@ export default {
     }
   },
   methods: {
+    showLoadingModal(info) {
+      Modal.info({
+        title: 'Loading...',
+        content: info,
+        maskClosable: false,
+        closable: false,
+      });
+    },
     startFollow(data) {
       this.followNodes = data;
     },
@@ -70,7 +78,10 @@ export default {
     },
 
     async handleStartClick(round) {
+      this.showLoadingModal("后端正在计算数据中")
+      await new Promise(resolve => setTimeout(resolve, 3000));
       this.tlbData = await getTlbData(round)
+      Modal.destroyAll()
     },
 
     async handleRowClick(rowData) {  // 监听行被点击事件 
@@ -82,25 +93,25 @@ export default {
     async refreshFG(id1, id2) {
       this.FGID1 = id1
       this.FGID2 = id2
+      this.showLoadingModal("加载力导向图中，正在计算位置")
       const data = await getFGData(id1, id2)
+      Modal.destroyAll();
       this.FGDataL = data[0]
       this.FGDataR = data[1]
     },
 
     async handleListClick(listData) {
-      // console.log(listData)
-      const id1 = listData.record.IDPair.ID1
-      const id2 = listData.record.IDPair.ID2
-      if (id1 != this.FGID1 || id2 != this.FGID2) {
-        await this.refreshFG(id1, id2)
+      const id1 = listData.record.IDPair.ID1;
+      const id2 = listData.record.IDPair.ID2;
+      if (id1 !== this.FGID1 || id2 !== this.FGID2) {
+        await this.refreshFG(id1, id2);
       }
       setTimeout(() => {
-        this.alignNodePair = listData.ENDatas.alignNodePair
-        this.centerNodePair = listData.ENDatas.centerNodePair
-        this.highlightId1 = listData.record.left.ID1
-        this.highlightId2 = listData.record.right.ID2
+        this.alignNodePair = listData.ENDatas.alignNodePair;
+        this.centerNodePair = listData.ENDatas.centerNodePair;
+        this.highlightId1 = listData.record.left.ID1;
+        this.highlightId2 = listData.record.right.ID2;
       }, 100); // 1000毫秒等于1秒
-      // console.log(this.highlightId1 + " " + this.highlightId2)
     },
 
     async handleFGIDClick(FGIDData) {
@@ -118,7 +129,7 @@ export default {
       this.alignNodePair = FGIDData.ENDatas.alignNodePair
       this.centerNodePair = FGIDData.ENDatas.centerNodePair
       // console.log(this.alignNodePair)
-      // console.log(this.centerNodePair)
+      console.log(this.centerNodePair)
       this.highlightId1 = this.highlightId2 = null
       this.refreshFG(FGIDData.nameDatas.ID1, FGIDData.nameDatas.ID2)
     },
