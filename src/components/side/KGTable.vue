@@ -1,6 +1,6 @@
 <!-- 侧边栏表格 -->
 <template>
-  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 20 }" class="custom-table"
+  <a-table :columns="columns" :data-source="data" size="small" :pagination="{ pageSize: 19 }" class="custom-table"
     :custom-row="handleCustomRow">
     <template #headerCell="{ column }">
       <template v-if="column.key === 'KG1'"> KG1 </template>

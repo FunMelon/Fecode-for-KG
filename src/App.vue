@@ -15,7 +15,7 @@
         <!-- 详细视图 -->
         <detailView :simData="simData" @ListClick="handleListClick" @FGIDClick="handleFGIDClick" />
         <!-- 力导向图 -->
-        <a-flex class="block" :style="{ flex: 1 }">
+        <a-flex class="block" :style="{ flex: 0.43 }">
           <FView class="block" :style="{ width: '50%' }" assignId="LFView" :FGData="FGDataL" type="base"
             :centerNodePairIds="this.centerNodePair" :alignNodePairListIds="this.alignNodePair"
             @startFollow="startFollow" :highlightNodeId="highlightId1" />
@@ -96,7 +96,7 @@ export default {
       }
       setTimeout(() => {
         this.alignNodePair = listData.ENDatas.alignNodePair
-      this.centerNodePair = listData.ENDatas.centerNodePair
+        this.centerNodePair = listData.ENDatas.centerNodePair
         this.highlightId1 = listData.record.left.ID1
         this.highlightId2 = listData.record.right.ID2
       }, 100); // 1000毫秒等于1秒
