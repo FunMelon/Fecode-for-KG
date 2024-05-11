@@ -145,7 +145,8 @@ export default {
                     // console.log(record); // 打印行数据到控制台
                     this.$emit('listClick', {
                         selectList: this.assignId,
-                        record: record
+                        record: record,
+                        selectedRow: record.left.KG1
                     });
 
                     this.selectedRow = record.left.KG1 // 更新选中的行索引
@@ -158,6 +159,11 @@ export default {
         clearSelectedRow() {
             // console.log("清空选择")
             this.selectedRow = -1;
+        },
+        setSelected(newData) {
+            if (this.selectedRow != newData) {
+                this.selectedRow = newData; 
+            }
         }
     }
 };

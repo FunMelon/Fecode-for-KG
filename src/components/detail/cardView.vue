@@ -66,7 +66,7 @@
     <a-modal v-model:open="ENOpen" title="实体" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEntityAscend" />
       <listView class="block c3" :isModal="true" :assignId="assignId + 'EntPop'" :data="ENDatas" :isNode="true"
-        :chosenId="this.chosenId" :isAscend="this.entityAscend" @listClick="handleListClick" />
+        :chosenId="this.chosenId" :isAscend="this.entityAscend" @listClick="handleListClick" ref="childRefPop"/>
     </a-modal>
 
     <a-modal v-model:open="RLOpen" title="属性" @ok="handleOk" @cancel="handleOk">
@@ -146,6 +146,11 @@ export default {
     handleListClick(rowData) {  // 监听行被点击事件 
       rowData.ENDatas = this.ENDatas
       rowData.Pos = this.assignId
+      // console.log(rowData.selectedRow)
+      this.$refs.childRef.setSelected(rowData.selectedRow)
+      if (this.$refs.childRefPop) {
+        this.$refs.childRefPop.setSelected(rowData.selectedRow)
+      }
       this.$emit('ListClick', rowData); // 将点击行的数据存储到 selectedRowData 中
     },
 
@@ -160,7 +165,10 @@ export default {
     clearListSelected() {
       // console.log(this.assignId + "卡片收到清空消息")
       this.$refs.childRef.clearSelectedRow()
-    }
+      if (this.$refs.childRefPop) {
+        this.$refs.childRefPop.clearSelectedRow()
+      }
+    },
   }
 };
 </script>
