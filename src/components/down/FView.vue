@@ -117,9 +117,9 @@ export default {
         },
       },
       layout: {
-        type: "force2",
+        type: "gForce",
         preventOverlap: true,
-        nodeStrength: 50,
+        nodeStrength: 100,
         linkDistance: 100,
         onTick: () => {
           const nodes = this.graph.getNodes().map((item) => item.getModel());
@@ -172,7 +172,7 @@ export default {
           "drag-canvas",
         ],
       },
-      animate: true,
+      animate: false,
     });
   },
   methods: {

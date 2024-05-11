@@ -79,7 +79,7 @@ export default {
 
     async handleStartClick(round) {
       this.showLoadingModal("后端正在计算数据中")
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // await new Promise(resolve => setTimeout(resolve, 1000));
       this.tlbData = await getTlbData(round)
       Modal.destroyAll()
     },
@@ -88,6 +88,21 @@ export default {
       // 监听子组件的行点击事件，并接收传递过来的行数据
       this.highlightId1 = this.highlightId2 = null
       this.simData = await getSimData(rowData.ID1); // 将点击行的数据存储到 selectedRowData 中
+      this.showLoadingModal("加载力导向图中，正在计算位置")
+      this.FGID1 = rowData.ID1
+      this.FGID2 = rowData.ID2
+      const data = await getFGData(rowData.ID1, rowData.ID2)
+      
+      this.FGDataL = data[0]
+      this.FGDataR = data[1]
+      for(let i = 0; i < this.simData.stru.length; ++i){
+        if(this.simData.stru[i].ID2 == rowData.ID2){
+          this.alignNodePair = this.simData.stru[i].alignNodePair
+          this.centerNodePair = this.simData.stru[i].centerNodePair
+          //this.simData.highlightedId = i
+        }
+      }
+      Modal.destroyAll();
     },
 
     async refreshFG(id1, id2) {
