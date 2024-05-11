@@ -104,6 +104,8 @@ export default {
       const id1 = listData.record.IDPair.ID1;
       const id2 = listData.record.IDPair.ID2;
       if (id1 !== this.FGID1 || id2 !== this.FGID2) {
+        this.alignNodePair = listData.ENDatas.alignNodePair;
+        this.centerNodePair = listData.ENDatas.centerNodePair;
         await this.refreshFG(id1, id2);
       }
       setTimeout(() => {
