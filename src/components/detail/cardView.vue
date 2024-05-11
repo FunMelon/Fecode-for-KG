@@ -39,7 +39,7 @@
       <a-flex>
         <simView class="block c0" :sim="ENDatas.Sim" :row="2" :maxSim="this.MaxSims[2]" />
         <listView class="block c3" :assignId="assignId + 'Ent'" :data="ENDatas" :isNode="true" :chosenId="this.chosenId"
-          :isAscend="this.entityAscend" @listClick="handleListClick" />
+          :isAscend="this.entityAscend" @listClick="handleListClick" ref="childRef"/>
       </a-flex>
     </div>
 
@@ -155,6 +155,11 @@ export default {
         ENDatas: this.ENDatas,
         Pos: this.assignId
       })
+    },
+
+    clearListSelected() {
+      // console.log(this.assignId + "卡片收到清空消息")
+      this.$refs.childRef.clearSelectedRow()
     }
   }
 };

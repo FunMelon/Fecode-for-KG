@@ -79,7 +79,7 @@ export default {
 
     async handleStartClick(round) {
       this.showLoadingModal("后端正在计算数据中")
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       this.tlbData = await getTlbData(round)
       Modal.destroyAll()
     },
@@ -129,7 +129,7 @@ export default {
       this.alignNodePair = FGIDData.ENDatas.alignNodePair
       this.centerNodePair = FGIDData.ENDatas.centerNodePair
       // console.log(this.alignNodePair)
-      console.log(this.centerNodePair)
+      // console.log(this.centerNodePair)
       this.highlightId1 = this.highlightId2 = null
       this.refreshFG(FGIDData.nameDatas.ID1, FGIDData.nameDatas.ID2)
     },
