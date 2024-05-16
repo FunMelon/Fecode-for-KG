@@ -41,12 +41,7 @@ export default {
         // console.log("清空力导向图")
         this.graph.clear();
       } else {
-        const num = parseInt(newId)
-        if (!isNaN(num)) {
-          this.setNodeColors();
-        } else {
-          this.setEdgeColors();
-        }
+        this.setNodeColors();
       }
     },
     FGData(data) {
@@ -232,29 +227,28 @@ export default {
             },
           });
         }
+        // 高亮边
+        const edges = this.graph.getEdges();
+        edges.forEach(edge => {
+          const rels = edge.getModel().rels;
+          if (rels.includes(this.highlightNodeId)) {
+            edge.update({
+              style: {
+                stroke: 'red', // 设置边的颜色为红色
+                lineWidth: 1,  // 可以根据需要调整线宽
+              },
+            });
+          } else {
+            edge.update({
+              style: {
+                stroke: '#A3B1BF', // 默认边的颜色
+                lineWidth: 1,      // 默认边的线宽
+              },
+            });
+          }
+        })
       }, 100)
     },
-    setEdgeColors() {
-      const edges = this.graph.getEdges();
-      edges.forEach(edge => {
-        const rels = edge.getModel().rels;
-        if (rels.includes(this.highlightNodeId)) {
-          edge.update({
-            style: {
-              stroke: 'red', // 设置边的颜色为红色
-              lineWidth: 1,  // 可以根据需要调整线宽
-            },
-          });
-        } else {
-          edge.update({
-            style: {
-              stroke: '#A3B1BF', // 默认边的颜色
-              lineWidth: 1,      // 默认边的线宽
-            },
-          });
-        }
-      })
-    }
   },
 };
 </script>
