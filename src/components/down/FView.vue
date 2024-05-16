@@ -46,6 +46,7 @@ export default {
       }
     },
     FGData(data) {
+      if (!data && this.graph) this.graph.clear();
       if (!data || !this.graph) return;
       if (this.type === "follow") return;
       this.graph.data(JSON.parse(JSON.stringify(this.FGData))); // 此处会修改data，因此必须使用深拷贝
@@ -117,9 +118,9 @@ export default {
         },
       },
       layout: {
-        type: "force2",
+        type: "gForce",
         preventOverlap: true,
-        nodeStrength: 50,
+        nodeStrength: 100,
         linkDistance: 100,
         onTick: () => {
           const nodes = this.graph.getNodes().map((item) => item.getModel());
@@ -197,7 +198,7 @@ export default {
             // console.log("中心节点")
             node.update({
               style: {
-                fill: "#EFF4FF",
+                fill: "#44cef6",
               },
             });
           } else {
@@ -227,6 +228,13 @@ export default {
         }
       }, 100)
     },
+    setEdgeColors() {
+      const edges = this.graph.getEdges();
+        // console.log(edges)
+        edges.forEach(edge => {
+          console.log(edge.getModel().rels)
+        })
+    }
   },
 };
 </script>

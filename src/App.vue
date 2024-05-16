@@ -58,6 +58,7 @@ export default {
       alignNodePair: [],
       centerNodePair: [],
       newRow: null,
+      round: 0,
     }
   },
   methods: {
@@ -67,6 +68,7 @@ export default {
         content: info,
         maskClosable: false,
         closable: false,
+        okButtonProps: { style: { display: "none" } },
       });
     },
     startFollow(data) {
@@ -77,11 +79,14 @@ export default {
       this.tlbData = data
     },
 
-    async handleStartClick(round) {
+    async handleStartClick() {
+      this.simData = this.FGDataL = this.FGDataR = null
       this.showLoadingModal("后端正在计算数据中")
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      this.tlbData = await getTlbData(round)
+      // console.log(this.round)
+      // await new Promise(resolve => setTimeout(resolve, 5000));
+      this.tlbData = await getTlbData(this.round)
       Modal.destroyAll()
+      ++this.round
     },
 
     async handleRowClick(rowData) {  // 监听行被点击事件 
@@ -93,9 +98,10 @@ export default {
     async refreshFG(id1, id2) {
       this.FGID1 = id1
       this.FGID2 = id2
-      this.showLoadingModal("加载力导向图中，正在计算位置")
+      // this.showLoadingModal("加载力导向图中，正在计算位置")
       const data = await getFGData(id1, id2)
-      Modal.destroyAll();
+      // Modal.destroyAll();
+      if(!data) return  // 没有数据就不刷新力导向图
       this.FGDataL = data[0]
       this.FGDataR = data[1]
     },
