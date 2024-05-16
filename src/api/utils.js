@@ -4,9 +4,9 @@ const url = "http://127.0.0.1:8000";
 export async function getTlbData(round) {
     try {
         // console.log(url + '/get_table_data/?round=' + round)
-        const response = await fetch(url + '/get_table_data/?round=' + round);
-        // const response = await fetch('./data/tlb.json');
-        // console.log(round);
+        // const response = await fetch(url + '/get_table_data/?round=' + round);
+        const response = await fetch('./data/tlb.json');
+        console.log(round);
         const data = await response.json();
         return data;
     } catch (error) {

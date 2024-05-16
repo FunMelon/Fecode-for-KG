@@ -139,16 +139,12 @@ export default {
         handleCustomRow(record) {
             return {
                 onClick: () => {
-                    if (!this.isNode) {
-                        return
-                    }
                     // console.log(record); // 打印行数据到控制台
                     this.$emit('listClick', {
                         selectList: this.assignId,
                         record: record,
                         selectedRow: record.left.KG1
                     });
-
                     this.selectedRow = record.left.KG1 // 更新选中的行索引
                 },
                 style: {

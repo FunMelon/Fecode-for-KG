@@ -107,6 +107,7 @@ export default {
     },
 
     async handleListClick(listData) {
+      // console.log(listData)
       const id1 = listData.record.IDPair.ID1;
       const id2 = listData.record.IDPair.ID2;
       if (id1 !== this.FGID1 || id2 !== this.FGID2) {
@@ -117,8 +118,15 @@ export default {
       setTimeout(() => {
         this.alignNodePair = listData.ENDatas.alignNodePair;
         this.centerNodePair = listData.ENDatas.centerNodePair;
-        this.highlightId1 = listData.record.left.ID1;
-        this.highlightId2 = listData.record.right.ID2;
+        if (listData.record.left.ID1) {  // 传送的是实体列表
+          this.highlightId1 = listData.record.left.ID1;
+          this.highlightId2 = listData.record.right.ID2;
+        } else {
+          this.highlightId1 = listData.record.left.KG1
+          this.highlightId2 = listData.record.right.KG2
+          // console.log(listData.record.left.KG1)
+          // console.log(listData.record.right.KG2)
+        }
       }, 100); // 1000毫秒等于1秒
     },
 

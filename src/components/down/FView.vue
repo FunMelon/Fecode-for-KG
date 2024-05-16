@@ -35,14 +35,18 @@ export default {
   },
   watch: {
     highlightNodeId(newId) {
-      // console.log(newId)
       if (!this.graph) {  // 没有力导向图实例
         return
       } else if (newId == null) {
         // console.log("清空力导向图")
         this.graph.clear();
       } else {
-        this.setNodeColors();
+        const num = parseInt(newId)
+        if (!isNaN(num)) {
+          this.setNodeColors();
+        } else {
+          this.setEdgeColors();
+        }
       }
     },
     FGData(data) {
@@ -115,6 +119,8 @@ export default {
       defaultEdge: {
         style: {
           endArrow: true,
+          stroke: '#A3B1BF', // 默认边的颜色
+          lineWidth: 1,      // 默认边的线宽
         },
       },
       layout: {
@@ -230,10 +236,24 @@ export default {
     },
     setEdgeColors() {
       const edges = this.graph.getEdges();
-        // console.log(edges)
-        edges.forEach(edge => {
-          console.log(edge.getModel().rels)
-        })
+      edges.forEach(edge => {
+        const rels = edge.getModel().rels;
+        if (rels.includes(this.highlightNodeId)) {
+          edge.update({
+            style: {
+              stroke: 'red', // 设置边的颜色为红色
+              lineWidth: 1,  // 可以根据需要调整线宽
+            },
+          });
+        } else {
+          edge.update({
+            style: {
+              stroke: '#A3B1BF', // 默认边的颜色
+              lineWidth: 1,      // 默认边的线宽
+            },
+          });
+        }
+      })
     }
   },
 };
