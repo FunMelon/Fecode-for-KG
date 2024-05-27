@@ -92,6 +92,7 @@ export default {
     async handleRowClick(rowData) {  // 监听行被点击事件 
       // 监听子组件的行点击事件，并接收传递过来的行数据
       this.highlightId1 = this.highlightId2 = null
+      this.FGDataL = this.FGDataR = null
       this.simData = await getSimData(rowData.ID1); // 将点击行的数据存储到 selectedRowData 中
     },
 

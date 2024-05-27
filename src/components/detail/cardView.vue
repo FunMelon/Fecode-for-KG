@@ -69,7 +69,7 @@
         :chosenId="this.chosenId" :isAscend="this.entityAscend" @listClick="handleListClick" ref="childRefPop"/>
     </a-modal>
 
-    <a-modal v-model:open="RLOpen" title="属性" @ok="handleOk" @cancel="handleOk">
+    <a-modal v-model:open="RLOpen" title="关系" @ok="handleOk" @cancel="handleOk">
       <SwapOutlined :rotate="90" :style="{ color: '#666' }" @click="changeEdgeAscend" />
       <listView class="block c3" :isModal="true" :assignId="assignId + 'Rel'" :data="RLDatas" :isNode="false"
         :chosenId="this.chosenId" :isAscend="this.edgeAscend" @listClick="handleListClick" />

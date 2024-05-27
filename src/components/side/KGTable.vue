@@ -10,7 +10,9 @@
         <span>
           <CheckCircleTwoTone v-if="record.Status === 'marked' || record.Status === 'unmarked'"
             :two-tone-color="'#52c41a'" @click="handleIconClick(record, 'marked')" />
-          &nbsp;
+            <template v-if="record.Status === 'unmarked'">
+              &nbsp;&nbsp;
+            </template>
           <CloseCircleTwoTone v-if="record.Status === 'unmarkable' || record.Status === 'unmarked'"
             :two-tone-color="'#eb2f96'" @click="handleIconClick(record, 'unmarkable')" />
         </span>
